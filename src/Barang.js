@@ -8,23 +8,18 @@ const Barang = ({id,nama, harga,stok}) => {
     const [total,setTotal]= useState(0);
 
     const kurangiStok =() => {
-        setCount(count+1)
-        setStok(Math.round(stokBaru -1))
-
-        if(count > stokBaru){
+       if(stokBaru == 0 ){
             setCount(count+ 0)
             alert ("Stok Kurang")
+        } else { 
+            setCount(count+1)
+            setStok(stokBaru - 1)
         }
     }
 
     const tambahStok =() => {
         setCount(count-1)
         setStok(stokBaru +1)
-    }
-
-    const hitungTotal = () => {
-        total = count * hargaBaru
-        setTotal(total)
     }
 
     return (
@@ -38,7 +33,6 @@ const Barang = ({id,nama, harga,stok}) => {
                         <td>{stokBaru}</td>
                         <td>{count}</td>
                         <td><button onClick={kurangiStok}>+</button><button onClick={tambahStok}>-</button></td>
-                        <td>{hitungTotal}</td>
                     </tbody>
                 </table>
             </div>

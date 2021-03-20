@@ -7,6 +7,8 @@ const AddBarang = () => {
     const [nama,setNama] = useState('');
     const [harga,setHarga] = useState('');
     const [stok,setStok] = useState('');
+    const [tglMasuk,setMasuk] = useState('');
+    const [tglKeluar,setKeluar] = useState('');
     const [barang,setBarang] = useContext(BarangContext)
 
     const updateID = e => {
@@ -24,21 +26,44 @@ const AddBarang = () => {
     const updateStok = e => {
         setStok(e.target.value);
     }
+    const updateMasuk = e => {
+        setMasuk(e.target.value);
+    }
+    const updateKeluar = e => {
+        setKeluar(e.target.value);
+    }
 
     const addBarang = e => {
         e.preventDefault(); 
-        setBarang(prevBarang => [...prevBarang,{id: id,nama: nama,harga: harga, stok: stok}])
+        const ids = barang.map(({id}) => id),
+        id = Math.max(...ids) + 1
 
+        setBarang(prevBarang => [...prevBarang,{id: id,nama: nama,harga: harga, stok: stok}])
     }
 
+
     return (
-        <div className="wrapper">
+        <div>
         <form className="form" onSubmit={addBarang}>
-            <label>ID:<input type="text" name="id" value={id} onChange={updateID}/></label><br></br>
-            <label>Nama Barang<input type="text" name="nama" value={nama} onChange={updateNama}/></label><br></br>
-            <label>Harga<input type="number" name="harga" value={harga} onChange={updateHarga}/></label><br></br>
-            <label>Stok<input typw="number" name="stok" value={stok} onChange={updateStok}/></label><br></br>
-            <input type="submit" value="Submit" className="btn" />
+            <h1>Tambah Barang</h1>
+            <div>
+                <label>ID<input type="text"  className="inputID" value={id} onChange={updateID}/></label>
+            </div>
+            <div>
+                <label>Nama<input type="text"  className="inputNama" value={nama} onChange={updateNama}/></label>
+            </div>
+            <div>
+                <label>Harga<input type="number"  className="inputHarga" value={harga} onChange={updateHarga}/></label>
+            </div>
+            <div>
+                <label>Stok<input typw="number"  className="inputStok" value={stok} onChange={updateStok}/></label><br></br>
+            </div>
+            <div className="inputMasuk">
+                <label>Tanggal Masuk<input type="text" value={tglMasuk} onChange={updateMasuk}/></label><br></br>
+            </div>
+            <div className="inputKeluar"><label>Tanggal Keluar<input type="text" name="stok" value={tglKeluar} onChange={updateKeluar}/></label><br></br>
+                <input type="submit" value="Submit" className="btn" />
+            </div>
         </form>
         </div>
     );

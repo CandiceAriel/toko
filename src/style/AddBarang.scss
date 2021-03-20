@@ -1,35 +1,67 @@
 .AddBarang{
+  padding: 50px;
 }
-    .wrapper{
-        width: 20%;
+    //.wrapper{
+       /* width: 20%;
         height: 320px;
         margin: 10px 600px;
         border-radius: 15px;
         padding: 10px 20px 10px 20px;
-        background-color: whitesmoke;
+        background-color: whitesmoke; */
 
         form {
-            height:300px; 
+            height:450px; 
             font-size: 16px;
-            margin-top: 10px;
-            margin-bottom: 60px;
-            text-align: center;
+            margin: 20px 500px;
+            padding: 10px 70px 10px 20px;
+            text-align: left;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-
+            justify-content: space-between;
+            border-radius: 10px;
+            width: 480px;
+            background-color: white;
+            box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
           }
 
           input{
             height: 30px;
-            margin-left: 30px;
+            width: 280px;
+            margin-left: 50px;
+            margin-right: 30px;
+          }
+
+          h1{
+            padding: 0px 150px;
+            font-size: 22px;
           }
 
           .btn{
               width: 100px;
+              height: 40px;
               border-radius: 5px;
-              margin: 0px 200px 0px;
+              margin: 15px 200px 0px;
           }
-    }
+
+          .inputID{
+            width: 280px;
+            margin-left: 142px;
+          }
+
+          .inputNama{
+            width: 280px;
+            margin-left: 115px;
+          }
+
+          .inputHarga{
+            width: 280px;
+            margin-left: 115px;
+          }
+
+          .inputStok{
+            width: 280px;
+            margin-left: 127px;
+          }
+    //}
 
     
