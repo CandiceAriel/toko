@@ -1,0 +1,19 @@
+.NavHeader{
+    margin: 10px;
+    height: 30vh;
+    justify-content: center;
+}
+
+header{
+    padding: 10px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: burlywood;
+    display: flex;
+    
+    p{
+        color: black;
+        font-size: large;
+        font-weight: bold;
+    }
+}

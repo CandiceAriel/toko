@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+
 import './App.css';
+import ListBarang from './ListBarang';
+import AddBarang from './AddBarang';
+import NavHeader from './NavHeader';
+import { BarangProvider } from './BarangContext';
 
 function App() {
   return (
+    <BarangProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavHeader />
+      <AddBarang />
+      <ListBarang />
     </div>
+    </BarangProvider>
   );
 }
 
