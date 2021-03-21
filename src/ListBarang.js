@@ -4,7 +4,7 @@ import Barang from './Barang'
 
 const ListBarang = () => {
     const [barang,setBarang]=useContext(BarangContext);
-    
+ 
     return (
         <div>
             {barang.map(barang => (

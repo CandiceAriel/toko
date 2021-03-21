@@ -7,8 +7,11 @@ const AddBarang = () => {
     const [nama,setNama] = useState('');
     const [harga,setHarga] = useState('');
     const [stok,setStok] = useState('');
+    const [newStok, setStokBaru] = useState('');
     const [tglMasuk,setMasuk] = useState('');
     const [tglKeluar,setKeluar] = useState('');
+    const [count,setCount] = useState(0);
+
     const [barang,setBarang] = useContext(BarangContext)
 
     const updateID = e => {
@@ -27,7 +30,7 @@ const AddBarang = () => {
         setStok(e.target.value);
     }
     const updateMasuk = e => {
-        setMasuk(Date().toLocaleString());
+        setMasuk(e.target.value);
     }
     const updateKeluar = e => {
         setKeluar(e.target.value);
@@ -38,9 +41,15 @@ const AddBarang = () => {
         const existingIndex = barang.findIndex((barang) => barang.id === id);
 
         if(existingIndex >= 0){
-            alert('gagal')
-        } else setBarang(prevBarang => [...prevBarang,{id: id,nama: nama,harga: harga, stok: stok}])
+            const sama = barang.findIndex((barang) => barang.id === id)
+            setStok(sama.stok)
+            alert (stok)
+        } else setBarang(prevBarang => [...prevBarang,{id: id,tglMasuk: tglMasuk,tglKeluar: tglKeluar,nama: nama,harga: harga, stok: stok}])
+    }
 
+    const tambahStok =() => {
+        setCount(count+1)
+        setStok(stok +1)
     }
 
 
@@ -58,10 +67,10 @@ const AddBarang = () => {
                 <label>Harga<input type="number"  className="inputHarga" value={harga} onChange={updateHarga}/></label>
             </div>
             <div>
-                <label>Stok<input typw="number"  className="inputStok" value={stok} onChange={updateStok}/></label><br></br>
+                <label>Stok<input type="number"  className="inputStok" value={stok} onChange={updateStok}/></label><br></br>
             </div>
             <div className="inputMasuk">
-                <label>Tanggal Masuk<input type="text" value={new Date().getFullYear() + '/' + (new Date().getMonth() + 1) + '/' + new Date().getDate()} onChange={updateMasuk}/></label><br></br>
+                <label>Tanggal Masuk<input type="text" value={tglMasuk} onChange={updateMasuk}/></label><br></br>
             </div>
             <div className="inputKeluar"><label>Tanggal Keluar<input type="text" name="stok" value={tglKeluar} onChange={updateKeluar}/></label><br></br>
                 <input type="submit" value="Submit" className="btn" />
