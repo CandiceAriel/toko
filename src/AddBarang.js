@@ -35,10 +35,12 @@ const AddBarang = () => {
 
     const addBarang = e => {
         e.preventDefault(); 
-        const ids = barang.map(({id}) => id),
-        id = Math.max(...ids) + 1
+        const existingIndex = barang.findIndex((barang) => barang.id === id);
 
-        setBarang(prevBarang => [...prevBarang,{id: id,nama: nama,harga: harga, stok: stok}])
+        if(existingIndex >= 0){
+            alert('gagal')
+        } else setBarang(prevBarang => [...prevBarang,{id: id,nama: nama,harga: harga, stok: stok}])
+
     }
 
 
