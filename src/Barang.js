@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './style/Barang.scss'
 
-const Barang = ({id,nama, harga,stok}) => {
+const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
     const [count,setCount] = useState(0);
     const [stokBaru,setStok] = useState(stok);
     const hargaBaru = useState(harga);
@@ -28,11 +28,13 @@ const Barang = ({id,nama, harga,stok}) => {
                 <table className="table">
                     <tbody>
                         <td>{id}</td>
+                        <td>{tglMasuk}</td>
+                        <td>{tglKeluar}</td>
                         <td>{nama}</td>
                         <td>{harga}</td>
                         <td>{stokBaru}</td>
                         <td>{count}</td>
-                        <td><button onClick={kurangiStok}>+</button><button onClick={tambahStok}>-</button></td>
+                        <td><button onClick={kurangiStok} className="button__tambah">+</button><button onClick={tambahStok} className="button__kurang">-</button></td>
                     </tbody>
                 </table>
             </div>

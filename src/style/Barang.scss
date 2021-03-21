@@ -19,17 +19,35 @@
     }
 
     td{
-        padding: 5px 30px;
+        padding: 5px 15px;
         margin: 0px;
         width: 40px;
         //border-bottom: 1px solid black;
     }
 }
 
-button{
-    width: 30px;
-    height:30px;
-    margin: 0px 10px;
+.button{
+    &__tambah{
+        background-color: #28527A;
+        margin: 0px 10px;
+        border-radius: 5px;
+        width: 40px;
+        height:40px;
+        border:none;
+        color:white;
+        font-size: medium;
+    }
+
+    &__kurang{
+        background-color: #810000;
+        margin: 0px 10px;
+        border-radius: 5px;
+        width: 40px;
+        height:40px;
+        border:none;
+        color: white;
+        font-size: large;
+    }
 }
 
 

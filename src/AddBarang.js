@@ -27,7 +27,7 @@ const AddBarang = () => {
         setStok(e.target.value);
     }
     const updateMasuk = e => {
-        setMasuk(e.target.value);
+        setMasuk(Date().toLocaleString());
     }
     const updateKeluar = e => {
         setKeluar(e.target.value);
@@ -59,7 +59,7 @@ const AddBarang = () => {
                 <label>Stok<input typw="number"  className="inputStok" value={stok} onChange={updateStok}/></label><br></br>
             </div>
             <div className="inputMasuk">
-                <label>Tanggal Masuk<input type="text" value={tglMasuk} onChange={updateMasuk}/></label><br></br>
+                <label>Tanggal Masuk<input type="text" value={new Date().getFullYear() + '/' + (new Date().getMonth() + 1) + '/' + new Date().getDate()} onChange={updateMasuk}/></label><br></br>
             </div>
             <div className="inputKeluar"><label>Tanggal Keluar<input type="text" name="stok" value={tglKeluar} onChange={updateKeluar}/></label><br></br>
                 <input type="submit" value="Submit" className="btn" />
