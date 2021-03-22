@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react'
+import React, { useContext } from 'react'
 import {BarangContext} from './BarangContext'
 import Barang from './Barang'
 
@@ -8,8 +8,7 @@ const ListBarang = () => {
     return (
         <div>
             {barang.map(barang => (
-                <Barang key ={barang.id}
-                        id={barang.id}
+                <Barang id={barang.id}
                         tglMasuk = {barang.tglMasuk}
                         tglKeluar={barang.tglKeluar}
                         nama={barang.nama} 

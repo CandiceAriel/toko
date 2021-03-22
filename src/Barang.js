@@ -4,8 +4,7 @@ import './style/Barang.scss'
 const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
     const [count,setCount] = useState(0);
     const [stokBaru,setStok] = useState(stok);
-    const hargaBaru = useState(harga);
-    const [total,setTotal]= useState(0);
+    const [counter,setCounter] = useState(0);
 
     const kurangiStok =() => {
        if(stokBaru == 0 ){
@@ -22,6 +21,16 @@ const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
         setStok(stokBaru +1)
     }
 
+    const addStok =() => {
+        setCounter(counter-1)
+        setStok(stokBaru +1)
+    }
+
+    const minusStok =() => {
+        setCounter(counter+1)
+        setStok(stokBaru -1)
+    }
+
     return (
         <div className="container">
             <div>
@@ -32,9 +41,9 @@ const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
                         <td>{tglKeluar}</td>
                         <td>{nama}</td>
                         <td>{harga}</td>
-                        <td>{stokBaru}</td>
-                        <td>{count}</td>
-                        <td><button onClick={kurangiStok} className="button__tambah">+</button><button onClick={tambahStok} className="button__kurang">-</button></td>
+                        <td><button onClick={addStok} className="button__tambah">+</button>{stokBaru}<button onClick={minusStok} className="button__kurang">-</button></td>
+                        <td><button onClick={kurangiStok} className="button__tambah">Beli</button>{count}<button onClick={tambahStok} className="button__kurang">Jual</button></td>
+                        <td>{count*harga}</td>
                     </tbody>
                 </table>
             </div>

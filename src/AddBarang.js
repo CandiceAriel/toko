@@ -7,10 +7,8 @@ const AddBarang = () => {
     const [nama,setNama] = useState('');
     const [harga,setHarga] = useState('');
     const [stok,setStok] = useState('');
-    const [newStok, setStokBaru] = useState('');
     const [tglMasuk,setMasuk] = useState('');
     const [tglKeluar,setKeluar] = useState('');
-    const [count,setCount] = useState(0);
 
     const [barang,setBarang] = useContext(BarangContext)
 
@@ -38,20 +36,14 @@ const AddBarang = () => {
 
     const addBarang = e => {
         e.preventDefault(); 
-        const existingIndex = barang.findIndex((barang) => barang.id === id);
+        const existingIndex = barang.find((barang) => barang.id === id);
 
-        if(existingIndex >= 0){
-            const sama = barang.findIndex((barang) => barang.id === id)
-            setStok(sama.stok)
-            alert (stok)
+        if(existingIndex){
+            alert (barang.stok+existingIndex.stok)
+
+            //alert ('Barang sudah ada')
         } else setBarang(prevBarang => [...prevBarang,{id: id,tglMasuk: tglMasuk,tglKeluar: tglKeluar,nama: nama,harga: harga, stok: stok}])
     }
-
-    const tambahStok =() => {
-        setCount(count+1)
-        setStok(stok +1)
-    }
-
 
     return (
         <div>
