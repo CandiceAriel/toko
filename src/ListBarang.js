@@ -1,12 +1,19 @@
 import React, { useContext } from 'react'
-import {BarangContext} from './BarangContext'
-import Barang from './Barang'
+import {BarangContext} from './context/BarangContext'
+import NavHeader from './NavHeader';
+import Barang from './Barang';
+import AddBarang from './AddBarang';
+import Cart from './Cart';
 
 const ListBarang = () => {
     const [barang,setBarang]=useContext(BarangContext);
+    
  
     return (
         <div>
+            <NavHeader />
+            <Barang />
+            <AddBarang />
             {barang.map(barang => (
                 <Barang id={barang.id}
                         tglMasuk = {barang.tglMasuk}

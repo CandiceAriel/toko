@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {BarangContext} from './BarangContext'
+import {BarangContext} from './context/BarangContext'
 import './style/AddBarang.scss'
 
 const AddBarang = () => {
@@ -39,9 +39,8 @@ const AddBarang = () => {
         const existingIndex = barang.find((barang) => barang.id === id);
 
         if(existingIndex){
-            alert (barang.stok+existingIndex.stok)
-
-            //alert ('Barang sudah ada')
+            existingIndex.stok = parseInt(existingIndex.stok)+ parseInt(stok)
+            setBarang(prevBarang => [...prevBarang,{id: id,tglMasuk: tglMasuk,tglKeluar: tglKeluar,nama: nama,harga: harga, stok: existingIndex.stok}])
         } else setBarang(prevBarang => [...prevBarang,{id: id,tglMasuk: tglMasuk,tglKeluar: tglKeluar,nama: nama,harga: harga, stok: stok}])
     }
 
