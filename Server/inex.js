@@ -61,6 +61,24 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
+app.put("/update", (req, res) => {
+  const id = req.body.id;
+  const harga = req.body.harga;
+  const stok = req.body.stok;
+  const qty = req.body.qty;
+  con.query(
+    "UPDATE Barang SET harga = ?,stok = ?,qty=? WHERE id = ?",
+    [harga,stok, qty, id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
 app.listen(3001, () => {
   console.log("Connected!");
 });
