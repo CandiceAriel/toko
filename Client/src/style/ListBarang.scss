@@ -1,0 +1,41 @@
+.ListBarang{
+    
+}
+
+.content{
+    width: 85%;
+    height: 85px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 10px 107px;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.button{
+
+    &__show{
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        margin: 10px 720px;
+    }
+
+    &__delete{
+        width: 130px;
+        height: 40px;
+        border-radius: 10px;
+        margin: 20px 10px 5px 5px;
+    }
+
+    &__update{
+        width: 100px;
+        height: 40px;
+        border-radius: 12px;
+        margin: 7px 10px 5px 5px;
+    }
+
+}
+

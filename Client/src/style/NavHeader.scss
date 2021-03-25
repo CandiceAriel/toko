@@ -1,0 +1,67 @@
+.NavHeader{
+    margin: 10px;
+    height: 20vh;
+    justify-content: space-between;
+}
+
+header{
+    padding: 30px 20px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #C1C2AD;
+    display: flex;
+    
+    p{
+        color: black;
+        font-size: large;
+        font-weight: bold;
+        margin: 0px;
+    }
+}
+
+
+.link{
+    height: 50px;
+    width: 55px;
+    margin-top: 10px;
+    align-items: center;
+
+&__barang{
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            background: #435560;
+            border: none;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 10px 10px 10px ;
+            padding: 10px 35px;
+    }
+
+&__tambahbarang{
+    text-decoration: none;
+            color:white;
+            font-weight: bold;
+            background: #435560;
+            border: none;
+            justify-content: center;
+            border-radius: 10px;
+            padding: 10px 35px;
+            margin: 10px 15px 10px ;
+}
+
+&__cart{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    background: #435560;
+    border: none;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px 10px 10px ;
+    padding: 10px 35px;
+}
+    
+}
+
+
