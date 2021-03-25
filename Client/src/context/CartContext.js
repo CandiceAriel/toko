@@ -11,8 +11,6 @@ export const  CartProvider = props => {
           harga: 50000,
           stok: 10,
           count: 0,
-          tglMasuk: '10/01/2021',
-          tglKeluar: '15/01/2021',
         },
     ]);
 
