@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React from 'react'
 
 const Cart = ({id,nama, harga,qty}) => {
 

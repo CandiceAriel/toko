@@ -11,29 +11,37 @@ const AddBarang = () => {
     const [tglMasuk,setMasuk] = useState('');
     const [tglKeluar,setKeluar] = useState('');
 
-
+    //update ID value
     const updateID = e => {
         setID(e.target.value);
     }
     
+    //update Nama value
     const updateNama = e => {
         setNama(e.target.value);
     }
 
+    //Update Harga value
     const updateHarga = e => {
         setHarga(e.target.value);
     }
 
+    //Update Stok value
     const updateStok = e => {
         setStok(e.target.value);
     }
+
+    //Update Tgl Masuk value
     const updateMasuk = e => {
         setMasuk(e.target.value);
     }
+
+    //Update Tgl Keluar value
     const updateKeluar = e => {
         setKeluar(e.target.value);
     }
 
+    //Add Barang to DB
     const addBarang = () => {
         Axios.post("http://localhost:3001/create",
         {
@@ -47,13 +55,6 @@ const AddBarang = () => {
         }).then(() => {
         alert("Good");
     });
-        {/*e.preventDefault(); 
-        const existingIndex = barang.find((barang) => barang.id === id);
-
-        if(existingIndex){
-            existingIndex.stok = parseInt(existingIndex.stok)+ parseInt(stok)
-            setBarang(prevBarang => [...prevBarang,{id: id,tglMasuk: tglMasuk,tglKeluar: tglKeluar,nama: nama,harga: harga, stok: existingIndex.stok}])
-        } else setBarang(prevBarang => [...prevBarang,{id: id,tglMasuk: tglMasuk,tglKeluar: tglKeluar,nama: nama,harga: harga, stok: stok}]) */}
     }
 
     return (

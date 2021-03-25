@@ -10,6 +10,7 @@ const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
 
     const [barang,setBarang] = useState([])
 
+    //Kurangi stok based on qty for counter button
     const kurangiStok =() => {
        if(stokBaru == 0 ){
             setQty(qty + 0)
@@ -20,25 +21,30 @@ const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
         }
     }
 
+    //Tambah stok based on qty for counter button
     const tambahStok =() => {
         setQty(qty-1)
         setStok(stokBaru +1)
     }
 
+    //Tambah stok based on qty for stok +  button
     const addStok =() => {
         setCounter(counter-1)
         setStok(stokBaru +1)
     }
 
+    //Kurangi stok based on qty for stok -  button
     const minusStok =() => {
         setCounter(counter+1)
         setStok(stokBaru -1)
     }
 
+    //Update Harga value
     const updateHarga = (e) => {
         setHarga(e.target.value);
     }
 
+    //Update Barang to DB based on new value
     const updateBarang = (id) => {
         Axios.put("http://localhost:3001/update", { harga: hargaBaru, stok: stokBaru , qty: qty , id: id }).then(
           (response) => {
@@ -47,6 +53,7 @@ const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
         );
     };
 
+    //Add to Cart
     const addCart = (id) => {
         alert(id)
         Axios.post("http://localhost:3001/createCart",

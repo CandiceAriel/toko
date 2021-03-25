@@ -6,12 +6,14 @@ import './style/ListBarang.scss'
 const ListBarang = () => {
     const [barang,setBarang]=useState([]);
 
+    //Get Barang from database
     const getBarang = () => {
         Axios.get("http://localhost:3001/barang").then((response) => {
             setBarang(response.data)
         });
     };
 
+    //Delete data from barang based on ID
     const deleteBarang = (id) => {
         Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
           setBarang(

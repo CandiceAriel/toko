@@ -15,12 +15,13 @@ const con = mysql.createConnection({
   database: "Toko"
 });
 
+//Connect to DB
 con.connect((err) => {
     if (err) throw err;
     console.log('Connected to MySQL Server!');
 });
 
-
+//Get data Barang from Barang table
 app.get('/barang', function (req, res) {
     con.query('SELECT * FROM Barang', (error, rows,field)  => {
         if (error) throw error;
@@ -28,6 +29,7 @@ app.get('/barang', function (req, res) {
     });
 });
 
+//Add data to tabel Barang
 app.post('/create', (req,res) => {
   const id = req.body.id;
   const tglMasuk = req.body.tglMasuk;
@@ -49,6 +51,7 @@ app.post('/create', (req,res) => {
   );
 });
 
+//Delete data from Table Barang
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
   con.query("DELETE FROM Barang WHERE id = ?", id, (err, result) => {
@@ -60,6 +63,7 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
+//Update data on table Barang
 app.put("/update", (req, res) => {
   const id = req.body.id;
   const harga = req.body.harga;
@@ -78,6 +82,7 @@ app.put("/update", (req, res) => {
   );
 });
 
+//Add data to Cart table
 app.post('/createCart', (req,res) => {
   const id = req.body.id;
   const nama = req.body.nama;
@@ -96,6 +101,7 @@ app.post('/createCart', (req,res) => {
   );
 });
 
+//delete data from Cart table
 app.delete("/deleteCart/:id", (req, res) => {
   const id = req.params.id;
   con.query("DELETE FROM Cart WHERE id = ?", id, (err, result) => {

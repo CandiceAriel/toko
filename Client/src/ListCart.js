@@ -7,12 +7,14 @@ import Axios from 'axios';
 const ListCart = () => {
     const [cart,setCart]=useState([]);
 
+    //Show Cart data from DB
     const getCart = () => {
         Axios.get("http://localhost:3001/cart").then((response) => {
             setCart(response.data)
         });
     };
 
+    //Delete Cart data based on ID
     const deleteCart = (id) => {
         alert(id);
         Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {

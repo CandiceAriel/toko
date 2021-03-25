@@ -14,7 +14,6 @@ function App() {
     <Route path="/Barang" component= {ListBarang}/>
     <Route path="/AddBarang" component= {AddBarang}/>
     <Route path="/Cart" component= {ListCart}/>
-        {/*<ListBarang /> */}
     </Switch>
   
     </div>
