@@ -78,6 +78,42 @@ app.put("/update", (req, res) => {
   );
 });
 
+app.post('/createCart', (req,res) => {
+  const id = req.body.id;
+  const nama = req.body.nama;
+  const harga = req.body.harga;
+  const qty = req.body.qty;
+
+  con.query('INSERT INTO Cart (id,nama,harga,qty) VALUES (?,?,?,?)',
+   [id,nama,harga,qty],
+    (err,result) => {
+      if(err) {
+        console.log(err);
+      }else {
+        res.send("Worked");
+      }
+    }
+  );
+});
+
+app.delete("/deleteCart/:id", (req, res) => {
+  const id = req.params.id;
+  con.query("DELETE FROM Cart WHERE id = ?", id, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.get('/cart', function (req, res) {
+  con.query('SELECT * FROM Cart', (error, rows,field)  => {
+      if (error) throw error;
+      return res.send(rows);
+  });
+});
+
 app.listen(3001, () => {
   console.log("Connected!");
 });
