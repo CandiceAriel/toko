@@ -1,6 +1,5 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import ListBarang from './ListBarang'
-import NavHeader from './NavHeader';
 import Axios from 'axios'
 import './style/AddBarang.scss'
 
@@ -11,8 +10,6 @@ const AddBarang = () => {
     const [stok,setStok] = useState('');
     const [tglMasuk,setMasuk] = useState('');
     const [tglKeluar,setKeluar] = useState('');
-
-    const [barang,setBarang] = useState([])
 
 
     const updateID = e => {

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import Barang from './Barang';
 import Axios from 'axios';
 import './style/ListBarang.scss'

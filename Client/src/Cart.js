@@ -1,8 +1,6 @@
 import React,{ useState } from 'react'
 
 const Cart = ({id,nama, harga,qty}) => {
-    const [cart,setCart] = useState([])
-
 
     return (
         <div className="container">
@@ -13,9 +11,6 @@ const Cart = ({id,nama, harga,qty}) => {
                         <td>{nama}</td>
                         <td>{harga}</td>
                         <td>{qty}</td>
-                        {/*<td><button onClick={addStok} className="button__tambah">+</button>{stokBaru}<button onClick={minusStok} className="button__kurang">-</button></td>
-                        <td><button onClick={kurangiStok} className="button__tambahQty">Beli</button>{count}<button onClick={tambahStok} className="button__kurangQty">Jual</button></td>
-    <td><button className="button__remove">Remove</button></td> */}
                     </tbody>
                 </table>
             </div>

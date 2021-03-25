@@ -1,4 +1,4 @@
-import React, {useState,useContext} from 'react'
+import React, {useState} from 'react'
 import Axios from 'axios';
 import './style/Barang.scss'
 
@@ -7,8 +7,6 @@ const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
     const [stokBaru,setStok] = useState(stok);
     const [hargaBaru, setHarga] = useState(harga);
     const [counter,setCounter] = useState(0);
-
-    const [cart,setCart] = useState([]);
 
     const [barang,setBarang] = useState([])
 
@@ -38,10 +36,6 @@ const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
     }
 
     const updateHarga = (e) => {
-        setHarga(e.target.value);
-    }
-
-    const updateQty = (e) => {
         setHarga(e.target.value);
     }
 
@@ -80,7 +74,7 @@ const Barang = ({id,tglMasuk,tglKeluar,nama, harga,stok}) => {
                         <td><button onClick={addStok} className="button__tambah">+</button>{stokBaru}<button onClick={minusStok} className="button__kurang">-</button></td>
                         <td><button onClick={kurangiStok} className="button__tambahQty">+</button>{qty}<button onClick={tambahStok} className="button__kurangQty">-</button></td>
                         <td><button onClick={() => {updateBarang(id);}}className="button__update"> Update </button></td>
-                        <td><button onClick={() => {addCart(id);}}className="button__update"> Add </button></td>
+                        <td><button onClick={() => {addCart(id);}}className="button__add"> Add </button></td>
                     </tbody>
                 </table>
             </div>
