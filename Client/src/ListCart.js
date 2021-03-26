@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './style/ListCart.scss'
-import Cart from './Cart';
+import Cart from './page/Cart';
 import Axios from 'axios';
 
 

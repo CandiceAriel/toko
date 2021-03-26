@@ -87,8 +87,8 @@ app.post('/createCart', (req,res) => {
   const harga = req.body.harga;
   const qty = req.body.qty;
 
-  con.query('INSERT INTO Cart (id,nama,harga,qty) VALUES (?,?,?,?)',
-   [id,nama,harga,qty],
+  con.query('INSERT INTO Cart (id,nama,harga,qty, harga * qty AS total) VALUES (?,?,?,?,?)',
+   [id,nama,harga,qty,total],
     (err,result) => {
       if(err) {
         console.log(err);
@@ -116,6 +116,27 @@ app.get('/cart', function (req, res) {
       if (error) throw error;
       return res.send(rows);
   });
+});
+
+//Add data to User table
+app.post('/createUser', (req,res) => {
+  const userID = req.body.userID;
+  const nama = req.body.nama;
+  const noHP = req.body.noHP;
+  const email = req.body.email;
+  const password = req.body.password;
+
+  con.query('INSERT INTO User (userID,nama,noHP,email,password) VALUES (?,?,?,?,?)',
+   [userID,nama,noHP,email,password],
+    (err,result) => {
+      if(err) {
+        alert("User already exist")
+        console.log(err);
+      }else {
+        res.send("Worked");
+      }
+    }
+  );
 });
 
 app.listen(3001, () => {

@@ -1,13 +1,33 @@
 .AddBarang{
   padding: 50px;
 }
-    //.wrapper{
-       /* width: 20%;
-        height: 320px;
-        margin: 10px 600px;
-        border-radius: 15px;
-        padding: 10px 20px 10px 20px;
-        background-color: whitesmoke; */
+
+.wrapperBaru{
+  height: 100%;
+  width: 95%;
+  background-color:#E9E6E2;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px 35px;
+  justify-content: center;
+
+  table{
+      width: 100%;
+      height: 85px;
+      background-color: white;
+      box-shadow: 3px solid whitesmoke;
+      border-radius: 10px;
+      justify-content: center;
+      table-layout: fixed;
+  }
+
+  td{
+      padding: 5px 20px;
+      height: 100%;
+      align-items: center;
+      width: 50px;
+  }
+}
 
         form {
             height:450px; 

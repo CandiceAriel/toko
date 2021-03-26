@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import Barang from './Barang';
+import React, { useState,useEffect } from 'react'
+import Barang from './page/Barang';
 import Axios from 'axios';
 import './style/ListBarang.scss'
 
 const ListBarang = () => {
     const [barang,setBarang]=useState([]);
 
-    //Get Barang from database
-    const getBarang = () => {
-        Axios.get("http://localhost:3001/barang").then((response) => {
+    //Get data upon accessing localhost
+    useEffect(() => {
+      Axios.get("http://localhost:3001/barang").then((response) => {
             setBarang(response.data)
         });
-    };
+    }, [])
 
     //Delete data from barang based on ID
     const deleteBarang = (id) => {
@@ -27,11 +27,6 @@ const ListBarang = () => {
  
     return (
         <div>
-            <div>
-                <span>
-                <button onClick={getBarang} className="button__show">Show Barang</button>
-                </span>
-            </div>
             {barang.map(barang => (
                 <div className="content">
                 <Barang id={barang.id}
