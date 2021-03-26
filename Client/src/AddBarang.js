@@ -8,8 +8,6 @@ const AddBarang = () => {
     const [nama,setNama] = useState('');
     const [harga,setHarga] = useState('');
     const [stok,setStok] = useState('');
-    const [tglMasuk,setMasuk] = useState('');
-    const [tglKeluar,setKeluar] = useState('');
 
     //update ID value
     const updateID = e => {
@@ -31,16 +29,6 @@ const AddBarang = () => {
         setStok(e.target.value);
     }
 
-    //Update Tgl Masuk value
-    const updateMasuk = e => {
-        setMasuk(e.target.value);
-    }
-
-    //Update Tgl Keluar value
-    const updateKeluar = e => {
-        setKeluar(e.target.value);
-    }
-
     //Add Barang to DB
     const addBarang = () => {
         Axios.post("http://localhost:3001/create",
@@ -49,8 +37,6 @@ const AddBarang = () => {
             nama: nama,
             harga: harga,
             stok: stok,
-            tglMasuk: tglMasuk,
-            tglKeluar: tglKeluar,
             qty: 0,
         }).then(() => {
         alert("Good");
@@ -73,11 +59,8 @@ const AddBarang = () => {
             <div>
                 <label>Stok<input type="number"  className="inputStok" value={stok} onChange={updateStok}/></label><br></br>
             </div>
-            <div className="inputMasuk">
-                <label>Tanggal Masuk<input type="text" value={tglMasuk} onChange={updateMasuk}/></label><br></br>
-            </div>
-            <div className="inputKeluar"><label>Tanggal Keluar<input type="text" name="stok" value={tglKeluar} onChange={updateKeluar}/></label><br></br>
-                <input type="submit" value="Submit" className="btn" />
+            <div className="btn__submit">
+                <input type="submit" value="Submit" onClick={addBarang} className="btn" />
             </div>
         </form>
         <ListBarang />

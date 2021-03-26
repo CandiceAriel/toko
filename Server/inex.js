@@ -32,15 +32,13 @@ app.get('/barang', function (req, res) {
 //Add data to tabel Barang
 app.post('/create', (req,res) => {
   const id = req.body.id;
-  const tglMasuk = req.body.tglMasuk;
-  const tglKeluar = req.body.tglKeluar;
   const nama = req.body.nama;
   const harga = req.body.harga;
   const stok = req.body.stok;
   const qty = req.body.qty;
 
-  con.query('INSERT INTO Barang (id,tglMasuk,tglKeluar,nama,harga,stok,qty) VALUES (?,?,?,?,?,?,?)',
-   [id,tglMasuk,tglKeluar,nama,harga,stok,qty],
+  con.query('INSERT INTO Barang (id, nama,harga,stok,qty) VALUES (?,?,?,?,?)',
+   [id,nama,harga,stok,qty],
     (err,result) => {
       if(err) {
         console.log(err);

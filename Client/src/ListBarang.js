@@ -21,6 +21,7 @@ const ListBarang = () => {
               return barang.id != id;
             })
           );
+          alert(id)
         });
       };
  
@@ -34,8 +35,6 @@ const ListBarang = () => {
             {barang.map(barang => (
                 <div className="content">
                 <Barang id={barang.id}
-                        tglMasuk = {barang.tglMasuk}
-                        tglKeluar={barang.tglKeluar}
                         nama={barang.nama} 
                         harga={barang.harga}
                         stok={barang.stok}
