@@ -6,6 +6,7 @@ const cors = require('cors');
 
 app.use(cors());
 app.use(bodyparser.json());
+app.use(express.json());
 
 
 const con = mysql.createConnection({
@@ -32,19 +33,18 @@ app.get('/barang', function (req, res) {
 //Add data to tabel Barang
 app.post('/create', (req,res) => {
   const id = req.body.id;
-  const tglMasuk = req.body.tglMasuk;
-  const tglKeluar = req.body.tglKeluar;
   const nama = req.body.nama;
   const harga = req.body.harga;
   const stok = req.body.stok;
   const qty = req.body.qty;
 
-  con.query('INSERT INTO Barang (id,tglMasuk,tglKeluar,nama,harga,stok,qty) VALUES (?,?,?,?,?,?,?)',
-   [id,tglMasuk,tglKeluar,nama,harga,stok,qty],
+  con.query('INSERT INTO Barang (id, nama,harga,stok,qty) VALUES (?,?,?,?,?)',
+   [id,nama,harga,stok,qty],
     (err,result) => {
       if(err) {
         console.log(err);
       }else {
+        console.log(result);
         res.send("Worked");
       }
     }
@@ -89,8 +89,8 @@ app.post('/createCart', (req,res) => {
   const harga = req.body.harga;
   const qty = req.body.qty;
 
-  con.query('INSERT INTO Cart (id,nama,harga,qty) VALUES (?,?,?,?)',
-   [id,nama,harga,qty],
+  con.query('INSERT INTO Cart (id,nama,harga,qty, harga * qty AS total) VALUES (?,?,?,?,?)',
+   [id,nama,harga,qty,total],
     (err,result) => {
       if(err) {
         console.log(err);
@@ -118,6 +118,53 @@ app.get('/cart', function (req, res) {
       if (error) throw error;
       return res.send(rows);
   });
+});
+
+//Add data to User table
+app.post('/register', (req,res) => {
+  const userID = req.body.userID;
+  const nama = req.body.nama;
+  const noHP = req.body.noHP;
+  const email = req.body.email;
+  const password = req.body.password;
+
+  con.query('INSERT INTO User (userID,nama,noHP,email,password) VALUES (?,?,?,?,?)',
+   [userID,nama,noHP,email,password],
+    (err,result) => {
+      if(err) {
+        console.log(err);
+      }else {
+        res.send("Worked");
+      }
+    }
+  );
+});
+
+app.get('/user', function (req, res) {
+  con.query('SELECT * FROM User', (error, rows,field)  => {
+      if (error) throw error;
+      return res.send(rows);
+  });
+});
+
+//Add Sign In data from Sign in form
+app.post('/SignIn', function(req,res) {
+  const email = req.body.userID;
+  const password = req.body.password;
+
+  con.query('SELECT * FROM User WHERE email = ? AND password = ?', 
+      [email,password], 
+      (err,result) => {
+        if(err){
+          res.send({err : err});
+        }
+          if (result.length > 0){
+            res.send(result);
+          } else {
+            res.send ({message : 'Wrong password or email'})
+          }
+      }
+    );
 });
 
 app.listen(3001, () => {

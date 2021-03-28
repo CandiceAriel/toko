@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './style/ListCart.scss'
-import Cart from './Cart';
+import Cart from './page/Cart';
 import Axios from 'axios';
 
 
@@ -20,7 +20,7 @@ const ListCart = () => {
         Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
           setCart(
             cart.filter((cart) => {
-              return cart.id != id;
+              return cart.id !== id;
             })
           );
         });

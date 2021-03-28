@@ -3,26 +3,29 @@
    }
    
    .container{
-       padding: 10px 15px 10px;
-       height: 55px;
+       height: 100%;
+       width: 1100px;
        background-color:#E9E6E2;
+       background-color: white;
+       border-radius: 10px;
+       margin: 0px 10px 0px 0px;
    
        table{
-           width: 90%;
-           height: 95%;
-           padding: 5px 15px 5px 15px;
+           width: 100%;
+           height: 100%;
+           padding: 0px;
            background-color: white;
            box-shadow: 3px solid whitesmoke;
            border-radius: 10px;
            justify-content: space-evenly;
-           margin: 5px 60px;
+           margin: 5px 0px 5px 0px;
            table-layout: fixed;
        }
    
        td{
-           padding: 5px 0px ;
-           margin: 0px;
-           width: 45px;
+           padding: 25px;
+           height: 100%;
+           justify-content: center;
        }
    }
    
@@ -32,7 +35,7 @@
            margin: 0px 10px;
            border-radius: 5px;
            width: 30px;
-           height:30px;
+           height:35px;
            border:none;
            color:white;
            font-size: medium;
@@ -43,7 +46,7 @@
            margin: 0px 10px;
            border-radius: 5px;
            width: 30px;
-           height:30px;
+           height:35px;
            border:none;
            color: white;
            font-size: large;
@@ -51,37 +54,62 @@
    
        &__tambahQty{
            background-color: #28527A;
-           margin: 0px 10px;
+           margin: 0px 5px 0px 5px;
            border-radius: 5px;
            width: 30px;
-           height:30px;
+           height:35px;
            border:none;
            color:white;
-           font-size: 14px;
+           font-size: large;
        }
    
        &__kurangQty{
            background-color: #810000;
-           margin: 0px 10px;
+           margin: 0px 5px 0px 5px;
            border-radius: 5px;
            width: 30px;
-           height:30px;
+           height:35px;
            border:none;
            color: white;
-           font-size: 14px;
+           font-size: large;
        }
    
-       &__remove{
-           background-color: #810000;
-           margin: 0px 10px;
+       &__update{
+           background-color: #28527A;
+           margin: 0px 5px;
            border-radius: 5px;
-           width: 64px;
+           width: 30px;
            height:35px;
            border:none;
            color: white;
            font-size: 14px;
            padding: 0pc 5px 0px 5px;
            font-weight: 900;
+       }
+   
+       &__add{
+           background-color: #28527A;
+           margin: 0px 0px;
+           border-radius: 10px;
+           width: 60px;
+           height:40px;
+           border:none;
+           color: white;
+           font-size: 14px;
+           padding: 0pc 5px 0px 0px;
+           font-weight: 900;
+       }
+   }
+   
+   
+   .input{
+       width: 80px;
+       margin: 0px 5px;
+       padding: 0px 5px;
+       justify-content: center;
+   
+       &__qty{
+           width: 30px;
        }
    }
    

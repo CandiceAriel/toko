@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
-import ListBarang from './ListBarang'
+import React, { useState,useEffect } from 'react';
 import Axios from 'axios'
-import './style/AddBarang.scss'
+import '../style/AddBarang.scss'
 
 const AddBarang = () => {
     const [id,setID] = useState('');
     const [nama,setNama] = useState('');
     const [harga,setHarga] = useState('');
     const [stok,setStok] = useState('');
-    const [tglMasuk,setMasuk] = useState('');
-    const [tglKeluar,setKeluar] = useState('');
+
+    const [barang,setBarang] =  useState([]);
+
 
     //update ID value
     const updateID = e => {
@@ -31,16 +31,6 @@ const AddBarang = () => {
         setStok(e.target.value);
     }
 
-    //Update Tgl Masuk value
-    const updateMasuk = e => {
-        setMasuk(e.target.value);
-    }
-
-    //Update Tgl Keluar value
-    const updateKeluar = e => {
-        setKeluar(e.target.value);
-    }
-
     //Add Barang to DB
     const addBarang = () => {
         Axios.post("http://localhost:3001/create",
@@ -49,13 +39,18 @@ const AddBarang = () => {
             nama: nama,
             harga: harga,
             stok: stok,
-            tglMasuk: tglMasuk,
-            tglKeluar: tglKeluar,
             qty: 0,
-        }).then(() => {
-        alert("Good");
-    });
+        }).then((response) => {
+            console.log(response.data);
+        });
     }
+
+    //Load data upon adding without refreshing page
+    useEffect(() => {
+        Axios.get("http://localhost:3001/barang").then((response) => {
+              setBarang(response.data)
+          });
+      }, []);
 
     return (
         <div>
@@ -73,14 +68,25 @@ const AddBarang = () => {
             <div>
                 <label>Stok<input type="number"  className="inputStok" value={stok} onChange={updateStok}/></label><br></br>
             </div>
-            <div className="inputMasuk">
-                <label>Tanggal Masuk<input type="text" value={tglMasuk} onChange={updateMasuk}/></label><br></br>
-            </div>
-            <div className="inputKeluar"><label>Tanggal Keluar<input type="text" name="stok" value={tglKeluar} onChange={updateKeluar}/></label><br></br>
-                <input type="submit" value="Submit" className="btn" />
+            <div className="btn__submit">
+                <input type="submit" value="Submit" onClick={addBarang} className="btn" />
             </div>
         </form>
-        <ListBarang />
+
+        <div>
+            { barang.map(barang => (
+                <div className="wrapperBaru">
+                <table className="table">
+                    <tbody>
+                        <td>{barang.id}</td>
+                        <td>{barang.nama}</td>
+                        <td>{barang.harga}</td>
+                        <td>{barang.stok}</td>
+                    </tbody>
+                </table>
+            </div>
+            ))}
+        </div>
         </div>
     );
 }

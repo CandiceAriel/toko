@@ -1,29 +1,31 @@
 .Barang{
- border: 1px solid black;
+ 
 }
 
-.container{
-    height: 100%;
-    width: 5000px;
+.wrapper{
+    height: 60px;
+    width: 95%;
     background-color:#E9E6E2;
     background-color: white;
     border-radius: 10px;
+    margin-right: 0px;
+    justify-content: center;
 
     table{
         width: 100%;
-        height: 100%;
-        padding: 0px;
+        height: 85px;
         background-color: white;
         box-shadow: 3px solid whitesmoke;
         border-radius: 10px;
-        justify-content: space-evenly;
-        margin: 10px 0px 5px 0px;
+        justify-content: center;
         table-layout: fixed;
     }
 
     td{
-        padding: 5px;
+        padding: 5px 20px;
         height: 100%;
+        align-items: center;
+        width: 50px;
     }
 }
 
@@ -72,12 +74,12 @@
         font-size: large;
     }
 
-    &__update{
+    &__editData{
         background-color: #28527A;
         margin: 0px 5px;
-        border-radius: 5px;
-        width: 30px;
-        height:35px;
+        border-radius: 10px;
+        width: 70px;
+        height:40px;
         border:none;
         color: white;
         font-size: 14px;
@@ -89,13 +91,21 @@
         background-color: #28527A;
         margin: 0px 0px;
         border-radius: 10px;
-        width: 60px;
-        height:40px;
+        width: 300px;
+        height:50px;
         border:none;
         color: white;
         font-size: 14px;
         padding: 0pc 5px 0px 0px;
         font-weight: 900;
+    }
+
+    &__delete{
+        width: 30px;
+        height: 40px;
+        border-radius: 10px;
+        margin: 20px 10px 5px 0px;
+        float: right;
     }
 }
 

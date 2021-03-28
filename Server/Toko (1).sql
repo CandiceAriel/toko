@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 25, 2021 at 12:32 PM
+-- Generation Time: Mar 28, 2021 at 01:42 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -29,8 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Barang` (
   `id` varchar(10) NOT NULL,
-  `tglMasuk` text NOT NULL,
-  `tglKeluar` text NOT NULL,
   `nama` text NOT NULL,
   `harga` int(6) NOT NULL,
   `stok` int(6) NOT NULL,
@@ -41,8 +39,10 @@ CREATE TABLE `Barang` (
 -- Dumping data for table `Barang`
 --
 
-INSERT INTO `Barang` (`id`, `tglMasuk`, `tglKeluar`, `nama`, `harga`, `stok`, `qty`) VALUES
-('12133', '1221', '1212', 'dfdf', 232, 12, 0);
+INSERT INTO `Barang` (`id`, `nama`, `harga`, `stok`, `qty`) VALUES
+('1007', 'Vanilla Bean', 120000, 6, 0),
+('1010', 'Mixer', 2000000, 10, 0),
+('1300', 'Cinnamon', 10000, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -54,15 +54,30 @@ CREATE TABLE `Cart` (
   `id` varchar(10) NOT NULL,
   `nama` varchar(10) NOT NULL,
   `harga` int(10) NOT NULL,
-  `qty` int(10) NOT NULL
+  `qty` int(10) NOT NULL,
+  `total` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `User`
+--
+
+CREATE TABLE `User` (
+  `userID` varchar(10) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `noHP` varchar(15) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `Cart`
+-- Dumping data for table `User`
 --
 
-INSERT INTO `Cart` (`id`, `nama`, `harga`, `qty`) VALUES
-('23223', 'fdfd', 11212, 0);
+INSERT INTO `User` (`userID`, `nama`, `noHP`, `email`, `password`) VALUES
+('NewUser1', 'Didis', '089768596', 'didis1998@gmail.com', 'asdqwe');
 
 --
 -- Indexes for dumped tables
@@ -79,6 +94,12 @@ ALTER TABLE `Barang`
 --
 ALTER TABLE `Cart`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `User`
+--
+ALTER TABLE `User`
+  ADD PRIMARY KEY (`userID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

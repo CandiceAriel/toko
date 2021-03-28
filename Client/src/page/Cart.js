@@ -1,9 +1,10 @@
 import React from 'react'
+import '../style/Cart.scss'
 
-const Cart = ({id,nama, harga,qty}) => {
+const Cart = ({id,nama, harga,qty,total}) => {
 
     return (
-        <div className="container">
+        <div className="container__cart">
             <div>
                 <table className="table">
                     <tbody>
@@ -11,6 +12,7 @@ const Cart = ({id,nama, harga,qty}) => {
                         <td>{nama}</td>
                         <td>{harga}</td>
                         <td>{qty}</td>
+                        <td>{total}</td>
                     </tbody>
                 </table>
             </div>
