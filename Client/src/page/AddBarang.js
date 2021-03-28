@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-import ListBarang from './Barang'
 import Axios from 'axios'
 import '../style/AddBarang.scss'
 
@@ -41,8 +40,8 @@ const AddBarang = () => {
             harga: harga,
             stok: stok,
             qty: 0,
-        }).then(() => {
-            alert("Good");
+        }).then((response) => {
+            console.log(response.data);
         });
     }
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import '../style/SignUp.scss'
 
-const User = () => {
+const SignUp = () => {
     const [user,setUser]=useState([]);
 
     const [userID,setUserID] = useState('');
@@ -38,8 +38,7 @@ const User = () => {
 
     //Sign Up
     const signUp = () => {
-        alert(noHP)
-        Axios.post("http://localhost:3001/createUser", {
+        Axios.post("http://localhost:3001/register", {
           userID: userID,
           nama: nama,
           noHP: noHP,
@@ -86,4 +85,4 @@ const User = () => {
     )
 }
 
-export default User
+export default SignUp

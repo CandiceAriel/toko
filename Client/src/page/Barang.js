@@ -6,13 +6,12 @@ const Barang = ({id, nama, harga,stok}) => {
     const [qty,setQty] = useState(0);
     const [stokBaru,setStokBaru] = useState(stok);
     const [hargaBaru, setHargaBaru] = useState(harga);
-    const [total,setTotal] = useState(0);
 
     const [barang,setBarang] = useState([])
 
     //Kurangi stok based on qty for counter button
     const kurangiStok =() => {
-       if(stokBaru == 0 ){
+       if(stokBaru === 0 ){
             setQty(qty + 0)
             alert ("Stok Kurang")
         } else { 
@@ -50,7 +49,7 @@ const Barang = ({id, nama, harga,stok}) => {
         Axios.put("http://localhost:3001/update", { harga: hargaBaru, stok: stokBaru , qty: qty , id: id }).then(
           (response) => {
             setBarang(barang.map((barang) => {
-                return barang.id == id ? {id: id,nama: nama, harga: hargaBaru, stok:stokBaru, qty: qty } : barang
+                return barang.id === id ? {id: id,nama: nama, harga: hargaBaru, stok:stokBaru, qty: qty } : barang
             }))
           }
         );

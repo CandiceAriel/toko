@@ -1,5 +1,4 @@
 import React from 'react'
-import Axios from 'axios';
 import '../style/Cart.scss'
 
 const Cart = ({id,nama, harga,qty,total}) => {

@@ -18,7 +18,7 @@ const ListBarang = () => {
         Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
           setBarang(
             barang.filter((barang) => {
-              return barang.id != id;
+              return barang.id !== id;
             })
           );
           alert(id)
@@ -34,7 +34,7 @@ const ListBarang = () => {
                         harga={barang.harga}
                         stok={barang.stok}
                         qty={barang.qty}/>
-                        <button onClick={() => {deleteBarang(barang.id);}}className="button__delete"> Remove </button>
+                        <button onClick={() => {deleteBarang(barang.id);}} className="button__delete"> Remove </button>
                 </div>
             ))}
         </div>

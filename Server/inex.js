@@ -6,6 +6,7 @@ const cors = require('cors');
 
 app.use(cors());
 app.use(bodyparser.json());
+app.use(express.json());
 
 
 const con = mysql.createConnection({
@@ -43,6 +44,7 @@ app.post('/create', (req,res) => {
       if(err) {
         console.log(err);
       }else {
+        console.log(result);
         res.send("Worked");
       }
     }
@@ -119,7 +121,7 @@ app.get('/cart', function (req, res) {
 });
 
 //Add data to User table
-app.post('/createUser', (req,res) => {
+app.post('/register', (req,res) => {
   const userID = req.body.userID;
   const nama = req.body.nama;
   const noHP = req.body.noHP;
@@ -130,13 +132,39 @@ app.post('/createUser', (req,res) => {
    [userID,nama,noHP,email,password],
     (err,result) => {
       if(err) {
-        alert("User already exist")
         console.log(err);
       }else {
         res.send("Worked");
       }
     }
   );
+});
+
+app.get('/user', function (req, res) {
+  con.query('SELECT * FROM User', (error, rows,field)  => {
+      if (error) throw error;
+      return res.send(rows);
+  });
+});
+
+//Add Sign In data from Sign in form
+app.post('/SignIn', function(req,res) {
+  const email = req.body.userID;
+  const password = req.body.password;
+
+  con.query('SELECT * FROM User WHERE email = ? AND password = ?', 
+      [email,password], 
+      (err,result) => {
+        if(err){
+          res.send({err : err});
+        }
+          if (result.length > 0){
+            res.send(result);
+          } else {
+            res.send ({message : 'Wrong password or email'})
+          }
+      }
+    );
 });
 
 app.listen(3001, () => {

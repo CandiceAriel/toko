@@ -20,7 +20,7 @@ const ListCart = () => {
         Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
           setCart(
             cart.filter((cart) => {
-              return cart.id != id;
+              return cart.id !== id;
             })
           );
         });
