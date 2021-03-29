@@ -149,7 +149,7 @@ app.get('/user', function (req, res) {
 
 //Add Sign In data from Sign in form
 app.post('/SignIn', function(req,res) {
-  const email = req.body.userID;
+  const email = req.body.email;
   const password = req.body.password;
 
   con.query('SELECT * FROM User WHERE email = ? AND password = ?', 

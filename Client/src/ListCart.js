@@ -37,7 +37,7 @@ const ListCart = () => {
                         nama={cart.nama} 
                         harga={cart.harga}
                         qty={cart.qty}/>
-                        <button onClick={() => {deleteCart(cart.id);}}className="button__delete"> Remove </button>
+                        <button onClick={() => {deleteCart(cart.id);}} className="button__delete"> Remove </button>
                 </div>
             ))}
         </div>

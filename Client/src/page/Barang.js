@@ -57,7 +57,6 @@ const Barang = ({id, nama, harga,stok}) => {
 
     //Add to Cart
     const addCart = (id) => {
-        alert(id)
         Axios.post("http://localhost:3001/createCart",
         {
             id: id,

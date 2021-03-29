@@ -3,45 +3,38 @@
 }
   
 form {
-    height:450px; 
+    height:300px; 
     font-size: 16px;
     margin: 30px 500px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 5px 10px 20px;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
-    width: 480px;
+    width: 390px;
     background-color: white;
     box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
 }
   
-            input{
-              height: 30px;
-              width: 280px;
-              margin-left: 50px;
-              margin-right: 10px;
-            }
-  
-            h1{
-              padding: 0px 150px;
-              font-size: 22px;
-            }
+h1{
+    padding: 0px 150px;
+    font-size: 22px;
+}
   
 .btn{
     width: 100px;
     height: 40px;
     border-radius: 5px;
-    margin: 15px 200px 0px;
+    margin: 5px 150px 0px;
 }
   
 .inputEmail{
-    width: 250px;
-    margin-left: 132px;
+    width: 200px;
+    margin-left: 90px;
 }
 
 .inputPassword{
-    width: 250px;
-    margin-left: 125px;
+    width: 200px;
+    margin-left: 60px;
 }

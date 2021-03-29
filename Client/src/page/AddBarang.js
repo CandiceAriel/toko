@@ -32,7 +32,8 @@ const AddBarang = () => {
     }
 
     //Add Barang to DB
-    const addBarang = () => {
+    const addBarang = (e) => {
+        e.preventDefault();
         Axios.post("http://localhost:3001/create",
         {
             id: id,
