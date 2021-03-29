@@ -6,7 +6,7 @@ const SignIn = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
-    //const [signInStatus, setSignInStatus] = useState('')
+    const [signInStatus, setSignInStatus] = useState('')
 
     //update Email value
     const updateEmail = e => {
@@ -18,13 +18,19 @@ const SignIn = () => {
         setPassword(e.target.value);
     }
 
-    const signIn = () => {
+    const signIn = e => {
+        e.preventDefault();
         Axios.post("http://localhost:3001/SignIn",
         {
             email: email,
             password: password,
         }).then((response) => {
-            console.log(response);
+            if(response.data.message){
+                setSignInStatus(response.data.message)
+            }else {
+                setSignInStatus(response.data[0].email)
+            }
+            console.log(response.data);
     });
     }
  
@@ -42,7 +48,7 @@ const SignIn = () => {
                 <input type="submit" value="Sign In" className="btn" onClick={signIn}/>
             </div>
         </form>
-        <h1>Welcome {email}</h1>
+        <h1>{signInStatus}</h1>
         </div>
     )
 }
