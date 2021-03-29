@@ -147,13 +147,12 @@ app.get('/user', function (req, res) {
   });
 });
 
-//Add Sign In data from Sign in form
+//Compare Sign In input from for with DB 
 app.post('/SignIn', function(req,res) {
   const email = req.body.email;
-  const password = req.body.password;
 
-  con.query('SELECT * FROM User WHERE email = ? AND password = ?', 
-      [email,password], 
+  con.query('SELECT * FROM User WHERE email = ?', 
+      [email], 
       (err,result) => {
         if(err){
           res.send({err : err});

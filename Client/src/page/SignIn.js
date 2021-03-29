@@ -23,7 +23,6 @@ const SignIn = () => {
         Axios.post("http://localhost:3001/SignIn",
         {
             email: email,
-            password: password,
         }).then((response) => {
             if(response.data.message){
                 setSignInStatus(response.data.message)

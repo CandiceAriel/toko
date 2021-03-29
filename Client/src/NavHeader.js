@@ -5,15 +5,15 @@ import './style/NavHeader.scss';
 export const NavHeader = () => {
     return (
         <header>
-            <div clasName="wrapper__button">
+            <div className="wrapper__button">
                 <Link to="/Barang" className="link__barang">Barang</Link>
                 <Link to="/AddBarang" className="link__tambahbarang">Tambah Barang</Link>
                 <Link to="/Cart" className="link__cart">Cart</Link>
             </div>
             <p className="logo">TOKO SERBA ADA</p>
-            <div clasName="wrapper__button">
+            <div className="wrapper__button">
                 <Link to="/SignUp" className="link__signup">Sign Up</Link>
-                <Link to="/SignIn" className="link__signin">Log In</Link>
+                <Link to="/SignIn" className="link__signin">Sign In</Link>
             </div>
         </header>
     )
