@@ -38,7 +38,7 @@ const SignIn = () => {
  
     return (
         <div>
-        <form className="form" onSubmit={signIn}>
+        <form className="formSignIn" onSubmit={signIn}>
             <h1>Sign In</h1>
             <div>
                 <label>Email<input type="text" name="email" className="inputEmail" value={email} onChange={updateEmail}/></label>
@@ -47,7 +47,7 @@ const SignIn = () => {
                 <label>Password<input type="password" name="password" className="inputPassword" value={password} onChange={updatePassword}/></label><br></br>
             </div>
             <div className="btn__submit">
-                <input type="submit" value="Sign In" className="btn" onClick={signIn}/>
+                <input type="submit" value="Sign In" className="btnSignIn" onClick={signIn}/>
             </div>
         </form>
         <h1>{signInStatus}</h1>
