@@ -150,18 +150,23 @@ app.get('/user', function (req, res) {
 //Compare Sign In input from for with DB 
 app.post('/SignIn', function(req,res) {
   const email = req.body.email;
+  const password = req.body.password;
 
   con.query('SELECT * FROM User WHERE email = ?', 
-      [email], 
+      email, 
       (err,result) => {
         if(err){
           res.send({err : err});
         }
           if (result.length > 0){
-            res.send(result);
-          } else {
-            res.send ({message : 'Wrong password or email'})
-          }
+            if(result[0].password === password){
+              res.send(result);
+            } else {
+              res.send ({message : 'Incorrect password'})
+            }
+        } else {
+          res.send ({message : 'User doesn not exist'})
+        }
       }
     );
 });

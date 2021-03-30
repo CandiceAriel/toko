@@ -3,16 +3,16 @@
 }
   
 form {
-    height:450px; 
+    height: 300px; 
     font-size: 16px;
     margin: 30px 500px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 5px 10px 15px;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
-    width: 480px;
+    width: 400px;
     background-color: white;
     box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
 }
@@ -26,15 +26,15 @@ h1{
     width: 100px;
     height: 40px;
     border-radius: 5px;
-    margin: 15px 200px 0px;
+    margin: 15px 150px 0px;
 }
   
 .inputEmail{
-    width: 250px;
+    width: 200px;
     margin-left: 95px;
 }
 
 .inputPassword{
-    width: 250px;
+    width: 200px;
     margin-left: 63px;
 }

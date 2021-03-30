@@ -23,11 +23,14 @@ const SignIn = () => {
         Axios.post("http://localhost:3001/SignIn",
         {
             email: email,
+            password: password
         }).then((response) => {
-            if(response.data.message){
+            if(response.data.message ){
                 setSignInStatus(response.data.message)
             }else {
-                setSignInStatus(response.data[0].email)
+                localStorage.setItem('dataLogIn', JSON.stringify(response.data));
+                var dataNama = JSON.parse(localStorage.getItem('dataLogIn'));
+                setSignInStatus('Welcome' + dataNama[0].nama)
             }
             console.log(response.data);
     });
@@ -41,7 +44,7 @@ const SignIn = () => {
                 <label>Email<input type="text" name="email" className="inputEmail" value={email} onChange={updateEmail}/></label>
             </div>
             <div>
-                <label>Password<input type="text" name="password" className="inputPassword" value={password} onChange={updatePassword}/></label><br></br>
+                <label>Password<input type="password" name="password" className="inputPassword" value={password} onChange={updatePassword}/></label><br></br>
             </div>
             <div className="btn__submit">
                 <input type="submit" value="Sign In" className="btn" onClick={signIn}/>
