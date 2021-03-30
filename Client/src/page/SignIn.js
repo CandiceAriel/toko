@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import Axios from 'axios';
 import '../style/SignIn.scss'
 
@@ -7,6 +8,9 @@ const SignIn = () => {
     const [password,setPassword] = useState('');
 
     const [signInStatus, setSignInStatus] = useState('')
+
+    const history = useHistory();
+    const navigateTo = () => history.push('/SignUp');
 
     //update Email value
     const updateEmail = e => {
@@ -46,8 +50,9 @@ const SignIn = () => {
             <div>
                 <label>Password<input type="password" name="password" className="inputPassword" value={password} onChange={updatePassword}/></label><br></br>
             </div>
-            <div className="btn__submit">
-                <input type="submit" value="Sign In" className="btnSignIn" onClick={signIn}/>
+            <div className="wrapper-btn">
+                <button onClick={navigateTo}  value="Sign Up" className="btn__SignUp">Sign Up</button>
+                <button type="submit" value="Sign In" className="btn__SignIn" onClick={signIn}>Sign In</button>
             </div>
         </form>
         <h1>{signInStatus}</h1>

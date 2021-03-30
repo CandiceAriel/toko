@@ -87,25 +87,17 @@
         font-weight: 900;
     }
 
-    &__add{
+    &__addCart{
         background-color: #28527A;
         margin: 0px 0px;
         border-radius: 10px;
-        width: 300px;
-        height:50px;
+        width: 100px;
+        height:40px;
         border:none;
         color: white;
         font-size: 14px;
         padding: 0pc 5px 0px 0px;
         font-weight: 900;
-    }
-
-    &__delete{
-        width: 30px;
-        height: 40px;
-        border-radius: 10px;
-        margin: 20px 10px 5px 0px;
-        float: right;
     }
 }
 

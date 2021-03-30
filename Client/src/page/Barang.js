@@ -83,7 +83,7 @@ const Barang = ({id, nama, harga,stok}) => {
                         <td><button onClick={addStok} className="button__tambah">+</button>{stokBaru}<button onClick={minusStok} className="button__kurang">-</button></td>
                         <td><button onClick={kurangiStok} className="button__tambahQty">+</button>{qty}<button onClick={tambahStok} className="button__kurangQty">-</button></td>
                         <td><button onClick={() => {updateBarang(id);}} className="button__editData"> Update </button></td>
-                        <td><button onClick={() => {addCart(id);}} className="button__add"> Add </button></td>
+                        <td><button onClick={() => {addCart(id);}} className="button__addCart"> Add </button></td>
                     </tbody>
                 </table>
             </div>
