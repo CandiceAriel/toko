@@ -30,11 +30,12 @@ const ListCart = () => {
             <span>
             </span>
             {cart.map(cart => (
-                <div className="content">
+                <div className="content" key={cart.id}>
                 <Cart id={cart.id}
                         nama={cart.nama} 
                         harga={cart.harga}
-                        qty={cart.qty}/>
+                        qty={cart.qty}
+                        total={cart.total}/>
                         <button onClick={() => {deleteCart(cart.id);}}className="button__delete"> Remove </button>
                 </div>
             ))}

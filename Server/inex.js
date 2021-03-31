@@ -88,8 +88,9 @@ app.post('/createCart', (req,res) => {
   const nama = req.body.nama;
   const harga = req.body.harga;
   const qty = req.body.qty;
+  const total = req.body.total;
 
-  con.query('INSERT INTO Cart (id,nama,harga,qty, harga * qty AS total) VALUES (?,?,?,?,?)',
+  con.query('INSERT INTO Cart (id,nama,harga,qty, total) VALUES (?,?,?,?,?)',
    [id,nama,harga,qty,total],
     (err,result) => {
       if(err) {
@@ -152,7 +153,7 @@ app.post('/SignIn', function(req,res) {
   const email = req.body.email;
   const password = req.body.password;
 
-  con.query('SELECT * FROM User WHERE email = ?', 
+  con.query('SELECT userID,nama,noHp,email FROM User WHERE email = ?', 
       email, 
       (err,result) => {
         if(err){
