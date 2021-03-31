@@ -45,7 +45,6 @@ const Barang = ({id, nama, harga,stok}) => {
 
     //Update Barang to DB based on new value
     const updateBarang = (id) => {
-        alert(id)
         Axios.put("http://localhost:3001/update", { harga: hargaBaru, stok: stokBaru , qty: qty , id: id }).then(
           (response) => {
             setBarang(barang.map((barang) => {
@@ -57,8 +56,8 @@ const Barang = ({id, nama, harga,stok}) => {
 
     //Add to Cart
     const addCart = (id) => {
-        alert(id)
-        Axios.post("http://localhost:3001/createCart",
+        if(localStorage.getItem('dataLogIn') > 0){
+            Axios.post("http://localhost:3001/createCart",
         {
             id: id,
             nama: nama,
@@ -67,8 +66,11 @@ const Barang = ({id, nama, harga,stok}) => {
             qty: 0,
             total : harga * qty,
         }).then(() => {
-        alert("Good");
-    });
+            alert("Good");
+         });
+        } else {
+            alert ('You must log in')
+        }
     }
 
     return (
@@ -81,7 +83,7 @@ const Barang = ({id, nama, harga,stok}) => {
                         <td><button onClick={addStok} className="button__tambah">+</button>{stokBaru}<button onClick={minusStok} className="button__kurang">-</button></td>
                         <td><button onClick={kurangiStok} className="button__tambahQty">+</button>{qty}<button onClick={tambahStok} className="button__kurangQty">-</button></td>
                         <td><button onClick={() => {updateBarang(id);}} className="button__editData"> Update </button></td>
-                        <td><button onClick={() => {addCart(id);}} className="button__add"> Add </button></td>
+                        <td><button onClick={() => {addCart(id);}} className="button__addCart"> Add </button></td>
                     </tbody>
                 </table>
             </div>

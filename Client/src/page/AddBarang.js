@@ -54,19 +54,23 @@ const AddBarang = () => {
 
     return (
         <div>
-        <form className="form" onSubmit={addBarang}>
+        <form className="formAddBarang" onSubmit={addBarang}>
             <h1>Tambah Barang</h1>
             <div>
-                <label>ID<input type="text"  className="inputID" value={id} onChange={updateID}/></label>
+                <label>ID</label>
+                <input type="text"  className="inputID" value={id} onChange={updateID}/>
             </div>
             <div>
-                <label>Nama<input type="text"  className="inputNama" value={nama} onChange={updateNama}/></label>
+                <label>Nama</label>
+                <input type="text"  className="inputNama" value={nama} onChange={updateNama}/>
             </div>
             <div>
-                <label>Harga<input type="number"  className="inputHarga" value={harga} onChange={updateHarga}/></label>
+                <label>Harga</label>
+                <input type="number"  className="inputHarga" value={harga} onChange={updateHarga}/>
             </div>
             <div>
-                <label>Stok<input type="number"  className="inputStok" value={stok} onChange={updateStok}/></label><br></br>
+                <label>Stok</label>
+                <input type="number"  className="inputStok" value={stok} onChange={updateStok}/>
             </div>
             <div className="btn__submit">
                 <input type="submit" value="Submit" onClick={addBarang} className="btn" />
