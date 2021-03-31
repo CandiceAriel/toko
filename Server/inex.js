@@ -88,8 +88,9 @@ app.post('/createCart', (req,res) => {
   const nama = req.body.nama;
   const harga = req.body.harga;
   const qty = req.body.qty;
+  const total = req.body.total;
 
-  con.query('INSERT INTO Cart (id,nama,harga,qty, harga * qty AS total) VALUES (?,?,?,?,?)',
+  con.query('INSERT INTO Cart (id,nama,harga,qty,total) VALUES (?,?,?,?,?)',
    [id,nama,harga,qty,total],
     (err,result) => {
       if(err) {

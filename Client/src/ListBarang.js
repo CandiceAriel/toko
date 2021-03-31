@@ -28,7 +28,7 @@ const ListBarang = () => {
     return (
         <div>
             {barang.map(barang => (
-                <div className="content">
+                <div className="content" key={barang.id}>
                 <Barang id={barang.id}
                         nama={barang.nama} 
                         harga={barang.harga}

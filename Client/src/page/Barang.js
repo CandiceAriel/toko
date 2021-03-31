@@ -28,13 +28,11 @@ const Barang = ({id, nama, harga,stok}) => {
 
     //Tambah stok based on qty for stok +  button
     const addStok =() => {
-        setQty(qty-1)
         setStokBaru(stokBaru +1)
     }
 
     //Kurangi stok based on qty for stok -  button
     const minusStok =() => {
-        setQty(qty+1)
         setStokBaru(stokBaru -1)
     }
 
@@ -56,15 +54,15 @@ const Barang = ({id, nama, harga,stok}) => {
 
     //Add to Cart
     const addCart = (id) => {
-        if(localStorage.getItem('dataLogIn') > 0){
+        if(localStorage.getItem('dataLogIn').length > 0){
             Axios.post("http://localhost:3001/createCart",
         {
             id: id,
             nama: nama,
             harga: hargaBaru,
             stok: stokBaru,
-            qty: 0,
-            total : harga * qty,
+            qty: qty,
+            total : hargaBaru * qty,
         }).then(() => {
             alert("Good");
          });
@@ -77,6 +75,7 @@ const Barang = ({id, nama, harga,stok}) => {
             <div className="wrapper">
                 <table className="table">
                     <tbody>
+                        <tr>
                         <td>{id}</td>
                         <td>{nama}</td>
                         <td><input type="number" className="input" value={hargaBaru} onChange={updateHarga}></input></td> 
@@ -84,6 +83,7 @@ const Barang = ({id, nama, harga,stok}) => {
                         <td><button onClick={kurangiStok} className="button__tambahQty">+</button>{qty}<button onClick={tambahStok} className="button__kurangQty">-</button></td>
                         <td><button onClick={() => {updateBarang(id);}} className="button__editData"> Update </button></td>
                         <td><button onClick={() => {addCart(id);}} className="button__addCart"> Add </button></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

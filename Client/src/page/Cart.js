@@ -8,11 +8,13 @@ const Cart = ({id,nama, harga,qty,total}) => {
             <div>
                 <table className="table">
                     <tbody>
-                        <td>{id}</td>
-                        <td>{nama}</td>
-                        <td>{harga}</td>
-                        <td>{qty}</td>
-                        <td>{total}</td>
+                        <tr>
+                            <td>{id}</td>
+                            <td>{nama}</td>
+                            <td>{harga}</td>
+                            <td>{qty}</td>
+                            <td>{total}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
