@@ -63,7 +63,7 @@ const SignUp = () => {
         <form className="form" onSubmit={signUp}>
             <h1>Sign Up</h1>
             <div>
-                <label>ID<input type="text"  className="inputNama" value={userID} onChange={updateUserID}/></label>
+                <label>ID<input type="text"  className="inputID" value={userID} onChange={updateUserID}/></label>
             </div>
             <div>
                 <label>Nama<input type="text"  className="inputNama" value={nama} onChange={updateNama}/></label>

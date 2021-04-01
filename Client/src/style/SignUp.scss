@@ -1,13 +1,6 @@
 .AddBarang{
     padding: 50px;
   }
-      //.wrapper{
-         /* width: 20%;
-          height: 320px;
-          margin: 10px 600px;
-          border-radius: 15px;
-          padding: 10px 20px 10px 20px;
-          background-color: whitesmoke; */
   
           form {
               height:450px; 
@@ -22,25 +15,17 @@
               width: 480px;
               background-color: white;
               box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
-            }
-  
-            input{
-              height: 30px;
-              width: 280px;
-              margin-left: 50px;
-              margin-right: 10px;
-            }
-  
-            h1{
-              padding: 0px 150px;
-              font-size: 22px;
-            }
-  
-            .btn{
+
+              .btn{
                 width: 100px;
                 height: 40px;
                 border-radius: 5px;
                 margin: 15px 200px 0px;
+            }
+
+            .inputID{
+              width: 250px;
+              margin-left: 152px;
             }
   
             .inputNama{
@@ -58,10 +43,25 @@
               margin-left: 132px;
             }
 
-            .inputPassword{
-                width: 250px;
-                margin-left: 125px;
-              }
+  .inputPassword{
+    width: 250px;
+    margin-left: 100px;
+  }
+}
+  
+            input{
+              height: 30px;
+              width: 280px;
+              margin-left: 50px;
+              margin-right: 10px;
+            }
+  
+            h1{
+              padding: 0px 150px;
+              font-size: 22px;
+            }
+  
+            
       //}
   
       

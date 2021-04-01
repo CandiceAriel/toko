@@ -3,11 +3,11 @@ const express = require("express");
 const bodyparser = require('body-parser');
 const app = express();
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 
 app.use(cors());
 app.use(bodyparser.json());
 app.use(express.json());
-
 
 const con = mysql.createConnection({
   host: "127.0.0.1",
@@ -129,8 +129,13 @@ app.post('/register', (req,res) => {
   const email = req.body.email;
   const password = req.body.password;
 
+  bcrypt.hash(password, 10, (err, hash) => {
+    if (err) {
+      console.log(err);
+    }
+
   con.query('INSERT INTO User (userID,nama,noHP,email,password) VALUES (?,?,?,?,?)',
-   [userID,nama,noHP,email,password],
+   [userID,nama,noHP,email,hash],
     (err,result) => {
       if(err) {
         console.log(err);
@@ -139,6 +144,7 @@ app.post('/register', (req,res) => {
       }
     }
   );
+  });
 });
 
 app.get('/user', function (req, res) {
@@ -155,18 +161,21 @@ app.post('/SignIn', function(req,res) {
 
   con.query('SELECT * FROM User WHERE email = ?', 
       email, 
-      (err,result) => {
-        if(err){
-          res.send({err : err});
+      (err, result) => {
+        if (err) {
+          res.send({ err: err });
         }
-          if (result.length > 0){
-            if(result[0].password === password){
+  
+        if (result.length > 0) {
+          bcrypt.compare(password, result[0].password, (error, response) => {
+            if (response) {
               res.send(result);
-            } else {
-              res.send ({message : 'Incorrect password'})
+            } else  {
+              res.send({ message: "Incorrect password!" });
             }
+          });
         } else {
-          res.send ({message : 'User doesn not exist'})
+          res.send({ message: "User doesn't exist" });
         }
       }
     );
