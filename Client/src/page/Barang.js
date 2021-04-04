@@ -54,9 +54,11 @@ const Barang = ({id, nama, harga,stok}) => {
 
     //Add to Cart
     const addCart = (id) => {
+        var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
         if(localStorage.getItem('dataLogIn').length > 0){
             Axios.post("http://localhost:3001/createCart",
         {
+            userID: dataUser[0]. userID,
             id: id,
             nama: nama,
             harga: hargaBaru,

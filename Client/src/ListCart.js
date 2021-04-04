@@ -31,7 +31,7 @@ const ListCart = () => {
             </span>
             {cart.map(cart => (
                 <div className="content" key={cart.id}>
-                <Cart id={cart.id}
+                <Cart   id={cart.id}
                         nama={cart.nama} 
                         harga={cart.harga}
                         qty={cart.qty}

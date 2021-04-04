@@ -84,14 +84,15 @@ app.put("/update", (req, res) => {
 
 //Add data to Cart table
 app.post('/createCart', (req,res) => {
+  const userID = req.body.userID;
   const id = req.body.id;
   const nama = req.body.nama;
   const harga = req.body.harga;
   const qty = req.body.qty;
   const total = req.body.total;
 
-  con.query('INSERT INTO Cart (id,nama,harga,qty,total) VALUES (?,?,?,?,?)',
-   [id,nama,harga,qty,total],
+  con.query('INSERT INTO Cart (userID,id,nama,harga,qty,total) VALUES (?,?,?,?,?,?)',
+   [userID,id,nama,harga,qty,total],
     (err,result) => {
       if(err) {
         console.log(err);
@@ -115,7 +116,9 @@ app.delete("/deleteCart/:id", (req, res) => {
 });
 
 app.get('/cart', function (req, res) {
-  con.query('SELECT * FROM Cart', (error, rows,field)  => {
+  con.query('SELECT * FROM Cart',
+    userID,
+    (error, rows,field)  => {
       if (error) throw error;
       return res.send(rows);
   });
