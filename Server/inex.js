@@ -91,7 +91,7 @@ app.post('/createCart', (req,res) => {
   const qty = req.body.qty;
   const total = req.body.total;
 
-  con.query('INSERT INTO Cart (userID,id,nama,harga,qty,total) VALUES (?,?,?,?,?,?)',
+  con.query('INSERT INTO Cart (userID,id,nama,harga,qty,total) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE qty=qty+qty',
    [userID,id,nama,harga,qty,total],
     (err,result) => {
       if(err) {
@@ -106,7 +106,8 @@ app.post('/createCart', (req,res) => {
 //delete data from Cart table
 app.delete("/deleteCart/:id", (req, res) => {
   const id = req.params.id;
-  con.query("DELETE FROM Cart WHERE id = ?", id, (err, result) => {
+
+  con.query("DELETE FROM Cart WHERE id = ? ", id, (err, result) => {
     if (err) {
       console.log(err);
     } else {

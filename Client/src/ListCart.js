@@ -23,7 +23,7 @@ const ListCart = () => {
             })
           );
         });
-      };
+    };
  
     return (
         <div>
