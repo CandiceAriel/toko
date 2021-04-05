@@ -80,9 +80,9 @@ const AddBarang = () => {
         <div>
             { barang.map(barang => (
                 <div className="wrapperBaru" key={barang.id}>
-                <table className="table" key={barang.id}>
-                    <tbody key={barang.id}> 
-                        <tr key={barang.id}>
+                <table className="table">
+                    <tbody> 
+                        <tr>
                         <td>{barang.id}</td>
                         <td>{barang.nama}</td>
                         <td>{barang.harga}</td>

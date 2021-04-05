@@ -11,6 +11,7 @@ const SignIn = () => {
 
     const history = useHistory();
     const navigateTo = () => history.push('/SignUp');
+    const navigateToHome = () => history.push('/Barang');
 
     //update Email value
     const updateEmail = e => {
@@ -38,7 +39,7 @@ const SignIn = () => {
 
                 localStorage.setItem('dataLogIn', JSON.stringify(dataUser));
             }
-            window.location = "http://localhost:3000/Barang";
+            navigateToHome();
     });
     }
  

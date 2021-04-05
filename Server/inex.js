@@ -91,7 +91,7 @@ app.post('/createCart', (req,res) => {
   const qty = req.body.qty;
   const total = req.body.total;
 
-  con.query('INSERT INTO Cart (userID,id,nama,harga,qty,total) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE qty=qty+qty',
+  con.query('INSERT INTO Cart (userID,id,nama,harga,qty,total) VALUES (?,?,?,?,?,?)',
    [userID,id,nama,harga,qty,total],
     (err,result) => {
       if(err) {
