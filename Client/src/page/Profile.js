@@ -10,15 +10,16 @@ const Profile = () => {
     //Get data upon accessing localhost
     useEffect(() => {
         var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
-        if(dataUser.length > 0){
-            setNama(dataUser[0].nama)
-            setNoHP(dataUser[0].noHP)
-            setEmail(dataUser[0].email)
-        } else {
+
+        if(dataUser === null){
             setNama('Please sign in first')
             setNoHP('No data')
             setEmail('No data')
-        }
+        } else if(dataUser !== null){
+            setNama(dataUser[0].nama)
+            setNoHP(dataUser[0].noHP)
+            setEmail(dataUser[0].email)
+        } 
       }, [])
     
       const onDelete = () => {

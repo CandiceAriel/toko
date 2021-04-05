@@ -38,7 +38,7 @@ const AddBarang = () => {
             id: id,
             nama: nama,
             harga: harga,
-            stok: stok,
+            stok: parseInt(stok),
             qty: 0,
         }).then((response) => {
             console.log(response.data);
@@ -79,13 +79,15 @@ const AddBarang = () => {
 
         <div>
             { barang.map(barang => (
-                <div className="wrapperBaru">
-                <table className="table">
-                    <tbody>
+                <div className="wrapperBaru" key={barang.id}>
+                <table className="table" key={barang.id}>
+                    <tbody key={barang.id}> 
+                        <tr key={barang.id}>
                         <td>{barang.id}</td>
                         <td>{barang.nama}</td>
                         <td>{barang.harga}</td>
                         <td>{barang.stok}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

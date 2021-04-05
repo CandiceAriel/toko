@@ -33,10 +33,12 @@ const SignIn = () => {
                 setSignInStatus(response.data.message)
             }else {
                 localStorage.setItem('dataLogIn', JSON.stringify(response.data));
-                var dataNama = JSON.parse(localStorage.getItem('dataLogIn'));
-                setSignInStatus('Welcome' + dataNama[0].nama)
+                var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
+                delete dataUser[0].password;
+
+                localStorage.setItem('dataLogIn', JSON.stringify(dataUser));
             }
-            console.log(response.data);
+            window.location = "http://localhost:3000/Barang";
     });
     }
  

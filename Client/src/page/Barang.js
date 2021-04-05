@@ -55,10 +55,10 @@ const Barang = ({id, nama, harga,stok}) => {
     //Add to Cart
     const addCart = (id) => {
         var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
-        if(localStorage.getItem('dataLogIn').length > 0){
+        if(localStorage.getItem('dataLogIn') !== null){
             Axios.post("http://localhost:3001/createCart",
         {
-            userID: dataUser[0]. userID,
+            userID: dataUser[0].userID,
             id: id,
             nama: nama,
             harga: hargaBaru,
@@ -67,6 +67,13 @@ const Barang = ({id, nama, harga,stok}) => {
             total : hargaBaru * qty,
         }).then(() => {
             alert("Good");
+            Axios.put("http://localhost:3001/update", { harga: hargaBaru, stok: stokBaru , qty: qty , id: id }).then(
+                (response) => {
+                  setBarang(barang.map((barang) => {
+                      return barang.id === id ? {id: id,nama: nama, harga: hargaBaru, stok:stokBaru, qty: qty } : barang
+                  }))
+                }
+              );
          });
         } else {
             alert ('You must log in')

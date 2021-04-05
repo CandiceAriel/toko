@@ -91,7 +91,7 @@ app.post('/createCart', (req,res) => {
   const qty = req.body.qty;
   const total = req.body.total;
 
-  con.query('INSERT INTO Cart (userID,id,nama,harga,qty,total) VALUES (?,?,?,?,?,?)',
+  con.query('INSERT INTO Cart (userID,id,nama,harga,qty,total) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE qty=qty+qty',
    [userID,id,nama,harga,qty,total],
     (err,result) => {
       if(err) {
@@ -117,7 +117,6 @@ app.delete("/deleteCart/:id", (req, res) => {
 
 app.get('/cart', function (req, res) {
   con.query('SELECT * FROM Cart',
-    userID,
     (error, rows,field)  => {
       if (error) throw error;
       return res.send(rows);
@@ -151,7 +150,10 @@ app.post('/register', (req,res) => {
 });
 
 app.get('/user', function (req, res) {
-  con.query('SELECT * FROM User', (error, rows,field)  => {
+  const userID = req.body.email;
+
+  con.query('SELECT userID,email,nama,noHP FROM User',
+    (error, rows,field)  => {
       if (error) throw error;
       return res.send(rows);
   });
