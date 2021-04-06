@@ -6,12 +6,22 @@ import Axios from 'axios';
 
 const ListCart = () => {
     const [cart,setCart]=useState([]);
+    const [userStatus,setUserStatus] = useState('')
 
     //Get data upon accessing Cart menu
     useEffect(() => {
-      Axios.get("http://localhost:3001/cart").then((response) => {
-            setCart(response.data)
-        });
+      var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
+
+        if(dataUser === null){
+            setUserStatus('Please sign in first')
+        } else if(dataUser !== null){
+            const userID = dataUser[0].userID;
+            setUserStatus(userID);
+          Axios.get("http://localhost:3001/cart").then((response) => {
+                setCart(response.data)
+            }); 
+        } 
+
     }, [])
 
     //Delete Cart data based on ID
@@ -27,12 +37,11 @@ const ListCart = () => {
  
     return (
         <div>
-            <span>
-            </span>
             {cart.map(cart => (
-                <div className="content" key={cart.id}>
+                <div className="wrapper" key={cart.id}>
                 <Cart   id={cart.id}
-                        nama={cart.nama} 
+                        kodeBarang={cart.kodeBarang} 
+                        namaBarang={cart.namaBarang} 
                         harga={cart.harga}
                         qty={cart.qty}
                         total={cart.total}/>

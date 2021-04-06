@@ -21,17 +21,17 @@ const ListBarang = () => {
               return barang.id !== id;
             })
           );
-          alert(id)
+          alert('deleted')
         });
       };
  
     return (
         <div>
             {barang.map(barang => (
-                <div className="content" key={barang.id}>
+                <div className="wrapper" key={barang.id}>
                 <Barang key={barang.id}
-                        id={barang.id}
-                        nama={barang.nama} 
+                        kodeBarang={barang.kodeBarang} 
+                        namaBarang={barang.namaBarang} 
                         harga={barang.harga}
                         stok={barang.stok}
                         qty={barang.qty}/>

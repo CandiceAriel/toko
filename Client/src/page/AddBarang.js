@@ -4,21 +4,21 @@ import '../style/AddBarang.scss'
 
 const AddBarang = () => {
     const [id,setID] = useState('');
-    const [nama,setNama] = useState('');
+    const [kodeBarang,setKodeBarang] = useState('');
+    const [namaBarang,setNamaBarang] = useState('');
     const [harga,setHarga] = useState('');
     const [stok,setStok] = useState('');
 
     const [barang,setBarang] =  useState([]);
 
-
-    //update ID value
-    const updateID = e => {
-        setID(e.target.value);
+    //update Nama value
+    const updateKodeBarang = e => {
+        setKodeBarang(e.target.value);
     }
     
     //update Nama value
-    const updateNama = e => {
-        setNama(e.target.value);
+    const updateNamaBarang = e => {
+        setNamaBarang(e.target.value);
     }
 
     //Update Harga value
@@ -36,7 +36,8 @@ const AddBarang = () => {
         Axios.post("http://localhost:3001/create",
         {
             id: id,
-            nama: nama,
+            kodeBarang: kodeBarang,
+            namaBarang: namaBarang,
             harga: harga,
             stok: parseInt(stok),
             qty: 0,
@@ -57,20 +58,20 @@ const AddBarang = () => {
         <form className="formAddBarang" onSubmit={addBarang}>
             <h1>Tambah Barang</h1>
             <div>
-                <label>ID</label>
-                <input type="text"  className="inputID" value={id} onChange={updateID}/>
+                <label>Kode Barang</label>
+                <input type="text"  className="input__Kode" value={kodeBarang} onChange={updateKodeBarang}/>
             </div>
             <div>
-                <label>Nama</label>
-                <input type="text"  className="inputNama" value={nama} onChange={updateNama}/>
+                <label>Nama Barang</label>
+                <input type="text"  className="input__Nama" value={namaBarang} onChange={updateNamaBarang}/>
             </div>
             <div>
                 <label>Harga</label>
-                <input type="number"  className="inputHarga" value={harga} onChange={updateHarga}/>
+                <input type="number"  className="input__Harga" value={harga} onChange={updateHarga}/>
             </div>
             <div>
                 <label>Stok</label>
-                <input type="number"  className="inputStok" value={stok} onChange={updateStok}/>
+                <input type="number"  className="input__Stok" value={stok} onChange={updateStok}/>
             </div>
             <div className="btn__submit">
                 <input type="submit" value="Submit" onClick={addBarang} className="btn" />
@@ -79,12 +80,12 @@ const AddBarang = () => {
 
         <div>
             { barang.map(barang => (
-                <div className="wrapperBaru" key={barang.id}>
+                <div className="wrapper" key={barang.id}>
                 <table className="table">
                     <tbody> 
                         <tr>
-                        <td>{barang.id}</td>
-                        <td>{barang.nama}</td>
+                        <td>{barang.kodeBarang}</td>
+                        <td>{barang.namaBarang}</td>
                         <td>{barang.harga}</td>
                         <td>{barang.stok}</td>
                         </tr>

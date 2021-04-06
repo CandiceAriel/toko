@@ -1,15 +1,8 @@
+@import './global.scss';
+
 .Barang{
  
 }
-
-.wrapper{
-    height: 60px;
-    width: 95%;
-    background-color:#E9E6E2;
-    background-color: white;
-    border-radius: 10px;
-    margin-right: 0px;
-    justify-content: center;
 
     table{
         width: 100%;
@@ -27,7 +20,6 @@
         align-items: center;
         width: 50px;
     }
-}
 
 .button{
     &__tambah{

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Axios from 'axios';
 import '../style/Barang.scss'
 
-const Barang = ({id, nama, harga,stok}) => {
+const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
     const [qty,setQty] = useState(0);
     const [stokBaru,setStokBaru] = useState(stok);
     const [hargaBaru, setHargaBaru] = useState(harga);
@@ -42,11 +42,11 @@ const Barang = ({id, nama, harga,stok}) => {
     }
 
     //Update Barang to DB based on new value
-    const updateBarang = (id) => {
-        Axios.put("http://localhost:3001/update", { harga: hargaBaru, stok: stokBaru , qty: qty , id: id }).then(
+    const updateBarang = (kodeBarang) => {
+        Axios.put("http://localhost:3001/update", { harga: hargaBaru, stok: stokBaru , qty: qty , kodeBarang: kodeBarang }).then(
           (response) => {
             setBarang(barang.map((barang) => {
-                return barang.id === id ? {id: id,nama: nama, harga: hargaBaru, stok:stokBaru, qty: qty } : barang
+                return barang.kodeBarang === kodeBarang ? {kodeBarang: kodeBarang,nama: namaBarang, harga: hargaBaru, stok:stokBaru, qty: qty } : barang
             }))
           }
         );
@@ -60,7 +60,8 @@ const Barang = ({id, nama, harga,stok}) => {
         {
             userID: dataUser[0].userID,
             id: id,
-            nama: nama,
+            kodeBarang: kodeBarang,
+            namaBarang: namaBarang,
             harga: hargaBaru,
             stok: stokBaru,
             qty: qty,
@@ -70,7 +71,7 @@ const Barang = ({id, nama, harga,stok}) => {
             Axios.put("http://localhost:3001/update", { harga: hargaBaru, stok: stokBaru , qty: qty , id: id }).then(
                 (response) => {
                   setBarang(barang.map((barang) => {
-                      return barang.id === id ? {id: id,nama: nama, harga: hargaBaru, stok:stokBaru, qty: qty } : barang
+                      return barang.id === id ? {id: id,kodeBarang: kodeBarang,namaBarang: namaBarang, harga: hargaBaru, stok:stokBaru, qty: qty } : barang
                   }))
                 }
               );
@@ -81,16 +82,16 @@ const Barang = ({id, nama, harga,stok}) => {
     }
 
     return (
-            <div className="wrapper">
+            <div className="content">
                 <table className="table">
                     <tbody>
                         <tr>
-                        <td>{id}</td>
-                        <td>{nama}</td>
+                        <td>{kodeBarang}</td>
+                        <td>{namaBarang}</td>
                         <td><input type="number" className="input" value={hargaBaru} onChange={updateHarga}></input></td> 
                         <td><button onClick={addStok} className="button__tambah">+</button>{stokBaru}<button onClick={minusStok} className="button__kurang">-</button></td>
                         <td><button onClick={kurangiStok} className="button__tambahQty">+</button>{qty}<button onClick={tambahStok} className="button__kurangQty">-</button></td>
-                        <td><button onClick={() => {updateBarang(id);}} className="button__editData"> Update </button></td>
+                        <td><button onClick={() => {updateBarang(kodeBarang);}} className="button__editData"> Update </button></td>
                         <td><button onClick={() => {addCart(id);}} className="button__addCart"> Add </button></td>
                         </tr>
                     </tbody>

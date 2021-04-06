@@ -1,16 +1,8 @@
+@import './global.scss';
+
 .AddBarang{
   padding: 50px;
 }
-
-.wrapperBaru{
-  height: 100%;
-  width: 95%;
-  background-color:#E9E6E2;
-  background-color: white;
-  border-radius: 10px;
-  margin: 10px 35px;
-  justify-content: center;
-
   table{
       width: 100%;
       height: 85px;
@@ -27,25 +19,24 @@
       align-items: center;
       width: 50px;
   }
-}
 
 .formAddBarang {
    height:450px; 
    font-size: 16px;
-   margin: 30px 550px;
-   padding: 10px 5px 10px 25px;
+   margin: 30px 470px;
+   padding: 10px 5px 10px 15px;
    text-align: left;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
    border-radius: 10px;
-   width: 400px;
+   width: 480px;
    background-color: white;
    box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
 
 
 h1{
-  padding: 0px 110px;
+  padding: 0px 150px;
   font-size: 18px;
 }
 
@@ -53,30 +44,29 @@ h1{
     width: 100px;
     height: 40px;
     border-radius: 5px;
-    margin: 15px 150px 0px;
+    margin: 15px 190px 0px;
 }
 
-.inputID{
-  height: 30px;
-  width: 250px;
-  margin-left: 75px;
+.input{
+    height: 30px;
+    width: 200px;
+
+  &__Kode{
+    margin-left: 57px;
+  }
+  
+  &__Nama{
+    margin-left: 50px;
+  }
+  
+  &__Harga{
+    margin-left: 103px;
+  }
+  
+  &__Stok{
+    margin-left: 112px;
+  }
 }
 
-.inputNama{
-  height: 30px;
-  width: 250px;
-  margin-left: 50px;
-}
 
-.inputHarga{
-  height: 30px;
-  width: 250px;
-  margin-left: 50px;
-}
-
-.inputStok{
-  height: 30px;
-  width: 250px;
-  margin-left: 60px;
-}
 }

@@ -33,13 +33,14 @@ app.get('/barang', function (req, res) {
 //Add data to tabel Barang
 app.post('/create', (req,res) => {
   const id = req.body.id;
-  const nama = req.body.nama;
+  const kodeBarang = req.body.kodeBarang;
+  const namaBarang = req.body.namaBarang;
   const harga = req.body.harga;
   const stok = req.body.stok;
   const qty = req.body.qty;
 
-  con.query('INSERT INTO Barang (id, nama,harga,stok,qty) VALUES (?,?,?,?,?)',
-   [id,nama,harga,stok,qty],
+  con.query('INSERT INTO Barang (kodeBarang, namaBarang,harga,stok,qty) VALUES (?,?,?,?,?)',
+   [kodeBarang,namaBarang,harga,stok,qty],
     (err,result) => {
       if(err) {
         console.log(err);
@@ -65,13 +66,13 @@ app.delete("/delete/:id", (req, res) => {
 
 //Update data on table Barang
 app.put("/update", (req, res) => {
-  const id = req.body.id;
+  const kodeBarang = req.body.kodeBarang;
   const harga = req.body.harga;
   const stok = req.body.stok;
   const qty = req.body.qty;
   con.query(
-    "UPDATE Barang SET harga = ?,stok = ?,qty=? WHERE id = ?",
-    [harga,stok, qty, id],
+    "UPDATE Barang SET harga = ?,stok = ?,qty=? WHERE kodeBarang = ?",
+    [harga,stok, qty, kodeBarang],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -86,13 +87,14 @@ app.put("/update", (req, res) => {
 app.post('/createCart', (req,res) => {
   const userID = req.body.userID;
   const id = req.body.id;
-  const nama = req.body.nama;
+  const kodeBarang = req.body.kodeBarang;
+  const namaBarang = req.body.namaBarang;
   const harga = req.body.harga;
   const qty = req.body.qty;
   const total = req.body.total;
 
-  con.query('INSERT INTO Cart (userID,id,nama,harga,qty,total) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE qty=qty+qty',
-   [userID,id,nama,harga,qty,total],
+  con.query('INSERT INTO Cart (userID,id,kodeBarang,namaBarang,harga,qty,total) VALUES (?,?,?,?,?,?,?)',
+   [userID,id,kodeBarang,namaBarang,harga,qty,total],
     (err,result) => {
       if(err) {
         console.log(err);
