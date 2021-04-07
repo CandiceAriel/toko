@@ -1,68 +1,59 @@
-.AddBarang{
+@import './global.scss';
+
+.signup{
     padding: 50px;
   }
   
-          form {
-              height:450px; 
-              font-size: 16px;
-              margin: 30px 500px;
-              padding: 10px 20px 10px 20px;
-              text-align: left;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              border-radius: 10px;
-              width: 480px;
-              background-color: white;
-              box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
+.formSignUp {
+  height:450px; 
+  font-size: 16px;
+  margin: 30px 500px;
+  padding: 10px 20px 10px 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  width: 450px;
+  background-color: white;
+  box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
 
-              .btn{
-                width: 100px;
-                height: 40px;
-                border-radius: 5px;
-                margin: 15px 200px 0px;
-            }
+  .btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 15px 180px 0px;
+  }
 
-            .inputID{
-              width: 250px;
-              margin-left: 152px;
-            }
+  .inputID{
+     width: 250px;
+     margin-left: 152px;
+  }
   
-            .inputNama{
-              width: 250px;
-              margin-left: 127px;
-            }
+  .inputNama{
+      width: 250px;
+      margin-left: 127px;
+  }
   
-            .inputHP{
-              width: 250px;
-              margin-left: 55px;
-            }
+  .inputHP{
+     width: 250px;
+     margin-left: 55px;
+  }
   
-            .inputEmail{
-              width: 250px;
-              margin-left: 132px;
-            }
+  .inputEmail{
+      width: 250px;
+      margin-left: 132px;
+  }
 
   .inputPassword{
     width: 250px;
     margin-left: 100px;
   }
 }
+
+
   
-            input{
-              height: 30px;
-              width: 280px;
-              margin-left: 50px;
-              margin-right: 10px;
-            }
-  
-            h1{
-              padding: 0px 150px;
-              font-size: 22px;
-            }
-  
-            
-      //}
-  
-      
-  
+h1{
+  padding: 0px 170px;
+  font-size: 22px;
+}

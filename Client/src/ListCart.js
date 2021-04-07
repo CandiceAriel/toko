@@ -7,9 +7,7 @@ import Axios from 'axios';
 const ListCart = () => {
     const [cart,setCart]=useState([]);
     const [userStatus,setUserStatus] = useState('')
-
     
-
     //Get data upon accessing Cart menu
     useEffect(() => {
       var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));

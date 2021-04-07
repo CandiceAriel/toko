@@ -60,7 +60,7 @@ const SignUp = () => {
  
     return (
         <div>
-        <form className="form" onSubmit={signUp}>
+        <form className="formSignUp" onSubmit={signUp}>
             <h1>Sign Up</h1>
             <div>
                 <label>ID<input type="text"  className="inputID" value={userID} onChange={updateUserID}/></label>
