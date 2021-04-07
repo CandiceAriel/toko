@@ -4,23 +4,6 @@
  
 }
 
-    table{
-        width: 100%;
-        height: 85px;
-        background-color: white;
-        box-shadow: 3px solid whitesmoke;
-        border-radius: 10px;
-        justify-content: center;
-        table-layout: fixed;
-    }
-
-    td{
-        padding: 5px 20px;
-        height: 100%;
-        align-items: center;
-        width: 50px;
-    }
-
 .button{
     &__tambah{
         background-color: #28527A;
@@ -104,11 +87,3 @@
         width: 30px;
     }
 }
-
-
-body{
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-  }
-

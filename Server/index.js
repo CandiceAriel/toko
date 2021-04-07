@@ -13,7 +13,8 @@ const con = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
   password: "",
-  database: "Toko"
+  database: "Toko",
+  multipleStatements: true
 });
 
 //Connect to DB
@@ -118,14 +119,6 @@ app.delete("/deleteCart/:id", (req, res) => {
   });
 });
 
-app.get('/cart', function (req, res) {
-  con.query('SELECT * FROM Cart',
-    (error, rows,field)  => {
-      if (error) throw error;
-      return res.send(rows);
-  });
-});
-
 //Add data to User table
 app.post('/register', (req,res) => {
   const userID = req.body.userID;
@@ -182,6 +175,26 @@ app.post('/SignIn', function(req,res) {
               res.send({ message: "Incorrect password!" });
             }
           });
+        } else {
+          res.send({ message: "User doesn't exist" });
+        }
+      }
+    );
+});
+
+//retrieve Cart based on UserID in Local Storage
+app.post('/retrieveCart', function(req,res) {
+  const userID = req.body.userID;
+
+  con.query('SELECT * FROM Cart WHERE userID = ?', 
+      userID, 
+      (err, result) => {
+        if (err) {
+          res.send({ err: err });
+        }
+  
+        if (result.length > 0) {
+              res.send(result);
         } else {
           res.send({ message: "User doesn't exist" });
         }

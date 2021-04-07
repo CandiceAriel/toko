@@ -82,8 +82,9 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
     }
 
     return (
-            <div className="content">
-                <table className="table">
+        <div className="content">
+        <div>
+            <table className="table">
                     <tbody>
                         <tr>
                         <td>{kodeBarang}</td>
@@ -95,8 +96,9 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
                         <td><button onClick={() => {addCart(id);}} className="button__addCart"> Add </button></td>
                         </tr>
                     </tbody>
-                </table>
-            </div>
+            </table>
+        </div>
+        </div>
     )
 }
 

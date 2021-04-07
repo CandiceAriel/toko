@@ -3,7 +3,7 @@ import Axios from 'axios'
 import '../style/AddBarang.scss'
 
 const AddBarang = () => {
-    const [id,setID] = useState('');
+    const [id] = useState('');
     const [kodeBarang,setKodeBarang] = useState('');
     const [namaBarang,setNamaBarang] = useState('');
     const [harga,setHarga] = useState('');
@@ -59,19 +59,19 @@ const AddBarang = () => {
             <h1>Tambah Barang</h1>
             <div>
                 <label>Kode Barang</label>
-                <input type="text"  className="input__Kode" value={kodeBarang} onChange={updateKodeBarang}/>
+                <input type="text"  className="input__kode" value={kodeBarang} onChange={updateKodeBarang}/>
             </div>
             <div>
                 <label>Nama Barang</label>
-                <input type="text"  className="input__Nama" value={namaBarang} onChange={updateNamaBarang}/>
+                <input type="text"  className="input__nama" value={namaBarang} onChange={updateNamaBarang}/>
             </div>
             <div>
                 <label>Harga</label>
-                <input type="number"  className="input__Harga" value={harga} onChange={updateHarga}/>
+                <input type="number"  className="input__harga" value={harga} onChange={updateHarga}/>
             </div>
             <div>
                 <label>Stok</label>
-                <input type="number"  className="input__Stok" value={stok} onChange={updateStok}/>
+                <input type="number"  className="input__stok" value={stok} onChange={updateStok}/>
             </div>
             <div className="btn__submit">
                 <input type="submit" value="Submit" onClick={addBarang} className="btn" />

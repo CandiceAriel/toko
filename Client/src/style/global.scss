@@ -6,7 +6,7 @@ body{
     background-color:#E9E6E2;
 }
 
-h2{
+h1{
   color: black;
   font-size: large;
   font-weight: bold;
@@ -14,19 +14,35 @@ h2{
   font-family: 'Comfortaa', cursive;
 }
 
+table{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    background-color: white;
+    box-shadow: 3px solid whitesmoke;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    margin: 5px 0px 5px 0px;
+    table-layout: fixed;
+}
+
+td{
+    height: 100%;
+    padding: 13px 15px;
+}
+
 .content{
     width: 100%;
-    height: 90px;
+    height: 100%;
     margin: 0px 5px 0px 0px;
     background-color:#E9E6E2;
     background-color: white;
     border-radius: 10px;
-    justify-content: center;
 }
 
 .wrapper{
     width: 95%;
-    height: 100px;
+    height:80px;
     margin: 10px 30px;
     padding: 0px;
     display: flex;

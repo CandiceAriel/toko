@@ -16,7 +16,6 @@
   td{
       padding: 5px 20px;
       height: 100%;
-      align-items: center;
       width: 50px;
   }
 
@@ -51,19 +50,19 @@ h1{
     height: 30px;
     width: 200px;
 
-  &__Kode{
+  &__kode{
     margin-left: 57px;
   }
   
-  &__Nama{
+  &__nama{
     margin-left: 50px;
   }
   
-  &__Harga{
+  &__harga{
     margin-left: 103px;
   }
   
-  &__Stok{
+  &__stok{
     margin-left: 112px;
   }
 }

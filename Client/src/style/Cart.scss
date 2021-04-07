@@ -2,25 +2,7 @@
 
 .Cart{
     border: 1px solid black;
-   }
-   
-       table{
-           width: 100%;
-           height: 100%;
-           padding: 0px;
-           background-color: white;
-           box-shadow: 3px solid whitesmoke;
-           border-radius: 10px;
-           justify-content: space-evenly;
-           margin: 5px 0px 5px 0px;
-           table-layout: fixed;
-       }
-   
-       td{
-           padding: 25px;
-           height: 100%;
-           justify-content: center;
-       }
+}
    
    .button{
        &__tambah{
