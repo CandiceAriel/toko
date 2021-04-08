@@ -64,7 +64,9 @@ const SignUp = () => {
         <div>
         <NavHeader />
         <form className="signup__form" onSubmit={signUp}>
-            <h1 className="form__title">Sign Up</h1>
+            <div className="title-signup">
+                <h5>Sign Up</h5>
+            </div>
             <div>
                 <label>ID<input type="text"  className="input__id" value={userID} onChange={updateUserID}/></label>
             </div>

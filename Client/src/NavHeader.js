@@ -13,7 +13,7 @@ export const NavHeader = () => {
         return (
             <div className="nav-header__container-header">
                 <div className="wrapper__link">
-                    <Link to="/Home" className="link__home">TOKO SERBA ADA</Link>
+                    <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                 </div>
                 <div className="wrapper__link">
                     <Link to="/Barang" className="link__barang">Barang</Link>
@@ -27,7 +27,7 @@ export const NavHeader = () => {
         return (
             <div className="nav-header__container-header">
                 <div className="wrapper__link">
-                    <Link to="/Home" className="link__home">TOKO SERBA ADA</Link>
+                    <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                 </div>
                 <div className="wrapper__link">
                     <Link to="/Barang" className="link__barang">Barang</Link>

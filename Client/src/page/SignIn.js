@@ -49,7 +49,9 @@ const SignIn = () => {
         <div>
         <NavHeader />
         <form className="signin__form" onSubmit={signIn}>
-            <h1>Sign In</h1>
+            <div className="title-signin">
+                <h5>Sign In</h5>
+            </div>
             <div>
                 <input type="text" name="email" placeholder="Email" className="input__email" value={email} onChange={updateEmail}/>
             </div>

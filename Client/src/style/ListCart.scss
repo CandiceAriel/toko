@@ -1,7 +1,14 @@
 @import './global.scss';
 
 .list-cart{
-    
+    background-color: white;
+}
+
+.status-user{
+    padding: 5px 53px;
+    margin: 290px 500px;
+    font-weight: 900;
+    font-size: x-large;
 }
 
 .button{
@@ -17,4 +24,3 @@
         color: white;
     }
 }
-

@@ -4,7 +4,6 @@
         width: 100%;
         padding: 40px 5px;
         justify-content: space-between;
-        margin-bottom: 10px;
         height: 20px;
         background-color:#173F5F;
         display: flex;
@@ -76,6 +75,12 @@
                 margin: 10px ;
                 padding: 10px;
                 width: 50px;
+                border: 1px solid white;
+
+                &:hover {
+                    background-color: white;
+                    color:black;
+                }
             }
             
             &__signin{
@@ -87,6 +92,12 @@
                 border-radius: 10px;
                 margin: 10px ;
                 padding: 10px;
+                border: 1px solid white;
+
+                &:hover {
+                    background-color: white;
+                    color:black;
+                }
             }
             
             &__signout{
@@ -98,6 +109,12 @@
                 border-radius: 10px;
                 margin: 10px ;
                 padding: 10px;
+                border: 1px solid white;
+
+                &:hover {
+                    background-color: white;
+                    color:black;
+                }
             }
                 
             &__profile{

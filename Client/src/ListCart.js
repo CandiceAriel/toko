@@ -14,7 +14,7 @@ const ListCart = () => {
       var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
       
         if(dataUser === null){
-            setUserStatus('Please sign in first')
+            setUserStatus('Your cart is empty')
         } else if(dataUser !== null){
           const userID = dataUser[0].userID;
 
@@ -45,7 +45,9 @@ const ListCart = () => {
     return (
         <div>
           <NavHeader />
+          <div className="status-user">
             <h1>{userStatus}</h1>
+          </div>
             {cart.map(cart => (
                 <div className="wrapper" key={cart.id}>
                 <Cart userID={cart.userID}  

@@ -16,16 +16,18 @@
       width: 450px;
       background-color: white;
       box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
-
-      &__title{
-        font-size: 22px;
-      }
+      border: 1px solid rgba(139, 128, 91, 0.2);
     
       .btn{
         width: 100px;
         height: 40px;
-        border-radius: 5px;
+        border-radius: 10px;
         margin: 15px 180px 0px;
+        border: none;
+        background-color: #28527A;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
       }
     
       .input{
@@ -56,4 +58,10 @@
        }
       }
     }
+}
+
+.title-signup{
+    height: 50px;
+    padding: 0px 150px;
+    margin: 5px;
 }

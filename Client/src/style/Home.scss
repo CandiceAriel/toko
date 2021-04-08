@@ -5,5 +5,12 @@
         height: 100vh;
         background-image: url(../image/ingredients.jpg);
         background-size: 100%;
+        padding: 270px 50px;
+    }
+
+    &__wrapper{
+        padding: 10px 5px;
+        width: 700px;
+        height: 100px;
     }
 }

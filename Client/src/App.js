@@ -14,7 +14,7 @@ function App() {
     <Router>
     <div>
       <Switch>
-        <Route path="/Home" component= {Home}/>
+        <Route path="/" exact={true} component= {Home}/>
         <Route path="/Barang" component= {ListBarang}/>
         <Route path="/AddBarang" component= {AddBarang}/>
         <Route path="/Cart" component= {ListCart}/>
