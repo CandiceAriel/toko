@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import Barang from './page/Barang';
 import Axios from 'axios';
 import './style/ListBarang.scss'
+import NavHeader from './NavHeader';
 
 const ListBarang = () => {
     const [barang,setBarang]=useState([]);
@@ -27,6 +28,7 @@ const ListBarang = () => {
  
     return (
         <div>
+            <NavHeader />
             {barang.map(barang => (
                 <div className="wrapper" key={barang.id}>
                 <Barang key={barang.id}

@@ -2,6 +2,8 @@ import React, { useState,useEffect } from 'react';
 import Axios from 'axios'
 import '../style/AddBarang.scss'
 
+import NavHeader from '../NavHeader';
+
 const AddBarang = () => {
     const [id] = useState('');
     const [kodeBarang,setKodeBarang] = useState('');
@@ -55,7 +57,8 @@ const AddBarang = () => {
 
     return (
         <div>
-        <form className="formAddBarang" onSubmit={addBarang}>
+            <NavHeader />
+        <form className="barang-add__form" onSubmit={addBarang}>
             <h1>Tambah Barang</h1>
             <div>
                 <label>Kode Barang</label>
@@ -73,7 +76,7 @@ const AddBarang = () => {
                 <label>Stok</label>
                 <input type="number"  className="input__stok" value={stok} onChange={updateStok}/>
             </div>
-            <div className="btn__submit">
+            <div className="button__submit">
                 <input type="submit" value="Submit" onClick={addBarang} className="btn" />
             </div>
         </form>

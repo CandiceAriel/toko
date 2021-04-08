@@ -1,23 +1,14 @@
 @import './global.scss';
 
-.listbarang{
-}
-
-.button{
-
-    &__show{
-        width: 100px;
-        height: 50px;
-        border-radius: 10px;
-        margin: 10px 720px;
-    }
-
-    &__delete{
-        width: 30px;
-        height: 40px;
-        border-radius: 10px;
-        margin: 40px 10px 0px 0px;
-        float: right;
+.list-barang{
+    
+    .button{
+        &__delete{
+            width: 30px;
+            height: 40px;
+            border-radius: 10px;
+            margin: 50px 10px 0px 0px;
+            float: right;
+        }
     }
 }
-

@@ -1,10 +1,10 @@
 @import './global.scss';
 
 .barang{
- 
+    
 }
 
-.button{
+.btn{
     &__tambah{
         background-color: #28527A;
         margin: 0px 10px;
@@ -27,29 +27,7 @@
         font-size: large;
     }
 
-    &__tambahQty{
-        background-color: #28527A;
-        margin: 0px 5px 0px 5px;
-        border-radius: 5px;
-        width: 30px;
-        height:35px;
-        border:none;
-        color:white;
-        font-size: large;
-    }
-
-    &__kurangQty{
-        background-color: #810000;
-        margin: 0px 5px 0px 5px;
-        border-radius: 5px;
-        width: 30px;
-        height:35px;
-        border:none;
-        color: white;
-        font-size: large;
-    }
-
-    &__editData{
+    &__update{
         background-color: #28527A;
         margin: 0px 5px;
         border-radius: 10px;
@@ -62,7 +40,7 @@
         font-weight: 900;
     }
 
-    &__addCart{
+    &__addtocart{
         background-color: #28527A;
         margin: 0px 0px;
         border-radius: 10px;
@@ -77,13 +55,8 @@
 }
 
 
-.input{
-    width: 80px;
+.input-qty{
     margin: 0px 5px;
     padding: 0px 5px;
-    justify-content: center;
-
-    &__qty{
-        width: 30px;
-    }
+    width: 90px;
 }

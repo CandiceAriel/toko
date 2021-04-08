@@ -28,7 +28,7 @@ table{
 
 td{
     height: 100%;
-    padding: 13px 15px;
+    padding: 20px 15px;
 }
 
 input{
@@ -47,11 +47,33 @@ input{
 
 .wrapper{
     width: 95%;
-    height:80px;
+    height: 90px;
     margin: 10px 30px;
     padding: 0px;
     display: flex;
     flex-direction: row;
     background-color: white;
     border-radius: 10px;
+}
+
+.input{
+    width: 150px;
+    height: 30px;
+}
+
+.button-primary{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 15px 180px 0px;
+    background: #435560;
+    border: none;
+}
+
+.button-secondary{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 15px 180px 0px;
+    border: none;
 }

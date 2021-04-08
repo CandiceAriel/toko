@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
     <div>
-    <NavHeader />
+    {/*<NavHeader />*/}
       <Switch>
         <Route path="/Barang" component= {ListBarang}/>
         <Route path="/AddBarang" component= {AddBarang}/>

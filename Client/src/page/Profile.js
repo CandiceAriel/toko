@@ -2,6 +2,8 @@ import React, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../style/Profile.scss'
 
+import NavHeader from '../NavHeader';
+
 const Profile = () => {
     const [nama,setNama] =useState('');
     const [noHP,setNoHP] =useState('');
@@ -27,7 +29,9 @@ const Profile = () => {
       }
 
     return (
-        <div className="container--profile">
+        <div>
+            <NavHeader />
+        <div className="container__profile">
             <div className="wrapper__profile">
                 <h3>{nama}</h3>
                 <p>{noHP}</p>
@@ -36,6 +40,7 @@ const Profile = () => {
             <div className="wrapper__link">
                 <Link to="/SignIn" className="link__SignOut" onClick={onDelete}>Sign Out</Link>
             </div>
+        </div>
         </div>
     )
 }

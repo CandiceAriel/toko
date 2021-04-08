@@ -2,56 +2,57 @@
 
 .signup{
     padding: 50px;
-  }
-  
-.formSignUp {
-  height:450px; 
-  font-size: 16px;
-  margin: 30px 500px;
-  padding: 10px 20px 10px 20px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 10px;
-  width: 450px;
-  background-color: white;
-  box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
 
-  .btn{
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    margin: 15px 180px 0px;
-  }
-
-  .inputID{
-     width: 250px;
-     margin-left: 152px;
-  }
-  
-  .inputNama{
-      width: 250px;
-      margin-left: 127px;
-  }
-  
-  .inputHP{
-     width: 250px;
-     margin-left: 55px;
-  }
-  
-  .inputEmail{
-      width: 250px;
-      margin-left: 132px;
-  }
-
-  .inputPassword{
-    width: 250px;
-    margin-left: 100px;
-  }
+    &__form{
+      height:450px; 
+      font-size: 16px;
+      margin: 30px 500px;
+      padding: 10px 20px 10px 20px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 10px;
+      width: 450px;
+      background-color: white;
+      box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
+    
+      .btn{
+        width: 100px;
+        height: 40px;
+        border-radius: 5px;
+        margin: 15px 180px 0px;
+      }
+    
+      .input{
+        width: 250px;
+    
+        &__id{
+          margin-left: 152px;
+       }
+       
+       &__nama{
+           width: 250px;
+           margin-left: 127px;
+       }
+       
+       &__hp{
+          width: 250px;
+          margin-left: 55px;
+       }
+       
+       &__email{
+           width: 250px;
+           margin-left: 132px;
+       }
+     
+       &__password{
+         width: 250px;
+         margin-left: 100px;
+       }
+      }
+    }
 }
-
-
   
 h1{
   padding: 0px 170px;

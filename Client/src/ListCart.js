@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import './style/ListCart.scss'
 import Cart from './page/Cart';
+import NavHeader from './NavHeader';
 import Axios from 'axios';
 
 
@@ -43,6 +44,7 @@ const ListCart = () => {
  
     return (
         <div>
+          <NavHeader />
             {cart.map(cart => (
                 <div className="wrapper" key={cart.id}>
                 <Cart userID={cart.userID}  

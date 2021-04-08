@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import Axios from 'axios';
 import '../style/SignIn.scss'
+import '../style/NavHeader.scss';
+import NavHeader from '../NavHeader';
 
 const SignIn = () => {
     const [email,setEmail] = useState('');
@@ -45,17 +47,18 @@ const SignIn = () => {
  
     return (
         <div>
-        <form className="formSignIn" onSubmit={signIn}>
+        <NavHeader />
+        <form className="signin__form" onSubmit={signIn}>
             <h1>Sign In</h1>
             <div>
-                <label>Email<input type="text" name="email" className="signinEmail" value={email} onChange={updateEmail}/></label>
+                <label>Email<input type="text" name="email" className="input__email" value={email} onChange={updateEmail}/></label>
             </div>
             <div>
-                <label>Password<input type="password" name="password" className="signinPassword" value={password} onChange={updatePassword}/></label><br></br>
+                <label>Password <input type="password" name="password" className="input__password" value={password} onChange={updatePassword}/></label><br></br>
             </div>
             <div className="wrapper-btn">
-                <button onClick={navigateTo}  value="Sign Up" className="btn__SignUp">Sign Up</button>
-                <button type="submit" value="Sign In" className="btn__SignIn" onClick={signIn}>Sign In</button>
+                <button onClick={navigateTo}  value="Sign Up" className="btn__signup">Sign Up</button>
+                <button type="submit" value="Sign In" className="btn__signin" onClick={signIn}>Sign In</button>
             </div>
         </form>
         <h1>{signInStatus}</h1>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import '../style/SignUp.scss'
 
+import NavHeader from '../NavHeader';
+
 const SignUp = () => {
     const [user,setUser]=useState([]);
 
@@ -60,22 +62,23 @@ const SignUp = () => {
  
     return (
         <div>
-        <form className="formSignUp" onSubmit={signUp}>
+        <NavHeader />
+        <form className="signup__form" onSubmit={signUp}>
             <h1>Sign Up</h1>
             <div>
-                <label>ID<input type="text"  className="inputID" value={userID} onChange={updateUserID}/></label>
+                <label>ID<input type="text"  className="input__id" value={userID} onChange={updateUserID}/></label>
             </div>
             <div>
-                <label>Nama<input type="text"  className="inputNama" value={nama} onChange={updateNama}/></label>
+                <label>Nama<input type="text"  className="input__nama" value={nama} onChange={updateNama}/></label>
             </div>
             <div>
-                <label>No. Handphone<input type="text"  className="inputHP" value={noHP} onChange={updateHP}/></label>
+                <label>No. Handphone<input type="text"  className="input__hp" value={noHP} onChange={updateHP}/></label>
             </div>
             <div>
-                <label>Email<input type="text"  className="inputEmail" value={email} onChange={updateEmail}/></label>
+                <label>Email<input type="text"  className="input__email" value={email} onChange={updateEmail}/></label>
             </div>
             <div>
-                <label>Password<input type="text"  className="inputPassword" value={password} onChange={updatePassword}/></label><br></br>
+                <label>Password<input type="text"  className="input__password" value={password} onChange={updatePassword}/></label><br></br>
             </div>
             <div className="btn__submit">
                 <input type="submit" value="Sign Up" className="btn" onClick={signUp}/>
