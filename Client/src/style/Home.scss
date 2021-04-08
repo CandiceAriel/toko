@@ -1,0 +1,9 @@
+@import './global.scss';
+
+.home{
+    &__container{
+        height: 100vh;
+        background-image: url(../image/ingredients.jpg);
+        background-size: 100%;
+    }
+}

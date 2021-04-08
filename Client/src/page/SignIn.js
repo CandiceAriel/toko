@@ -51,10 +51,10 @@ const SignIn = () => {
         <form className="signin__form" onSubmit={signIn}>
             <h1>Sign In</h1>
             <div>
-                <label>Email<input type="text" name="email" className="input__email" value={email} onChange={updateEmail}/></label>
+                <input type="text" name="email" placeholder="Email" className="input__email" value={email} onChange={updateEmail}/>
             </div>
             <div>
-                <label>Password <input type="password" name="password" className="input__password" value={password} onChange={updatePassword}/></label><br></br>
+                <input type="password" name="password" placeholder="Password" className="input__password" value={password} onChange={updatePassword}/>
             </div>
             <div className="wrapper-btn">
                 <button onClick={navigateTo}  value="Sign Up" className="btn__signup">Sign Up</button>

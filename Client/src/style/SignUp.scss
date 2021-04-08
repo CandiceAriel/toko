@@ -6,7 +6,7 @@
     &__form{
       height:450px; 
       font-size: 16px;
-      margin: 30px 500px;
+      margin: 30px 450px;
       padding: 10px 20px 10px 20px;
       text-align: left;
       display: flex;
@@ -16,6 +16,10 @@
       width: 450px;
       background-color: white;
       box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
+
+      &__title{
+        font-size: 22px;
+      }
     
       .btn{
         width: 100px;
@@ -52,9 +56,4 @@
        }
       }
     }
-}
-  
-h1{
-  padding: 0px 170px;
-  font-size: 22px;
 }

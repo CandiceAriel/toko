@@ -45,6 +45,7 @@ const ListCart = () => {
     return (
         <div>
           <NavHeader />
+            <h1>{userStatus}</h1>
             {cart.map(cart => (
                 <div className="wrapper" key={cart.id}>
                 <Cart userID={cart.userID}  

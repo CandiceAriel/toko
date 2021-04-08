@@ -2,16 +2,16 @@
 
     &__container-header{
         width: 100%;
-        padding: 30px 5px;
+        padding: 40px 5px;
         justify-content: space-between;
         margin-bottom: 10px;
-        height: 30px;
-        background-color:#E9E6E2;
+        height: 20px;
+        background-color:#173F5F;
         display: flex;
         border-radius: 0px;
         
         p{
-            color: black;
+            color: white;
             font-size: 25px;
             font-weight: bold;
             margin-top : 0px;
@@ -21,91 +21,95 @@
             width: 55px;
             margin-top: 20px;
             align-items: center;
+
+            &__home{
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                border: none;
+                justify-content: center;
+                border-radius: 10px;
+                margin: 10px ;
+                padding: 10px;
+             }
         
-        &__barang{
-                    text-decoration: none;
-                    color:white;
-                    font-weight: bold;
-                    background: #435560;
-                    border: none;
-                    justify-content: center;
-                    border-radius: 10px;
-                    margin: 10px ;
-                    padding: 10px;
+            &__barang{
+                        text-decoration: none;
+                        color:white;
+                        font-weight: bold;
+                        border: none;
+                        justify-content: center;
+                        border-radius: 10px;
+                        margin: 10px ;
+                        padding: 10px;
             }
         
-        &__tambahbarang{
-                    text-decoration: none;
-                    color:white;
-                    font-weight: bold;
-                    background: #435560;
-                    border: none;
-                    justify-content: center;
-                    border-radius: 10px;
-                    padding: 10px;
-                    margin: 10px 15px;
-        }
+            &__tambahbarang{
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                border: none;
+                justify-content: center;
+                border-radius: 10px;
+                padding: 10px;
+                margin: 10px 15px;
+            }
         
-        &__cart{
-            text-decoration: none;
-            color:white;
-            font-weight: bold;
-            background: #435560;
-            border: none;
-            justify-content: center;
-            border-radius: 10px;
-            margin: 10px ;
-            padding:10px;
-        }
-        
-        &__signup{
-            text-decoration: none;
-            color:white;
-            font-weight: bold;
-            background: #435560;
-            border: none;
-            justify-content: center;
-            border-radius: 10px;
-            margin: 10px ;
-            padding: 10px;
-            width: 50px;
-        }
-        
-        &__signin{
-            text-decoration: none;
-            color:white;
-            font-weight: bold;
-            background: #435560;
-            border: none;
-            justify-content: center;
-            border-radius: 10px;
-            margin: 10px ;
-            padding: 10px;
-        }
-        
-        &__signout{
-            text-decoration: none;
-            color:white;
-            font-weight: bold;
-            background: #435560;
-            border: none;
-            justify-content: center;
-            border-radius: 10px;
-            margin: 10px ;
-            padding: 10px;
-        }
+            &__cart{
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                border: none;
+                justify-content: center;
+                border-radius: 10px;
+                margin: 10px ;
+                padding:10px;
+            }
             
-        &__profile{
-            text-decoration: none;
-            color:white;
-            font-weight: bold;
-            background: #435560;
-            border: none;
-            justify-content: center;
-            border-radius: 10px;
-            margin: 10px ;
-            padding: 10px;
-        }
+            &__signup{
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                border: none;
+                justify-content: center;
+                border-radius: 10px;
+                margin: 10px ;
+                padding: 10px;
+                width: 50px;
+            }
+            
+            &__signin{
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                border: none;
+                justify-content: center;
+                border-radius: 10px;
+                margin: 10px ;
+                padding: 10px;
+            }
+            
+            &__signout{
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                border: none;
+                justify-content: center;
+                border-radius: 10px;
+                margin: 10px ;
+                padding: 10px;
+            }
+                
+            &__profile{
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                border: none;
+                justify-content: center;
+                border-radius: 10px;
+                margin: 10px ;
+                padding: 10px;
+            }
       }
     }
 }
