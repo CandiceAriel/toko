@@ -45,12 +45,24 @@ const ListCart = () => {
     return (
         <div>
           <NavHeader />
-          <div className="status-user">
-            <h1>{userStatus}</h1>
-          </div>
-            {cart.map(cart => (
-                <div className="wrapper" key={cart.id}>
-                <Cart userID={cart.userID}  
+            <div className="container">
+              <div className="list-cart__wrapper">
+                <table className="list-cart__table">
+                <thead>
+                 <tr>
+                    <th align="center" width="125px">Kode Barang</th>
+                    <th align="center" width="125px">Nama Barang</th>
+                    <th align="center" width="125px">Harga</th>
+                    <th align="center" width="125px">Jumlah</th>
+                    <th align="center" width="125px">Total</th>
+                    <th align="center" width="40px"></th>
+                 </tr>
+                </thead>
+                <tbody>
+                {cart.map(cart => (
+                  <tr>
+                  <div className="wrapper" key={cart.id}>
+                  <Cart userID={cart.userID}  
                       id={cart.id}
                       kodeBarang={cart.kodeBarang} 
                       namaBarang={cart.namaBarang} 
@@ -58,9 +70,14 @@ const ListCart = () => {
                       qty={cart.qty}
                       total={cart.total}/>
                       <button onClick={() => {deleteCart(cart.id);}}className="button__delete"> Remove </button>
-                </div>
-            ))}
-        </div>
+                  </div>
+                  </tr>
+                ))}
+                </tbody>
+                </table>
+            </div>
+          </div> 
+      </div>
     )
 }
 

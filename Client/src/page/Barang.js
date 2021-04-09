@@ -87,13 +87,13 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
             <table className="table">
                     <tbody>
                         <tr>
-                        <td>{kodeBarang}</td>
-                        <td>{namaBarang}</td>
-                        <td><input type="number" className="input-qty" value={hargaBaru} onChange={updateHarga}></input></td> 
-                        <td><button onClick={addStok} className="btn__tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn__kurang">-</button></td>
-                        <td><button onClick={kurangiStok} className="btn__tambah">+</button>{qty}<button onClick={tambahStok} className="btn__kurang">-</button></td>
-                        <td><button onClick={() => {updateBarang(kodeBarang);}} className="btn__update"> Update </button></td>
-                        <td><button onClick={() => {addCart(id);}} className="btn__addtocart"> Add </button></td>
+                        <td align="center">{kodeBarang}</td>
+                        <td align="center">{namaBarang}</td>
+                        <td align="center"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input></td> 
+                        <td align="center"><button onClick={addStok} className="btn__tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn__kurang">-</button></td>
+                        <td align="center"><button onClick={kurangiStok} className="btn__tambah">+</button>{qty}<button onClick={tambahStok} className="btn__kurang">-</button></td>
+                        <td align="center"><button onClick={() => {updateBarang(kodeBarang);}} className="btn__update"> Update </button></td>
+                        <td align="center"><button onClick={() => {addCart(id);}} className="btn__addtocart"> Add </button></td>
                         </tr>
                     </tbody>
             </table>

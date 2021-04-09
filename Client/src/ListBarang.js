@@ -29,18 +29,40 @@ const ListBarang = () => {
     return (
         <div>
             <NavHeader />
-            {barang.map(barang => (
-                <div className="wrapper" key={barang.id}>
-                <Barang key={barang.id}
+            <div className="container">
+            <div className="list-barang__wrapper">
+            <table className="list-barang__table">
+              <thead>
+                <tr>
+                    <th align="center" width="115px">Kode Barang</th>
+                    <th align="center" width="115px">Nama Barang</th>
+                    <th align="center" width="115px">Harga</th> 
+                    <th align="center" width="115px">Stok Barang</th>
+                    <th align="center" width="115px">Jumlah Barang</th>
+                    <th align="left" width="115px"></th>
+                    <th align="left" width="115px"></th>
+                    <th align="left" width="50px"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr key={barang.id}> 
+                {barang.map(barang => (
+                      <div className="wrapper" key={barang.id}>
+                        <Barang key={barang.id}
                         kodeBarang={barang.kodeBarang} 
                         namaBarang={barang.namaBarang} 
                         harga={barang.harga}
                         stok={barang.stok}
                         qty={barang.qty}/>
                         <button onClick={() => {deleteBarang(barang.id);}} className="button__delete"> Remove </button>
-                </div>
-            ))}
-        </div>
+                      </div>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            </div>
+      </div>
     )
 }
 

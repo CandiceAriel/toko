@@ -4,20 +4,18 @@ import '../style/Cart.scss'
 const Cart = ({id,kodeBarang,namaBarang, harga,qty,total}) => {
 
     return (
-        <div className="content">
-            <div>
+        <div >
                 <table className="table">
                     <tbody>
                         <tr>
-                            <td>{kodeBarang}</td>
-                            <td>{namaBarang}</td>
-                            <td>{harga}</td>
-                            <td>{qty}</td>
-                            <td>{total}</td>
+                            <td align="center">{kodeBarang}</td>
+                            <td align="center">{namaBarang}</td>
+                            <td align="center">{harga}</td>
+                            <td align="center">{qty}</td>
+                            <td align="center">{total}</td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
         </div>
     )
 }

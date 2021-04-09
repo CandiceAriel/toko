@@ -16,6 +16,7 @@
    width: 480px;
    background-color: white;
    box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
+   border: 1px solid rgba(139, 128, 91, 0.2);
 
    h1{
     padding: 0px 150px;
@@ -23,12 +24,13 @@
     font-weight: bold;
   }
   
-  .button{
+  .btn{
     &__submit{
       width: 100px;
       height: 40px;
       border-radius: 5px;
       margin: 15px 190px 0px;
+      border: 1px solid black;
     }
   }
   

@@ -1,7 +1,11 @@
 @import './global.scss';
 
 .barang{
-    
+    &__wrapper{
+        width: 182vh;
+        margin: 10px;
+        border: 1px solid black;
+    }
 }
 
 .btn{
@@ -55,7 +59,7 @@
 }
 
 
-.input-qty{
+.input-harga{
     margin: 0px 5px;
     padding: 0px 5px;
     width: 90px;

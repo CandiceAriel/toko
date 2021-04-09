@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
 .nav-header{
 
     &__container-header{
@@ -8,13 +10,6 @@
         background-color:#173F5F;
         display: flex;
         border-radius: 0px;
-        
-        p{
-            color: white;
-            font-size: 25px;
-            font-weight: bold;
-            margin-top : 0px;
-        }
     
         .link{
             width: 55px;
@@ -24,12 +19,13 @@
             &__home{
                 text-decoration: none;
                 color:white;
-                font-weight: bold;
+                font-weight: 900;
                 border: none;
                 justify-content: center;
                 border-radius: 10px;
                 margin: 10px ;
                 padding: 10px;
+                font-family: 'Comfortaa', cursive;
              }
         
             &__barang{

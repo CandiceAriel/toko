@@ -63,7 +63,7 @@ const SignUp = () => {
     return (
         <div>
         <NavHeader />
-        <form className="signup__form" onSubmit={signUp}>
+        <form className="signup__form">
             <div className="title-signup">
                 <h5>Sign Up</h5>
             </div>

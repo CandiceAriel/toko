@@ -35,7 +35,7 @@ const AddBarang = () => {
 
     //Add Barang to DB
     const addBarang = () => {
-        Axios.post("http://localhost:3001/create",
+        Axios.post("http://localhost:3001/create/",
         {
             id: id,
             kodeBarang: kodeBarang,
@@ -58,7 +58,7 @@ const AddBarang = () => {
     return (
         <div>
             <NavHeader />
-        <form className="barang-add__form" onSubmit={addBarang}>
+        <form className="barang-add__form">
             <h1>Tambah Barang</h1>
             <div>
                 <label>Kode Barang</label>
@@ -77,7 +77,7 @@ const AddBarang = () => {
                 <input type="number"  className="input__stok" value={stok} onChange={updateStok}/>
             </div>
             <div className="button__submit">
-                <input type="submit" value="Submit" onClick={addBarang} className="btn" />
+                <input type="submit" value="Submit" onClick={addBarang} className="btn__submit" />
             </div>
         </form>
 

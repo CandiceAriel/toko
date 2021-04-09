@@ -32,13 +32,14 @@ app.get('/barang', function (req, res) {
 });
 
 //Add data to tabel Barang
-app.post('/create', (req,res) => {
+app.post('/create/', (req,res) => {
   const id = req.body.id;
   const kodeBarang = req.body.kodeBarang;
   const namaBarang = req.body.namaBarang;
   const harga = req.body.harga;
   const stok = req.body.stok;
   const qty = req.body.qty;
+  req.setTimeout( 1000 * 60 * 10 ); 
 
   con.query('INSERT INTO Barang (kodeBarang, namaBarang,harga,stok,qty) VALUES (?,?,?,?,?)',
    [kodeBarang,namaBarang,harga,stok,qty],
@@ -46,9 +47,11 @@ app.post('/create', (req,res) => {
       if(err) {
         console.log(err);
       }else {
-        console.log(result);
+        setTimeout( function() {
+          console.log(result);
         res.send("Worked");
-      }
+      }, 10000 );
+    }
     }
   );
 });
@@ -85,7 +88,7 @@ app.put("/update", (req, res) => {
 });
 
 //Add data to Cart table
-app.post('/createCart', (req,res) => {
+app.post('/createCart/', (req,res) => {
   const userID = req.body.userID;
   const id = req.body.id;
   const kodeBarang = req.body.kodeBarang;
@@ -120,7 +123,7 @@ app.delete("/deleteCart/:id", (req, res) => {
 });
 
 //Add data to User table
-app.post('/register', (req,res) => {
+app.post('/register/', (req,res) => {
   const userID = req.body.userID;
   const nama = req.body.nama;
   const noHP = req.body.noHP;
