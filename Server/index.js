@@ -122,6 +122,24 @@ app.delete("/deleteCart/:id", (req, res) => {
   });
 });
 
+//Update data on table Barang
+app.put("/updateCart", (req, res) => {
+  const kodeBarang = req.body.kodeBarang;
+  const total = req.body.total;
+  const qty = req.body.qty;
+  con.query(
+    "UPDATE Cart SET qty=?,total =? WHERE kodeBarang = ?",
+    [qty, total, kodeBarang],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
 //Add data to User table
 app.post('/register/', (req,res) => {
   const userID = req.body.userID;

@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Barang from './page/Barang';
 import Axios from 'axios';
 import './style/ListBarang.scss'
@@ -41,7 +42,7 @@ const ListBarang = () => {
                     <th align="center" width="115px">Jumlah Barang</th>
                     <th align="left" width="115px"></th>
                     <th align="left" width="115px"></th>
-                    <th align="left" width="50px"></th>
+                    <th align="left" width="50px"><Link to="/AddBarang" className="link__barang">Add</Link></th>
                 </tr>
               </thead>
               <tbody>

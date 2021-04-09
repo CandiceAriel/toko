@@ -5,20 +5,39 @@
         border-radius: 0px;
     }
 
-        &__table{
-            font-size: medium;
-            width: 100%;
-            height: 100%;
-            border-radius: 0px;
-            margin: 5px;
+    &__table{
+        font-size: medium;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        margin: 5px;
 
-            th{
-                display: table-cell;
-                height: 50px;
-                vertical-align:inherit;
-                font-size: 20px;
-                padding: 0px 3px;
+        th{
+            display: table-cell;
+            height: 50px;
+            vertical-align:inherit;
+            font-size: 20px;
+            padding: 0px 3px;
+
+            .link{
+                &__barang{
+                    width: 90px;
+                    height: 50px;
+                    margin: 10px;
+                    padding: 10px;
+                    align-items: center;
+                    text-decoration: none;
+                    border: 1px solid #173F5F;
+                    border-radius: 10px;
+                    color:black;
+
+                    &:hover {
+                        background-color: #173F5F;
+                        color:white;
+                    }
+                }
             }
+        }
     }
     
     .button{
@@ -26,6 +45,7 @@
             width: 30px;
             height: 40px;
             border-radius: 10px;
+            border: none;
             margin: 50px 10px 0px 0px;
             float: right;
         }

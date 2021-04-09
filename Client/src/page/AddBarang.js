@@ -6,31 +6,31 @@ import NavHeader from '../NavHeader';
 
 const AddBarang = () => {
     const [id] = useState('');
-    const [kodeBarang,setKodeBarang] = useState('');
-    const [namaBarang,setNamaBarang] = useState('');
-    const [harga,setHarga] = useState('');
-    const [stok,setStok] = useState('');
+    const [kodeBaranginput,setKodeBaranginput] = useState('');
+    const [namaBaranginput,setNamaBaranginput] = useState('');
+    const [hargainput,setHargainput] = useState('');
+    const [stokinput,setStokinput] = useState('');
 
     const [barang,setBarang] =  useState([]);
 
     //update Nama value
     const updateKodeBarang = e => {
-        setKodeBarang(e.target.value);
+        setKodeBaranginput(e.target.value);
     }
     
     //update Nama value
     const updateNamaBarang = e => {
-        setNamaBarang(e.target.value);
+        setNamaBaranginput(e.target.value);
     }
 
     //Update Harga value
     const updateHarga = e => {
-        setHarga(e.target.value);
+        setHargainput(e.target.value);
     }
 
     //Update Stok value
     const updateStok = e => {
-        setStok(e.target.value);
+        setStokinput(e.target.value);
     }
 
     //Add Barang to DB
@@ -38,10 +38,10 @@ const AddBarang = () => {
         Axios.post("http://localhost:3001/create/",
         {
             id: id,
-            kodeBarang: kodeBarang,
-            namaBarang: namaBarang,
-            harga: harga,
-            stok: parseInt(stok),
+            kodeBarang: kodeBaranginput,
+            namaBarang: namaBaranginput,
+            harga: hargainput,
+            stok: parseInt(stokinput),
             qty: 0,
         }).then((response) => {
             console.log(response.data);
@@ -62,19 +62,19 @@ const AddBarang = () => {
             <h1>Tambah Barang</h1>
             <div>
                 <label>Kode Barang</label>
-                <input type="text"  className="input__kode" value={kodeBarang} onChange={updateKodeBarang}/>
+                <input type="text"  className="input__kode" value={kodeBaranginput} onChange={updateKodeBarang}/>
             </div>
             <div>
                 <label>Nama Barang</label>
-                <input type="text"  className="input__nama" value={namaBarang} onChange={updateNamaBarang}/>
+                <input type="text"  className="input__nama" value={namaBaranginput} onChange={updateNamaBarang}/>
             </div>
             <div>
                 <label>Harga</label>
-                <input type="number"  className="input__harga" value={harga} onChange={updateHarga}/>
+                <input type="number"  className="input__harga" value={hargainput} onChange={updateHarga}/>
             </div>
             <div>
                 <label>Stok</label>
-                <input type="number"  className="input__stok" value={stok} onChange={updateStok}/>
+                <input type="number"  className="input__stok" value={stokinput} onChange={updateStok}/>
             </div>
             <div className="button__submit">
                 <input type="submit" value="Submit" onClick={addBarang} className="btn__submit" />
