@@ -1,132 +1,182 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
-.nav-header{
+.navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#173F5F;
+    border-radius: 0px;
 
-    &__container-header{
+    &__container{
         width: 100%;
-        padding: 30px 5px;
-        justify-content: space-between;
-        height: 20px;
-        background-color:#173F5F;
+        height: 90%;
+        margin: 10px;
+        padding: 15px 0px;
         display: flex;
-        border-radius: 0px;
+        justify-content: center;
+        color: white;
+        border: none;
+        box-sizing: border-box;
+
+    }
+
+
+    .link{
+        text-decoration: none;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+
+        &__home{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            border: none;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            margin-top: 0px;
+            margin-right: 800px;
+            border: 1px solid #173F5F;
+            width: 200px;
+            height: 40px;
+            padding: 10px 5px;
+            font-family: 'Comfortaa', cursive;
+        }
+
+        &__barang{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            border: none;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            margin-top: 0px;
+            border: 1px solid #173F5F;
+            width: 80px;
+            height: 40px;
+            padding: 10px 5px;
+        }
     
-        .link{
-            width: 55px;
-            align-items: center;
-
-            &__home{
-                text-decoration: none;
-                color:white;
-                font-weight: 900;
-                border: none;
-                justify-content: center;
-                font-family: 'Comfortaa', cursive;
-                margin-right: 850px;
-                margin-left: 10px;
-             }
+        &__tambahbarang{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            border: none;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 10px 15px;
+        }
+    
+        &__cart{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            border: none;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 0px 5px;
+            padding: 3px 0px;
+            border: 1px solid #173F5F;
+            box-sizing: border-box;border-radius: 10px;
+            margin-right: 10px;
+            width: 60px;
+            height: 40px;
+        }
         
-            &__barang{
-                text-decoration: none;
-                color:white;
-                font-weight: 900;
-                border: none;
-                justify-content: center;
-                padding: 10px;
-                font-family: 'Comfortaa', cursive;
-            }
-        
-            &__tambahbarang{
-                text-decoration: none;
-                color:white;
-                font-weight: bold;
-                border: none;
-                justify-content: center;
-                border-radius: 10px;
-                padding: 10px;
-                margin: 10px 15px;
-            }
-        
-            &__cart{
-                text-decoration: none;
-                color:white;
-                font-weight: bold;
-                border: none;
-                justify-content: center;
-                border-radius: 10px;
-                padding:10px;
+        &__signup{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            border: none;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            border: 1px solid white;
+            width: 80px;
+            height: 40px;
+            padding: 10px 5px;
 
-                &__icon{
-                    width: 50px;
-                    height: 100%;
-                }
-            }
-            
-            &__signup{
-                text-decoration: none;
-                color:white;
-                font-weight: bold;
-                border: none;
-                justify-content: center;
-                border-radius: 10px;
-                padding: 10px;
-                width: 50px;
-                border: 1px solid white;
-
-                &:hover {
-                    background-color: white;
-                    color:black;
-                }
-            }
-            
-            &__signin{
-                text-decoration: none;
-                color:white;
-                font-weight: bold;
-                border: none;
-                justify-content: center;
-                border-radius: 10px;
-                padding: 10px;
-                margin-right: 10px;
-                border: 1px solid white;
-
-                &:hover {
-                    background-color: white;
-                    color:black;
-                }
-            }
-            
-            &__signout{
-                text-decoration: none;
-                color:white;
-                font-weight: bold;
-                border: none;
-                justify-content: center;
-                border-radius: 10px;
-                padding: 10px;
-                border: 1px solid white;
-                margin-top: 2px;
-
-                &:hover {
-                    background-color: white;
-                    color:black;
-                }
-            }
-                
-            &__profile{
-                text-decoration: none;
-                color:white;
-                font-weight: bold;
-                border: none;
-                border-radius: 10px;
-                margin: 5px;
-                padding: 10px;
-
-                &__icon{
-                    width: 50px;
-                    height: 100%;
-                }
+            &:hover {
+                background-color: white;
+                color:black;
             }
         }
-    }    
+        
+        &__signin{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            border: none;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            margin-top: 0px;
+            margin-right: 10px;
+            border: 1px solid white;
+            width: 80px;
+            height: 40px;
+            padding: 10px 5px;
+
+            &:hover {
+                background-color: white;
+                color:black;
+            }
+        }
+        
+        &__signout{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            border: none;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            margin-top: 0px;
+            margin-right: 10px;
+            border: 1px solid white;
+            width: 80px;
+            height: 40px;
+            padding: 10px 5px;
+
+            &:hover {
+                background-color: white;
+                color:black;
+            }
+        }
+            
+        &__profile{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            border: none;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 0px 5px;
+            padding: 3px 0px;
+            border: 1px solid #173F5F;
+            box-sizing: border-box;border-radius: 10px;
+            margin-right: 10px;
+            width: 60px;
+            height: 40px;
+        }
+
+        &__icon{
+            width: 100%;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid #173F5F;
+        }
+    }
 }

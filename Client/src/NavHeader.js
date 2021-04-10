@@ -14,27 +14,27 @@ export const NavHeader = () => {
 
     if(dataUser === null){
         return (
-            <div className="nav-header__container-header">
+            <nav className="navbar">
+                <div className="navbar__container">
                     <Link to="/" className="link__home">TOKO SERBA ADA</Link>
-                <div className="nav-header__wrapper__link">
                     <Link to="/Barang" className="link__barang">Barang</Link>
-                    <Link to="/Cart" className="link__cart"><AiOutlineShoppingCart className="link__cart__icon"/></Link>
+                    <Link to="/Cart" className="link__cart"><AiOutlineShoppingCart className="link__icon" size="25px"/></Link>
                     <Link to="/SignIn" className="link__signin">Sign In</Link>
                     <Link to="/SignUp" className="link__signup">Sign Up</Link>
                 </div>
-            </div>
+            </nav>
         )
     } else if (dataUser !== null){
         return (
-            <div className="nav-header__container-header">
-                <div className="wrapper__link">
+            <nav className="navbar">
+                <div className="navbar__container">
                     <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                     <Link to="/Barang" className="link__barang">Barang</Link>
-                    <Link to="/Cart" className="link__cart"><AiOutlineShoppingCart className="link__cart__icon"/></Link>
-                    <Link to="/Profile" className="link__profile"><BsPerson className="link__profile__icon"/></Link>
+                    <Link to="/Cart" className="link__cart"><AiOutlineShoppingCart className="link__icon"/></Link>
+                    <Link to="/Profile" className="link__profile"><BsPerson className="link__icon"/></Link>
                     <Link to="/SignIn" className="link__signout" onClick={onDelete}>Sign Out</Link>
                 </div>
-            </div>
+            </nav>
         )
     }
 }
