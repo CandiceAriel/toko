@@ -2,34 +2,40 @@
 
 .barang-add{
   padding: 50px;
+  //display: flex;
+  //justify-content: center;
+
+  &__warning-text{
+    margin: 280px 570px;
+    font-size: 30px;
+    font-weight: 900;
+  }
 
   &__form{
     height:450px; 
    font-size: 16px;
    margin: 30px 470px;
-   padding: 10px 5px 10px 15px;
+   padding: 10px 0px 10px 15px;
    text-align: left;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
    border-radius: 10px;
-   width: 480px;
+   width: 450px;
    background-color: white;
    box-shadow: 12px 12px 2px 1px rgba(139, 128, 91, 0.2);
    border: 1px solid rgba(139, 128, 91, 0.2);
 
-   h1{
-    padding: 0px 150px;
-    font-size: 18px;
-    font-weight: bold;
+  h5{
+    margin: 0px 130px;
   }
-  
+
   .btn{
     &__submit{
       width: 100px;
       height: 40px;
       border-radius: 5px;
-      margin: 15px 190px 0px;
+      margin: 15px 180px 0px;
       border: 1px solid black;
     }
   }

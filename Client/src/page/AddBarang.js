@@ -13,6 +13,8 @@ const AddBarang = () => {
 
     const [barang,setBarang] =  useState([]);
 
+    var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
+
     //update Nama value
     const updateKodeBarang = e => {
         setKodeBaranginput(e.target.value);
@@ -54,12 +56,13 @@ const AddBarang = () => {
               setBarang(response.data)
           });
       }, []);
-
+    
+    if (dataUser !== null) {
     return (
         <div>
-            <NavHeader />
+        <NavHeader />
         <form className="barang-add__form">
-            <h1>Tambah Barang</h1>
+            <h5 className="form__title">Tambah Barang</h5>
             <div>
                 <label>Kode Barang</label>
                 <input type="text"  className="input__kode" value={kodeBaranginput} onChange={updateKodeBarang}/>
@@ -80,7 +83,6 @@ const AddBarang = () => {
                 <input type="submit" value="Submit" onClick={addBarang} className="btn__submit" />
             </div>
         </form>
-
         <div>
             { barang.map(barang => (
                 <div className="wrapper" key={barang.id}>
@@ -99,6 +101,14 @@ const AddBarang = () => {
         </div>
         </div>
     );
+    } else if ( dataUser === null) {
+        return (
+            <div>
+                <NavHeader />
+                <h1 className="barang-add__warning-text">Not Authorized</h1>
+            </div>
+        )
+    }
 }
 
 export default AddBarang;

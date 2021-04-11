@@ -4,10 +4,14 @@ import Cart from './page/Cart';
 import NavHeader from './NavHeader';
 import Axios from 'axios';
 
+import {ReactComponent as EmptyCart} from './image/emptycart.svg';
+
 
 const ListCart = () => {
     const [cart,setCart]=useState([]);
     const [userStatus,setUserStatus] = useState('')
+
+    var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
     
     //Get data upon accessing Cart menu
     useEffect(() => {
@@ -41,7 +45,8 @@ const ListCart = () => {
           );
         });
     };
- 
+    
+    if(dataUser !== null){
     return (
         <div>
           <NavHeader />
@@ -78,7 +83,16 @@ const ListCart = () => {
             </div>
           </div> 
       </div>
-    )
+    )} else if (dataUser === null) {
+      return (
+        <div>
+          <NavHeader />
+          <div className="list-cart__container">
+              <EmptyCart className="list-cart__emptycart-image"/>
+              <h1 className="list-cart__warning-text">Cart is empty</h1>
+          </div> 
+        </div>
+      )}
 }
 
 export default ListCart
