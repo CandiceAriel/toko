@@ -103,7 +103,7 @@ app.post('/createCart/', (req,res) => {
       if(err) {
         console.log(err);
       }else {
-        res.send("Worked");
+        res.send(result.data);
       }
     }
   );

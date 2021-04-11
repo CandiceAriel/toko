@@ -45,8 +45,7 @@ const ListBarang = () => {
                     <th align="left" width="50px"><Link to="/AddBarang" className="link__barang">Add</Link></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr key={barang.id}> 
+              </table>
                 {barang.map(barang => (
                       <div className="wrapper" key={barang.id}>
                         <Barang key={barang.id}
@@ -58,9 +57,7 @@ const ListBarang = () => {
                         <button onClick={() => {deleteBarang(barang.id);}} className="button__delete"> Remove </button>
                       </div>
                   ))}
-                </tr>
-              </tbody>
-            </table>
+            
             </div>
             </div>
       </div>

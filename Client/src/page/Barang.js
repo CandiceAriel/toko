@@ -9,6 +9,8 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
 
     const [barang,setBarang] = useState([])
 
+    var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
+
     //Kurangi stok based on qty for counter button
     const kurangiStok =() => {
        if(stokBaru === 0 ){
@@ -55,6 +57,8 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
     //Add to Cart
     const addCart = (id) => {
         var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
+        const userID = dataUser[0].userID;
+
         if(localStorage.getItem('dataLogIn') !== null){
             Axios.post("http://localhost:3001/createCart",
         {
@@ -66,7 +70,7 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
             stok: stokBaru,
             qty: qty,
             total : hargaBaru * qty,
-        }).then(() => {
+        }).then((response) => {
             alert("Good");
             Axios.put("http://localhost:3001/update", { harga: hargaBaru, stok: stokBaru , qty: qty , id: id }).then(
                 (response) => {
@@ -74,8 +78,20 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
                       return barang.id === id ? {id: id,kodeBarang: kodeBarang,namaBarang: namaBarang, harga: hargaBaru, stok:stokBaru, qty: qty } : barang
                   }))
                 }
-              );
-         });
+            );
+         }); 
+
+         Axios.post("http://localhost:3001/retrieveCart",
+          {
+            userID: userID
+          }).then((response) => {
+          if(response.data.message ){
+            console.log(response.data.message)
+          }else {
+            localStorage.setItem('datacart', JSON.stringify(response.data));
+            var datacart = JSON.parse(localStorage.getItem('datacart'));
+          }
+        });
         } else {
             alert ('You must log in')
         }
@@ -83,7 +99,6 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
 
     return (
         <div className="content">
-        <div>
             <table className="table">
                     <tbody>
                         <tr>
@@ -97,7 +112,6 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
                         </tr>
                     </tbody>
             </table>
-        </div>
         </div>
     )
 }

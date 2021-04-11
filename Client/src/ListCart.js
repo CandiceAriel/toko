@@ -12,6 +12,7 @@ const ListCart = () => {
     const [userStatus,setUserStatus] = useState('')
 
     var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
+    var usercart = JSON.parse(localStorage.getItem('datacart'));
     
     //Get data upon accessing Cart menu
     useEffect(() => {
@@ -30,8 +31,10 @@ const ListCart = () => {
             console.log(response.data.message)
           }else {
             setCart(response.data)
-         }
-      });
+            localStorage.setItem('datacart', JSON.stringify(response.data));
+            var datacart = JSON.parse(localStorage.getItem('datacart'));
+          }
+        });
       } 
     }, [])
 
@@ -44,9 +47,12 @@ const ListCart = () => {
             })
           );
         });
+        const datacart = JSON.parse(localStorage.getItem('datacart'));
+        const filtered = datacart.filter(datacart => datacart.id !== id);
+        localStorage.setItem('datacart', JSON.stringify(filtered));
     };
     
-    if(dataUser !== null){
+    if(dataUser !== null && usercart.length !== 0){
     return (
         <div>
           <NavHeader />
@@ -63,9 +69,8 @@ const ListCart = () => {
                     <th align="center" width="40px"></th>
                  </tr>
                 </thead>
-                <tbody>
+                </table>
                 {cart.map(cart => (
-                  <tr>
                   <div className="wrapper" key={cart.id}>
                   <Cart userID={cart.userID}  
                       id={cart.id}
@@ -76,23 +81,31 @@ const ListCart = () => {
                       total={cart.total}/>
                       <button onClick={() => {deleteCart(cart.id);}}className="button__delete"> Remove </button>
                   </div>
-                  </tr>
                 ))}
-                </tbody>
-                </table>
             </div>
           </div> 
       </div>
     )} else if (dataUser === null) {
-      return (
-        <div>
-          <NavHeader />
-          <div className="list-cart__container">
-              <EmptyCart className="list-cart__emptycart-image"/>
-              <h1 className="list-cart__warning-text">Cart is empty</h1>
-          </div> 
-        </div>
-      )}
+    return (
+      <div>
+        <NavHeader />
+        <div className="list-cart__container">
+            <EmptyCart className="list-cart__emptycart-image"/>
+            <h1 className="list-cart__warning-text">Cart is empty</h1>
+        </div> 
+      </div>
+    )
+  } else if (usercart.length === 0) {
+    return (
+      <div>
+        <NavHeader />
+        <div className="list-cart__container">
+            <EmptyCart className="list-cart__emptycart-image"/>
+            <h1 className="list-cart__warning-text">Cart is empty</h1>
+        </div> 
+      </div>
+    )
+  }
 }
 
 export default ListCart
