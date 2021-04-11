@@ -10,6 +10,7 @@ export const NavHeader = () => {
 
     const onDelete = () => {
         localStorage.removeItem('dataLogIn')
+        localStorage.removeItem('datacart')
     }
 
     if(dataUser === null){

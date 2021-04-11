@@ -40,9 +40,24 @@ const SignIn = () => {
                 delete dataUser[0].password;
 
                 localStorage.setItem('dataLogIn', JSON.stringify(dataUser));
+
+                if(dataUser !== null){
+                    const userID = dataUser[0].userID;
+            
+                      Axios.post("http://localhost:3001/retrieveCart",
+                      {
+                        userID: userID
+                      }).then((response) => {
+                      if(response.data.message ){
+                        console.log(response.data.message)
+                      }else {
+                        localStorage.setItem('datacart', JSON.stringify(response.data));
+                      }
+                    });
+                }
             }
             navigateToHome();
-    });
+        });
     }
  
     return (

@@ -9,7 +9,6 @@ import {ReactComponent as EmptyCart} from './image/emptycart.svg';
 
 const ListCart = () => {
     const [cart,setCart]=useState([]);
-    const [userStatus,setUserStatus] = useState('')
 
     var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
     var usercart = JSON.parse(localStorage.getItem('datacart'));
@@ -17,12 +16,11 @@ const ListCart = () => {
     //Get data upon accessing Cart menu
     useEffect(() => {
       var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
-      
-        if(dataUser === null){
-            setUserStatus('Your cart is empty')
+      var usercart = JSON.parse(localStorage.getItem('datacart'));
+
+      if(dataUser === null){
         } else if(dataUser !== null){
           const userID = dataUser[0].userID;
-
           Axios.post("http://localhost:3001/retrieveCart",
           {
             userID: userID
@@ -32,15 +30,21 @@ const ListCart = () => {
           }else {
             setCart(response.data)
             localStorage.setItem('datacart', JSON.stringify(response.data));
-            var datacart = JSON.parse(localStorage.getItem('datacart'));
           }
         });
-      } 
+      }
+
+      if(localStorage.getItem('datacart') !== null && localStorage.getItem('datacart').length === 0){
+        localStorage.removeItem('datacart')
+      }
     }, [])
 
     //Delete Cart data based on ID
     const deleteCart = (id) => {
-        Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
+        if( usercart !== null && localStorage.getItem('datacart').length === 0){
+          localStorage.removeItem('datacart')
+        } else if ( usercart !== null && usercart.length !== 0){
+          Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
           setCart(
             cart.filter((cart) => {
               return cart.id !== id;
@@ -50,9 +54,10 @@ const ListCart = () => {
         const datacart = JSON.parse(localStorage.getItem('datacart'));
         const filtered = datacart.filter(datacart => datacart.id !== id);
         localStorage.setItem('datacart', JSON.stringify(filtered));
+        }
     };
     
-    if(dataUser !== null && usercart.length !== 0){
+    if(dataUser !== null && usercart !== null){
     return (
         <div>
           <NavHeader />
@@ -85,7 +90,7 @@ const ListCart = () => {
             </div>
           </div> 
       </div>
-    )} else if (dataUser === null) {
+    )} else if (dataUser === null || usercart === null  ) {
     return (
       <div>
         <NavHeader />
@@ -95,7 +100,7 @@ const ListCart = () => {
         </div> 
       </div>
     )
-  } else if (usercart.length === 0) {
+  } else if (dataUser !== null && usercart !== null && localStorage.getItem('datacart').length === 0) {
     return (
       <div>
         <NavHeader />
