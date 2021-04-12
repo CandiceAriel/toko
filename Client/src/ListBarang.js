@@ -54,7 +54,7 @@ const ListBarang = () => {
                         harga={barang.harga}
                         stok={barang.stok}
                         qty={barang.qty}/>
-                        <button onClick={() => {deleteBarang(barang.id);}} className="list-barang__btn__delete"> Remove </button>
+                        <button onClick={() => {deleteBarang(barang.id);}} className="list-barang__btn__delete"> x </button>
                       </div>
                   ))}
             

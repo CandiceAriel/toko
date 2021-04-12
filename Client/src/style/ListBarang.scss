@@ -9,6 +9,7 @@
         border-radius: 0px;
         margin-top: 20px;
         margin-bottom: 0px;
+        background-color: #f0f8ff;
 
         th{
             display: table-cell;
@@ -20,6 +21,7 @@
             padding: 10px;
             font-family: $base-font-family;
             box-sizing: border-box;
+            background-color: #f0f8ff;
 
             .link{
                 &__barang{
@@ -48,8 +50,11 @@
             height: 40px;
             border-radius: 10px;
             border: none;
-            margin: 20px 10px;
+            margin: 23px 10px;
             float: right;
+            font-family: $base-font-family;
+            font-size: $base-font-size-large;
+            font-weight: $weight-bold;
         }
     }
     

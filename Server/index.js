@@ -217,7 +217,7 @@ app.post('/retrieveCart', function(req,res) {
         if (result.length > 0) {
               res.send(result);
         } else {
-          res.send({ message: "User doesn't exist" });
+          res.send({ message: "Cart is empty" });
         }
       }
     );

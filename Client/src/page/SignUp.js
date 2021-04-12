@@ -63,29 +63,38 @@ const SignUp = () => {
     return (
         <div>
         <NavHeader />
+        <div className="signup__container">
         <form className="signup__form">
-            <div className="title-signup">
-                <h5>Sign Up</h5>
+            <div className="signup__form__title">
+                <h5 className="signup__form__title__text">Sign Up</h5>
             </div>
-            <div>
-                <label>ID<input type="text"  className="input__id" value={userID} onChange={updateUserID}/></label>
+            <div className="signup__form__input">
+                <div className="signup__form__input__group">
+                    <label>ID</label>
+                    <input type="text"  className="signup__form__input__id" value={userID} onChange={updateUserID}/>
+                </div>
+                <div className="signup__form__input__group">
+                    <label>Nama</label>
+                    <input type="text"  className="signup__form__input__nama" value={nama} onChange={updateNama}/>
+                </div>
+                <div className="signup__form__input__group">
+                    <label>No. Handphone</label>
+                    <input type="text"  className="signup__form__input__hp" value={noHP} onChange={updateHP}/>
+                </div>
+                <div className="signup__form__input__group">
+                    <label>Email</label>
+                    <input type="text"  className="signup__form__input__email" value={email} onChange={updateEmail}/>
+                </div>
+                <div className="signup__form__input__group">
+                    <label>Password</label>
+                    <input type="text"  className="signup__form__input__password" value={password} onChange={updatePassword}/>
+                </div>
             </div>
-            <div>
-                <label>Nama<input type="text"  className="input__nama" value={nama} onChange={updateNama}/></label>
-            </div>
-            <div>
-                <label>No. Handphone<input type="text"  className="input__hp" value={noHP} onChange={updateHP}/></label>
-            </div>
-            <div>
-                <label>Email<input type="text"  className="input__email" value={email} onChange={updateEmail}/></label>
-            </div>
-            <div>
-                <label>Password<input type="text"  className="input__password" value={password} onChange={updatePassword}/></label><br></br>
-            </div>
-            <div className="btn__submit">
-                <input type="submit" value="Sign Up" className="btn" onClick={signUp}/>
+            <div className="signup__form__btn">
+                <input type="submit" value="Sign Up" className="signup__form__btn__signup" onClick={signUp}/>
             </div>
         </form>
+        </div>
         </div>
     )
 }

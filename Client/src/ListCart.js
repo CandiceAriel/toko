@@ -12,6 +12,7 @@ const ListCart = () => {
 
     var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
     var usercart = JSON.parse(localStorage.getItem('datacart'));
+    const total = usercart[0].total;
     
     //Get data upon accessing Cart menu
     useEffect(() => {
@@ -68,15 +69,24 @@ const ListCart = () => {
                       harga={cart.harga}
                       qty={cart.qty}
                       total={cart.total}/>
-                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item__button__delete"> Remove </button>
+                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item__button__delete"> X </button>
                   </div>
                 ))}  
             </div> 
             <div className="list-cart-detil__container">
-                <h5>Detail Order</h5>
-                {cart.map(cart => (
-                  <p>Total : Rp. {cart.total}</p>
-                ))}  
+              <table className="list-cart-detil__table">
+                <thead>
+                  <tr>
+                    <th className="list-cart-detil__table__head">Detail Order</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="list-cart-detil__table__body">Total</td>
+                    <td className="list-cart-detil__table__body">{total}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
       </div>

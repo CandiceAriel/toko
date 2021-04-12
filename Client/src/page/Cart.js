@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import '../style/Cart.scss'
 
@@ -42,15 +43,13 @@ const Cart = ({id,kodeBarang,namaBarang, harga,qty,total}) => {
         <div>
             <table className="cart__table">
                     <tbody>
-                        <tr align="center">{kodeBarang}</tr>
-                        <tr align="center">{namaBarang}</tr>
-                        <tr align="center">{harga}</tr>
-                        <tr align="center"><button onClick={tambahJum} className="button__tambah">+</button>{qtyBaru}<button onClick={kurangiJum} className="button__kurang">-</button></tr>
-                        <tr align="center">{total}</tr>
+                        <tr align="center"><td>{kodeBarang}</td></tr>
+                        <tr align="center"><td>{namaBarang}</td></tr>
+                        <tr align="center"><td>{harga}</td></tr>
+                        <tr align="center"><td><button onClick={tambahJum} className="button__tambah">+</button>{qtyBaru}<button onClick={kurangiJum} className="button__kurang">-</button></td></tr>
+                        <tr align="center"><td>{total}</td></tr>
                     </tbody>
             </table>
-
-            {/*<div className="cart__wrapper"></div> */}
         </div>
     )
 }

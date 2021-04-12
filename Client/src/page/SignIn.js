@@ -33,6 +33,7 @@ const SignIn = () => {
             password: password
         }).then((response) => {
             if(response.data.message ){
+                console.log(response.data.message)
                 setSignInStatus(response.data.message)
             }else {
                 localStorage.setItem('dataLogIn', JSON.stringify(response.data));
@@ -48,7 +49,7 @@ const SignIn = () => {
                       {
                         userID: userID
                       }).then((response) => {
-                      if(response.data.message ){
+                      if(response.data.message){
                         console.log(response.data.message)
                       }else {
                         localStorage.setItem('datacart', JSON.stringify(response.data));
@@ -61,25 +62,25 @@ const SignIn = () => {
     }
  
     return (
-        <div>
+    <div>
         <NavHeader />
+        <div className="signin__container">
         <form className="signin__form" onSubmit={signIn}>
-            <div className="title-signin">
-                <h5>Sign In</h5>
+            <div className="signin__form__title">
+                <h5 className="signin__form__title__text">Sign In</h5>
             </div>
-            <div>
-                <input type="text" name="email" placeholder="Email" className="input__email" value={email} onChange={updateEmail}/>
+            <div className="signin__form__input">
+                <input type="text" name="email" placeholder="Email" className="signin__form__input__email" value={email} onChange={updateEmail}/>
+                <input type="password" name="password" placeholder="Password" className="signin__form__input__password" value={password} onChange={updatePassword}/>
             </div>
-            <div>
-                <input type="password" name="password" placeholder="Password" className="input__password" value={password} onChange={updatePassword}/>
-            </div>
-            <div className="wrapper-btn">
-                <button onClick={navigateTo}  value="Sign Up" className="btn__signup">Sign Up</button>
-                <button type="submit" value="Sign In" className="btn__signin" onClick={signIn}>Sign In</button>
+            <div className="signin__form__btn">
+                <button onClick={navigateTo}  value="Sign Up" className="signin__form__btn__signup">Sign Up</button>
+                <button type="submit" value="Sign In" className="signin__form__btn__signin" onClick={signIn}>Sign In</button>
             </div>
         </form>
         <h1>{signInStatus}</h1>
         </div>
+    </div>
     )
 }
 
