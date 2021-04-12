@@ -1,11 +1,12 @@
-@import './global.scss';
+@import './main.scss';
 
 .home{
     &__container{
-        height: 100%;
+        box-sizing: border-box;
+        height: 100vh;
         background-image: url(../image/ingredients.jpg);
         background-size: 100%;
-        padding: 270px 50px;
+        padding: 200px 50px;
     }
 
     &__wrapper{
@@ -13,4 +14,12 @@
         width: 700px;
         height: 100px;
     }
+
+    &__slogan{
+        font-family: $base-font-family;
+        font-weight: 900;
+        letter-spacing: .05em;
+        font-size: 40px;
+    }
 }
+

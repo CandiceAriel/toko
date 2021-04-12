@@ -1,31 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+@import './base/variables';
+@import './base/base';
 
 body{
     padding: 0;
     margin: 0;
-}
-
-h1{
-  color: black;
-  font-size: 30px;
-  font-weight: 900;
-  font-family: 'Comfortaa', cursive;
-}
-
-p{
-    color: black;
-    font-size: 16px;
-    font-weight: 900;
-    font-family: 'Comfortaa', cursive;
+    font-family: $base-font-family;
+    font-size: 14px;
+    color: #3a4166;
+    box-sizing: border-box;
 }
 
 h5{
     margin: 15px 25px;
     color: black;
-    font-size: 20px;
-    font-weight: 900;
-    font-family: 'Comfortaa', cursive;
-  }
+    font-size: $base-font-size-medium;
+    font-family: $base-font-family;
+}
 
 table{
     width: 100%;
@@ -45,15 +35,27 @@ td{
     height: 100%;
     padding: 20px 15px;
     vertical-align: initial;
+    font-family: $base-font-family;
 }
+
+tr{
+    display: table-row;
+    height: 100%;
+    padding: 20px 0px;
+    vertical-align: initial;
+    justify-content: center;
+    font-family: $base-font-family;
+}
+
 
 input{
     width:250px;
     height: 30px;
+    font-family: $base-font-family;
 }
 
 .content{
-    width: 100%;
+    width: 95%;
     height: 100%;
     margin-right: 5px;
     background-color:#E9E6E2;
@@ -75,7 +77,6 @@ input{
 }
 
 .container{
-    height: 100vh;
     width: 100%;
 }
 

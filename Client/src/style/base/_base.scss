@@ -1,0 +1,26 @@
+// Font size helper
+:root {
+  --font-3xs: 6px;
+  --font-2xs: 8px;
+  --font-xs: 10px;
+  --font-sm: 12px;
+  --font-md: 14px;
+  --font-lg: 16px;
+  --font-xl: 18px;
+  --font-2xl: 20px;
+  --font-3xl: 30px;
+}
+
+/*@media screen and (min-width: 360px) {
+  :root {
+    --font-3xs: 8px;
+    --font-2xs: 10px;
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 16px;
+    --font-lg: 18px;
+    --font-xl: 20px;
+    --font-2xl: 22px;
+    --font-3xl: 32px;
+  }
+}*/

@@ -1,12 +1,66 @@
-@import './global.scss';
-
-@import './global.scss';
+@import './main.scss';
 
 .cart{
-    
+    font-family: $base-font-family;
+
     &__content{
-        width: 182vh;
-        height: 80px;
+        box-sizing: border-box;
+        width: 100vh;
+        height: 500px;
+        border-radius: 0px;
+        margin-right: 10px;
+    }
+
+    &__wrapper{
+        box-sizing: border-box;
+        width: 50%;
+        height: 250px;
+        padding-right: 50px;
+        margin: 10px 80px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__table{
+        width: 90%;
+        border-radius: 0px;
+        box-sizing: border-box;
+
+        tr{
+            width: 100%;
+            height: 48px;
+            padding: 10px 20px;
+            vertical-align: inherit;
+            display: flex;
+            justify-content: right;
+            box-sizing: border-box;
+            font-weight: $weight-bold;
+            font-size: $base-font-size-medium;
+        }
+    }
+}
+
+.button{
+    &__tambah{
+        background-color: #28527A;
+        margin-right: 10px;
+        border-radius: 5px;
+        width: 30px;
+        height:30px;
+        border:transparent;
+        color:white;
+        font-size: medium;
+    }
+
+    &__kurang{
+        background-color: #28527A;
+        margin-left: 10px;
+        border-radius: 5px;
+        width: 30px;
+        height:30px;
+        border:transparent;
+        color:white;
+        font-size: medium;
     }
 }
 
@@ -18,16 +72,3 @@
     color: black;
 }
 
-.button{
-
-    &__delete{
-        width: 70px;
-        height: 40px;
-        border-radius: 10px;
-        margin: 20px 10px 5px 0px;
-        float: right;
-        background:darkred;
-        font-weight: 900;
-        color: white;
-    }
-}

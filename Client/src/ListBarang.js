@@ -39,7 +39,7 @@ const ListBarang = () => {
                     <th align="center" width="115px">Nama Barang</th>
                     <th align="center" width="115px">Harga</th> 
                     <th align="center" width="115px">Stok Barang</th>
-                    <th align="center" width="115px">Jumlah Barang</th>
+                    <th align="left" width="115px">Jumlah Barang</th>
                     <th align="left" width="115px"></th>
                     <th align="left" width="115px"></th>
                     <th align="left" width="50px"><Link to="/AddBarang" className="link__barang">Add</Link></th>
@@ -54,7 +54,7 @@ const ListBarang = () => {
                         harga={barang.harga}
                         stok={barang.stok}
                         qty={barang.qty}/>
-                        <button onClick={() => {deleteBarang(barang.id);}} className="button__delete"> Remove </button>
+                        <button onClick={() => {deleteBarang(barang.id);}} className="list-barang__btn__delete"> Remove </button>
                       </div>
                   ))}
             

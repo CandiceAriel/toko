@@ -41,9 +41,6 @@ const ListCart = () => {
 
     //Delete Cart data based on ID
     const deleteCart = (id) => {
-        if( usercart !== null && localStorage.getItem('datacart').length === 0){
-          localStorage.removeItem('datacart')
-        } else if ( usercart !== null && usercart.length !== 0){
           Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
           setCart(
             cart.filter((cart) => {
@@ -54,29 +51,16 @@ const ListCart = () => {
         const datacart = JSON.parse(localStorage.getItem('datacart'));
         const filtered = datacart.filter(datacart => datacart.id !== id);
         localStorage.setItem('datacart', JSON.stringify(filtered));
-        }
     };
     
-    if(dataUser !== null && usercart !== null){
+    if(dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('datacart')).length !== 0){
     return (
         <div>
           <NavHeader />
-            <div className="container">
-              <div className="list-cart__wrapper">
-                <table className="list-cart__table">
-                <thead>
-                 <tr>
-                    <th align="center" width="125px">Kode Barang</th>
-                    <th align="center" width="125px">Nama Barang</th>
-                    <th align="center" width="125px">Harga</th>
-                    <th align="center" width="125px">Jumlah</th>
-                    <th align="center" width="125px">Total</th>
-                    <th align="center" width="40px"></th>
-                 </tr>
-                </thead>
-                </table>
+          <div className="list-cart__container">
+            <div className="list-cart-item__container">
                 {cart.map(cart => (
-                  <div className="wrapper" key={cart.id}>
+                  <div className="list-cart-item__wrapper" key={cart.id}>
                   <Cart userID={cart.userID}  
                       id={cart.id}
                       kodeBarang={cart.kodeBarang} 
@@ -84,29 +68,41 @@ const ListCart = () => {
                       harga={cart.harga}
                       qty={cart.qty}
                       total={cart.total}/>
-                      <button onClick={() => {deleteCart(cart.id);}}className="button__delete"> Remove </button>
+                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item__button__delete"> Remove </button>
                   </div>
-                ))}
+                ))}  
+            </div> 
+            <div className="list-cart-detil__container">
+                <h5>Detail Order</h5>
+                {cart.map(cart => (
+                  <p>Total : Rp. {cart.total}</p>
+                ))}  
             </div>
-          </div> 
+          </div>
       </div>
     )} else if (dataUser === null || usercart === null  ) {
     return (
       <div>
         <NavHeader />
         <div className="list-cart__container">
+          <div className="list-cart__wrapper">
             <EmptyCart className="list-cart__emptycart-image"/>
-            <h1 className="list-cart__warning-text">Cart is empty</h1>
+            <h1 className="list-cart__warning-text">Cart Anda Kosong</h1>
+          </div>
         </div> 
       </div>
     )
-  } else if (dataUser !== null && usercart !== null && localStorage.getItem('datacart').length === 0) {
+  }
+  
+  if (dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('datacart')).length === 0) {
     return (
       <div>
         <NavHeader />
         <div className="list-cart__container">
+          <div className="list-cart__wrapper">
             <EmptyCart className="list-cart__emptycart-image"/>
-            <h1 className="list-cart__warning-text">Cart is empty</h1>
+            <h1 className="list-cart__warning-text">Cart Anda Kosong</h1>
+          </div>
         </div> 
       </div>
     )

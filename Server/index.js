@@ -41,7 +41,7 @@ app.post('/create/', (req,res) => {
   const qty = req.body.qty;
   req.setTimeout( 1000 * 60 * 10 ); 
 
-  con.query('INSERT INTO Barang (kodeBarang, namaBarang,harga,stok,qty) VALUES (?,?,?,?,?)',
+  con.query('INSERT INTO Barang (kodeBarang, namaBarang,harga,stok,qty) VALUES (?,?,?,?,?) ON DUPLICATE KEY UPDATE stok = VALUES(stok)',
    [kodeBarang,namaBarang,harga,stok,qty],
     (err,result) => {
       if(err) {
@@ -97,7 +97,7 @@ app.post('/createCart/', (req,res) => {
   const qty = req.body.qty;
   const total = req.body.total;
 
-  con.query('INSERT INTO Cart (userID,id,kodeBarang,namaBarang,harga,qty,total) VALUES (?,?,?,?,?,?,?)',
+  con.query('INSERT INTO Cart (userID,id,kodeBarang,namaBarang,harga,qty,total) VALUES (?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE qty = VALUES(qty)',
    [userID,id,kodeBarang,namaBarang,harga,qty,total],
     (err,result) => {
       if(err) {

@@ -39,18 +39,18 @@ const Cart = ({id,kodeBarang,namaBarang, harga,qty,total}) => {
     };
 
     return (
-        <div >
-                <table className="table">
+        <div>
+            <table className="cart__table">
                     <tbody>
-                        <tr>
-                            <td align="center">{kodeBarang}</td>
-                            <td align="center">{namaBarang}</td>
-                            <td align="center">{harga}</td>
-                            <td align="center"><button onClick={tambahJum} className="btn__tambah">+</button>{qtyBaru}<button onClick={kurangiJum} className="btn__kurang">-</button></td>
-                            <td align="center">{total}</td>
-                        </tr>
+                        <tr align="center">{kodeBarang}</tr>
+                        <tr align="center">{namaBarang}</tr>
+                        <tr align="center">{harga}</tr>
+                        <tr align="center"><button onClick={tambahJum} className="button__tambah">+</button>{qtyBaru}<button onClick={kurangiJum} className="button__kurang">-</button></tr>
+                        <tr align="center">{total}</tr>
                     </tbody>
-                </table>
+            </table>
+
+            {/*<div className="cart__wrapper"></div> */}
         </div>
     )
 }
