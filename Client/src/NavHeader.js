@@ -34,13 +34,13 @@ export const NavHeader = () => {
         return (
             <div className="container">
                 <ul className="navbar__subnav">
-                    <li><Link to="/Cart" className="link__cart"><FaShoppingCart className="link__icon"/></Link></li> 
+                    <li><Link to="/SignIn" className="link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                    <li><Link to="/Cart" className="link__cart"><FaShoppingCart className="link__icon" size="20px"/></Link></li>
                 </ul>
             <nav className="navbar">
                     <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                     <ul className="navbar__item">
                         <li><Link to="/Barang" className="link__barang">Barang</Link></li>
-                        <li><Link to="/SignIn" className="link__signout" onClick={onDelete}>Sign Out</Link></li>
                     </ul>
             </nav>
             </div>

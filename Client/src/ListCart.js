@@ -1,8 +1,11 @@
 import React, { useState,useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './style/ListCart.scss'
 import Cart from './page/Cart';
 import NavHeader from './NavHeader';
 import Axios from 'axios';
+
+import { FaShoppingCart } from "react-icons/fa";
 
 import {ReactComponent as EmptyCart} from './image/emptycart.svg';
 
@@ -18,6 +21,11 @@ const ListCart = () => {
     } else if (usercart === null){
       var totalorder = 0;
     }
+
+    const onDelete = () => {
+      localStorage.removeItem('dataLogIn')
+      localStorage.removeItem('datacart')
+  }
     
     //Get data upon accessing Cart menu
     useEffect(() => {
@@ -62,7 +70,12 @@ const ListCart = () => {
     if(dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('datacart')).length !== 0){
     return (
         <div>
-          <NavHeader />
+          <nav className="list-cart__subnav">
+              <Link to="/" className="link__home">TOKO SERBA ADA</Link>
+                <ul className="list-cart__subnav__item">
+                  <li><Link to="/SignIn" className="list-cart__subnav__link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                </ul>
+            </nav>
           <div className="list-cart__container">
             <div className="list-cart-item__container">
                 {cart.map(cart => (
@@ -98,7 +111,12 @@ const ListCart = () => {
     )} else if (dataUser === null || usercart === null  ) {
     return (
       <div>
-        <NavHeader />
+        <nav className="list-cart__subnav">
+              <Link to="/" className="link__home">TOKO SERBA ADA</Link>
+                <ul className="list-cart__subnav__item">
+                  <li><Link to="/SignIn" className="list-cart__subnav__link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                </ul>
+            </nav>
         <div className="list-cart__container">
           <div className="list-cart__wrapper">
             <EmptyCart className="list-cart__emptycart-image"/>
@@ -112,7 +130,12 @@ const ListCart = () => {
   if (dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('datacart')).length === 0) {
     return (
       <div>
-        <NavHeader />
+        <nav className="list-cart__subnav">
+              <Link to="/" className="link__home">TOKO SERBA ADA</Link>
+                <ul className="list-cart__subnav__item">
+                  <li><Link to="/SignIn" className="list-cart__subnav__link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                </ul>
+            </nav>
         <div className="list-cart__container">
           <div className="list-cart__wrapper">
             <EmptyCart className="list-cart__emptycart-image"/>

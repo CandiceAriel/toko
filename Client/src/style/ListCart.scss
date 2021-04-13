@@ -27,7 +27,77 @@
         font-size: 32px;
         font-family: 'Montserrat', sans-serif;
     }
+
+    &__subnav{
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        margin: 0px;
+        padding: 0px 100px;
+        box-sizing: border-box;
+        background: white;
+
+        &__item{
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        }
+
+        &__link{
+            text-decoration: none;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+
+            &__signout{
+                box-sizing: border-box;
+                text-decoration: none;
+                color:black;
+                font-weight: $weight-bold;
+                border: none;
+                justify-content: center;
+                border-radius: 10px;
+                padding: 5px 0px;
+                margin-right: 5px;
+                border: transparent;
+                box-sizing: border-box;
+                width: 60px;
+                height: 40px;
     
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
+
+        li{
+            display: list-item;
+        }
+    }
+    
+}
+
+.link{
+    &__home{
+        box-sizing: border-box;
+        text-decoration: none;
+        color:black;
+        border: none;
+        display: flex;
+        justify-content: center;
+        border: transparent;
+        margin-right: 870px;
+        width: 200px;
+        height: 40px;
+        padding: 5px;
+        font-family: $base-font-family;
+        font-weight: $weight-bold;
+        font-size: $base-font-size-x-large;
+    }
 }
 
 .list-cart-item{

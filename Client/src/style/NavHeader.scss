@@ -2,10 +2,10 @@
 
 .navbar{
     width: 100%;
-    height: 90px;
+    height: 60px;
     display: flex;
     margin-top: 0px;
-    padding: 5px;
+    padding: 3px;
     justify-content: center;
     align-items: center;
     border-radius: 0px;
@@ -111,28 +111,6 @@
                         color:black;
                     }
                 }
-                
-                &__signout{
-                    box-sizing: border-box;
-                    text-decoration: none;
-                    color:white;
-                    font-weight: bold;
-                    border: none;
-                    display: flex;
-                    justify-content: center;
-                    border-radius: 50px;
-                    margin-top: 0px;
-                    margin-right: 10px;
-                    border: 1px solid white;
-                    width: 80px;
-                    height: 40px;
-                    padding: 10px 5px;
-        
-                    &:hover {
-                        background-color: white;
-                        color:black;
-                    }
-                }
                     
                 &__profile{
                     box-sizing: border-box;
@@ -180,7 +158,7 @@
         align-items: center;
         width: 100%;
         height: 35px;
-        padding: 15px 40px;
+        padding: 10px 60px;
         margin: 0px;
         box-sizing: border-box;
         background-image: linear-gradient(
@@ -192,6 +170,28 @@
             box-sizing: border-box;
             display: flex;
             justify-content: center;
+
+            &__signout{
+                box-sizing: border-box;
+                text-decoration: none;
+                color:white;
+                font-weight: bold;
+                border: none;
+                justify-content: center;
+                border-radius: 10px;
+                padding: 5px 0px;
+                margin-right: 10px;
+                border: transparent;
+                box-sizing: border-box;
+                margin-right: 30px;
+                width: 60px;
+                height: 40px;
+    
+                &:hover {
+                    background-color: white;
+                    color:black;
+                }
+            }
             
 
             &__cart{
@@ -211,7 +211,7 @@
             }
 
             &__icon{
-                width: 100%;
+                width: 20px;
                 height: 20px;
                 border-radius: 10px;
                 border: transparent;
