@@ -31,6 +31,7 @@ const ListBarang = () => {
         <div>
             <NavHeader />
             <div className="list-barang__container">
+            <h1 className="list-barang__title">Daftar Barang</h1>
             <div className="list-barang__wrapper">
             <table className="list-barang__table">
               <thead>
@@ -40,7 +41,7 @@ const ListBarang = () => {
                     <th align="center" width="50px">Harga</th> 
                     <th align="center" width="50px">Stok Barang</th>
                     <th align="center" width="50px">Jumlah Barang</th>
-                    <th align="center" width="50px"><Link to="/AddBarang" className="link__barang">Add</Link></th>
+                    <th align="center" width="50px"></th>
                 </tr>
               </thead>
               </table>

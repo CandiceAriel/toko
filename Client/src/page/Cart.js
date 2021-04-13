@@ -45,7 +45,7 @@ const Cart = ({id,kodeBarang,namaBarang, harga,qty,total}) => {
                         <tr align="center"><td>{kodeBarang}</td></tr>
                         <tr align="center"><td>{namaBarang}</td></tr>
                         <tr align="center"><td>{harga}</td></tr>
-                        <tr align="center"><td><button onClick={tambahJum} className="button__tambah">+</button>{qtyBaru}<button onClick={kurangiJum} className="button__kurang">-</button></td></tr>
+                        <tr align="center"><td>{qtyBaru}</td></tr>
                         <tr align="center"><td>{total}</td></tr>
                     </tbody>
             </table>

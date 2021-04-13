@@ -2,7 +2,6 @@ import React, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './style/ListCart.scss'
 import Cart from './page/Cart';
-import NavHeader from './NavHeader';
 import Axios from 'axios';
 
 import { FaShoppingCart } from "react-icons/fa";

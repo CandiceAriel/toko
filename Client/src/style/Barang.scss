@@ -3,33 +3,47 @@
 .barang{
     &__container{
         width: 100%;
-        height: 90px;
+        height: 130px;
         box-sizing: border-box;
     }
 
     &__table{
         box-sizing: border-box;
-        height: 40px;
+        height: 100%;
         width: 100%;
 
         &__item{
             display: table-cell;
             height: 100%;
             padding: 20px 15px;
-            vertical-align: initial;
+            vertical-align: middle;
             font-family: $base-font-family;
+            font-weight: $weight-bold;
+            font-size: 20px;
             box-sizing: border-box;
             border-radius: 0px;
             color: #3a4166;
-            font-size: 16px;
             text-align: center;
+
+            &__addtocart{
+                display: table-cell;
+                height: 100%;
+                padding: 20px 0px;
+                vertical-align: middle;
+                font-family: $base-font-family;
+                font-weight: $weight-bold;
+                font-size: 20px;
+                box-sizing: border-box;
+                border-radius: 0px;
+                color: #3a4166;
+                text-align: center;
+            }
         }
         
         tr{
             display: table-row;
             height: 100%;
             padding: 0px;
-            vertical-align: initial;
             justify-content: center;
             font-family: $base-font-family;
             box-sizing: border-box;
@@ -82,24 +96,32 @@
     }
 
     &__addtocart{
-        margin: 0px 0px;
         border-radius: 5px;
-        width: 100px;
-        height:40px;
+        width: 170px;
+        height: 50px;
+        font-family: $base-font-family;
         font-size: 14px;
-        padding: 0pc 5px 0px 0px;
         font-weight: 900;
         background: #fb8c00;
         border: none;
         color: #fff;
         text-align: center;
         text-transform: uppercase;
+        display: inline-block;
+
+        &:hover{
+            background-color: #fd7e14;
+        }
     }
 }
 
 
 .input-harga{
     margin: 0px 5px;
-    padding: 0px 5px;
     width: 90px;
+    height: 50px;
+    font-size: 20px;
+    font-family: $base-font-family;
+    font-weight: $weight-bold;
+    border: none;
 }

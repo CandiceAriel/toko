@@ -2,9 +2,11 @@
 
 .list-barang{
     &__container{
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        padding-right: 100px;
-        padding-left: 100px;
+        padding-right: 120px;
+        padding-left: 120px;
     }
 
     &__wrapper{
@@ -13,6 +15,10 @@
         width: 100%;
         margin-top: 10px;
         padding: 10px 0px;
+    }
+
+    &__title{
+        margin: 50px 480px;
     }
 
     &__table{

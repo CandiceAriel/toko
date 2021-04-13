@@ -66,11 +66,11 @@ const SignIn = () => {
         <NavHeader />
         <div className="signin__container">
         <form className="signin__form" onSubmit={signIn}>
-                <h5 className="signin__form__title">Sign In</h5>
-                <p className="signin__form__subtitle">
-                    Belum punya akun.
-                    <span><Link to="/SignUp" className="signin__form__subtitle__link-signup">Daftar disini</Link></span>
-                </p>
+            <h5 className="signin__form__title">Sign In</h5>
+            <p className="signin__form__subtitle">
+                Belum punya akun.
+                <span><Link to="/SignUp" className="signin__form__subtitle__link-signup">Daftar disini</Link></span>
+            </p>
             <div className="signin__form__input__group">
                 <label>Email</label>
                 <input type="text" name="email" placeholder="Email" className="signin__form__input__email" value={email} onChange={updateEmail}/>
