@@ -11,20 +11,24 @@
 
     &__wrapper{
         width: 100%;
-        padding: 30px 0px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 90px 520px;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     &__emptycart-image{
-        width: 200px;
+        width: 360px;
         height: 200px;
-        margin: 0px 600px;
         box-sizing: border-box;
     }
 
     &__warning-text{
-        margin: 0px 545px;
-        font-size: 32px;
+        margin: 40px;
+        font-size: 28px;
         font-family: 'Montserrat', sans-serif;
     }
 
@@ -62,7 +66,7 @@
                 justify-content: center;
                 border-radius: 10px;
                 padding: 5px 0px;
-                margin-right: 5px;
+                margin-right: 50px;
                 border: transparent;
                 box-sizing: border-box;
                 width: 60px;
@@ -90,13 +94,33 @@
         display: flex;
         justify-content: center;
         border: transparent;
-        margin-right: 870px;
+        margin-right: 850px;
         width: 200px;
         height: 40px;
         padding: 5px;
         font-family: $base-font-family;
         font-weight: $weight-bold;
         font-size: $base-font-size-x-large;
+    }
+
+    &__mainpage{
+        text-decoration: none;
+        width: 200px;
+        font-family: $base-font-family;
+        font-weight: $weight-bold;
+        text-transform: uppercase;
+        text-align: center;
+        margin-left: 50px;
+        border-radius: 2px;
+        letter-spacing: .05em;
+        padding: 16px 48px;
+        background: #fb8c00;
+        border: 2px solid #fb8c00;
+        color: #fff;
+        padding: 15px 25px;
+        font-size: 15px;
+        line-height: 20px;
+        text-transform: uppercase;
     }
 }
 

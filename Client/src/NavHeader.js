@@ -15,7 +15,7 @@ export const NavHeader = () => {
 
     if(dataUser === null){
         return (
-            <div className="container">
+            <div className="navbar__container">
                 <ul className="navbar__subnav">
                     <li><Link to="/Cart" className="link__cart"><FaShoppingCart className="link__icon"/></Link></li> 
                 </ul>
@@ -25,14 +25,12 @@ export const NavHeader = () => {
                         <li><Link to="/Barang" className="link__barang">Barang</Link></li>
                         <li><Link to="/SignIn" className="link__signin">Sign In</Link></li>
                     </ul>
-                    
-                    
             </nav>
             </div>
         )
     } else if (dataUser !== null){
         return (
-            <div className="container">
+            <div className="navbar__container">
                 <ul className="navbar__subnav">
                     <li><Link to="/SignIn" className="link__signout" onClick={onDelete}>Sign Out</Link></li> 
                     <li><Link to="/Cart" className="link__cart"><FaShoppingCart className="link__icon" size="20px"/></Link></li>

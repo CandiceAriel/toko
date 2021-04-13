@@ -16,7 +16,7 @@ const ListCart = () => {
     var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
     var usercart = JSON.parse(localStorage.getItem('datacart'));
 
-    if(usercart !== null){
+    if(usercart !== null && JSON.parse(localStorage.getItem('datacart')).length !== 0){
       var totalorder = usercart[0].total;
     } else if (usercart === null){
       var totalorder = 0;
@@ -121,6 +121,7 @@ const ListCart = () => {
           <div className="list-cart__wrapper">
             <EmptyCart className="list-cart__emptycart-image"/>
             <h1 className="list-cart__warning-text">Cart Anda Kosong</h1>
+            <Link to="/" className="link__mainpage">KE HALAMAN UTAMA</Link>
           </div>
         </div> 
       </div>
@@ -140,6 +141,7 @@ const ListCart = () => {
           <div className="list-cart__wrapper">
             <EmptyCart className="list-cart__emptycart-image"/>
             <h1 className="list-cart__warning-text">Cart Anda Kosong</h1>
+            <Link to="/" className="link__mainpage">KE HALAMAN UTAMA</Link>
           </div>
         </div> 
       </div>

@@ -6,12 +6,14 @@
         display: flex;
         justify-content: center;
         padding: 10px 0px;
-        background-color: white;
+        background-image: linear-gradient(
+        45deg
+        ,#00349b,rgba(0,92,255,.9219),#007aff);
         height: 100vh;
     }
 
     &__form{
-        height: 300px; 
+        height: 400px; 
         font-size: 16px;
         padding: 32px 48px;
         text-align: left;
@@ -21,7 +23,7 @@
         border-radius: 8px;
         width: 390px;
         background-color: white;
-        box-shadow: 0 6px 20px grey;
+        box-shadow: 0 6px 20px calc(rgb(17 26 104 / 20%));
         border: 1px solid #c4c4c4;
         box-sizing: border-box;
 
@@ -45,7 +47,7 @@
                 &__link-signup{
                     font-size: $base-font-size-small;
                     font-weight: $weight-bold;
-                    color: blue;
+                    color: #007aff;
                     margin-right: 5px;
                 }
             }
@@ -61,7 +63,7 @@
             margin-bottom: 20px;
 
             &__group{
-                margin: 10px 0px;
+                margin-top: 32px;
                 padding: 0px;
                 height: 60px;
             }
@@ -86,7 +88,7 @@
             display: flex;
             justify-content: center;
             padding: 0px 20px;
-            margin-top: 20px;
+            margin-top: 50px;
             justify-content: space-between;
 
             &__signin{
@@ -102,6 +104,10 @@
                 border-radius: 5px;
                 letter-spacing: .05em;
                 padding: 16px 48px;
+
+                 &:hover{
+                    background-color: #fd7e14;
+                }
             }
         }
     }

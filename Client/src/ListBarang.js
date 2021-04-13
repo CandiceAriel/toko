@@ -35,14 +35,12 @@ const ListBarang = () => {
             <table className="list-barang__table">
               <thead>
                 <tr>
-                    <th align="center" width="115px">Kode Barang</th>
-                    <th align="center" width="115px">Nama Barang</th>
-                    <th align="center" width="115px">Harga</th> 
-                    <th align="center" width="115px">Stok Barang</th>
-                    <th align="left" width="115px">Jumlah Barang</th>
-                    <th align="left" width="115px"></th>
-                    <th align="left" width="115px"></th>
-                    <th align="left" width="50px"><Link to="/AddBarang" className="link__barang">Add</Link></th>
+                    <th align="center" width="50px">Kode Barang</th>
+                    <th align="center" width="50px">Nama Barang</th>
+                    <th align="center" width="50px">Harga</th> 
+                    <th align="center" width="50px">Stok Barang</th>
+                    <th align="center" width="50px">Jumlah Barang</th>
+                    <th align="center" width="50px"><Link to="/AddBarang" className="link__barang">Add</Link></th>
                 </tr>
               </thead>
               </table>
@@ -55,7 +53,6 @@ const ListBarang = () => {
                         harga={barang.harga}
                         stok={barang.stok}
                         qty={barang.qty}/>
-                        <button onClick={() => {deleteBarang(barang.id);}} className="list-barang__btn__delete"> x </button>
                       </div>
                   ))}
               </div>  
