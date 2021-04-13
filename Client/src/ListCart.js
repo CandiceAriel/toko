@@ -121,7 +121,7 @@ const ListCart = () => {
           <div className="list-cart__wrapper">
             <EmptyCart className="list-cart__emptycart-image"/>
             <h1 className="list-cart__warning-text">Cart Anda Kosong</h1>
-            <Link to="/" className="link__mainpage">KE HALAMAN UTAMA</Link>
+            <Link to="/Barang" className="link__mainpage">KE HALAMAN UTAMA</Link>
           </div>
         </div> 
       </div>
@@ -141,7 +141,7 @@ const ListCart = () => {
           <div className="list-cart__wrapper">
             <EmptyCart className="list-cart__emptycart-image"/>
             <h1 className="list-cart__warning-text">Cart Anda Kosong</h1>
-            <Link to="/" className="link__mainpage">KE HALAMAN UTAMA</Link>
+            <Link to="/Barang" className="link__mainpage">KE HALAMAN UTAMA</Link>
           </div>
         </div> 
       </div>
