@@ -55,7 +55,6 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
     //Add to Cart
     const addCart = (id) => {
         var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
-        const userID = dataUser[0].userID;
 
         if(dataUser !== null){
             Axios.post("http://localhost:3001/createCart",
@@ -74,7 +73,7 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
 
                 Axios.post("http://localhost:3001/retrieveCart",
                 {
-                    userID: userID
+                    userID: dataUser[0].userID
                 }).then((response) => {
                 if(response.data.message ){
                     console.log(response.data.message)
@@ -89,17 +88,17 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
     }
 
     return (
-        <div className="content">
-            <table className="table">
+        <div className="barang__container">
+            <table className="barang__table">
                     <tbody>
                         <tr>
-                        <td align="center">{kodeBarang}</td>
-                        <td align="center">{namaBarang}</td>
-                        <td align="center"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input></td> 
-                        <td align="center"><button onClick={addStok} className="btn__tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn__kurang">-</button></td>
-                        <td align="center"><button onClick={kurangiStok} className="btn__tambah">+</button>{qty}<button onClick={tambahStok} className="btn__kurang">-</button></td>
-                        <td align="center"><button onClick={() => {updateBarang(kodeBarang);}} className="btn__update"> Update </button></td>
-                        <td align="center"><button onClick={() => {addCart(id);}} className="btn__addtocart"> Add </button></td>
+                        <td className="barang__table__item" align="center">{kodeBarang}</td>
+                        <td className="barang__table__item" align="center">{namaBarang}</td>
+                        <td className="barang__table__item" align="center"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input></td> 
+                        <td className="barang__table__item" align="center"><button onClick={addStok} className="btn__tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn__kurang">-</button></td>
+                        <td className="barang__table__item" align="center"><button onClick={kurangiStok} className="btn__tambah">+</button>{qty}<button onClick={tambahStok} className="btn__kurang">-</button></td>
+                        <td className="barang__table__item" align="center"><button onClick={() => {updateBarang(kodeBarang);}} className="btn__update"> Update </button></td>
+                        <td className="barang__table__item" align="center"><button onClick={() => {addCart(id);}} className="btn__addtocart"> Add </button></td>
                         </tr>
                     </tbody>
             </table>

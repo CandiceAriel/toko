@@ -30,7 +30,7 @@ const ListBarang = () => {
     return (
         <div>
             <NavHeader />
-            <div className="container">
+            <div className="list-barang__container">
             <div className="list-barang__wrapper">
             <table className="list-barang__table">
               <thead>
@@ -46,7 +46,8 @@ const ListBarang = () => {
                 </tr>
               </thead>
               </table>
-                {barang.map(barang => (
+              <div className="list-barang__item__container">
+              {barang.map(barang => (
                       <div className="wrapper" key={barang.id}>
                         <Barang key={barang.id}
                         kodeBarang={barang.kodeBarang} 
@@ -57,7 +58,7 @@ const ListBarang = () => {
                         <button onClick={() => {deleteBarang(barang.id);}} className="list-barang__btn__delete"> x </button>
                       </div>
                   ))}
-            
+              </div>  
             </div>
             </div>
       </div>

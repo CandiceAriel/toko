@@ -6,7 +6,7 @@
     &__container{
         width: 100%;
         display: flex;
-        
+        background-color: #f0f8ff;
     }
 
     &__wrapper{
@@ -37,6 +37,7 @@
         flex-direction: column;
         margin: 10px 70px;
         background-color: $color-white;
+        background-color: #f0f8ff;
     }
 
     &__wrapper{

@@ -1,10 +1,39 @@
 @import './main.scss';
 
 .barang{
-    &__content{
-        width: 182vh;
-        margin: 10px;
-        border: 1px solid black;
+    &__container{
+        width: 100%;
+        height: 90px;
+        box-sizing: border-box;
+    }
+
+    &__table{
+        box-sizing: border-box;
+        height: 40px;
+        width: 100%;
+
+        &__item{
+            display: table-cell;
+            height: 100%;
+            padding: 20px 15px;
+            vertical-align: initial;
+            font-family: $base-font-family;
+            box-sizing: border-box;
+            border-radius: 0px;
+            color: #3a4166;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        tr{
+            display: table-row;
+            height: 100%;
+            padding: 0px;
+            vertical-align: initial;
+            justify-content: center;
+            font-family: $base-font-family;
+            box-sizing: border-box;
+        }
     }
 }
 
@@ -12,51 +41,59 @@
     font-family: $base-font-family;
     
     &__tambah{
-        background-color: #28527A;
+        box-sizing: border-box;
+        background-color: transparent;
         margin: 0px 10px;
-        border-radius: 5px;
+        border-radius: 3px;
         width: 30px;
         height:35px;
         border:none;
-        color:white;
-        font-size: medium;
+        color:darkgrey;
+        font-weight: $weight-bold;
+        font-size: $base-font-size-large;
     }
 
     &__kurang{
-        background-color: #810000;
+        box-sizing: border-box;
+        background-color: transparent;
         margin: 0px 10px;
-        border-radius: 5px;
+        border-radius: 3px;
         width: 30px;
         height:35px;
         border:none;
-        color: white;
-        font-size: large;
+        color:darkgrey;
+        font-weight: $weight-bold;
+        font-size: $base-font-size-x-large;
     }
 
     &__update{
-        background-color: #28527A;
-        margin: 0px 5px;
-        border-radius: 10px;
-        width: 100px;
-        height:40px;
-        border:none;
-        color: white;
-        font-size: 14px;
-        padding: 0pc 5px 0px 5px;
-        font-weight: 900;
-    }
-
-    &__addtocart{
-        background-color: #28527A;
         margin: 0px 0px;
-        border-radius: 10px;
+        border-radius: 5px;
         width: 100px;
         height:40px;
-        border:none;
-        color: white;
         font-size: 14px;
         padding: 0pc 5px 0px 0px;
         font-weight: 900;
+        background: #fb8c00;
+        border: none;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__addtocart{
+        margin: 0px 0px;
+        border-radius: 5px;
+        width: 100px;
+        height:40px;
+        font-size: 14px;
+        padding: 0pc 5px 0px 0px;
+        font-weight: 900;
+        background: #fb8c00;
+        border: none;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
     }
 }
 

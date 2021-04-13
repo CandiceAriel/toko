@@ -12,7 +12,12 @@ const ListCart = () => {
 
     var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
     var usercart = JSON.parse(localStorage.getItem('datacart'));
-    const total = usercart[0].total;
+
+    if(usercart !== null){
+      var totalorder = usercart[0].total;
+    } else if (usercart === null){
+      var totalorder = 0;
+    }
     
     //Get data upon accessing Cart menu
     useEffect(() => {
@@ -83,7 +88,7 @@ const ListCart = () => {
                 <tbody>
                   <tr>
                     <td className="list-cart-detil__table__body">Total</td>
-                    <td className="list-cart-detil__table__body">{total}</td>
+                    <td className="list-cart-detil__table__body">{totalorder}</td>
                   </tr>
                 </tbody>
               </table>

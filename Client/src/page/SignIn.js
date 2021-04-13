@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory} from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import Axios from 'axios';
 import '../style/SignIn.scss'
 import '../style/NavHeader.scss';
@@ -66,15 +66,20 @@ const SignIn = () => {
         <NavHeader />
         <div className="signin__container">
         <form className="signin__form" onSubmit={signIn}>
-            <div className="signin__form__title">
-                <h5 className="signin__form__title__text">Sign In</h5>
-            </div>
-            <div className="signin__form__input">
+                <h5 className="signin__form__title">Sign In</h5>
+                <p className="signin__form__subtitle">
+                    Belum punya akun.
+                    <span><Link to="/SignUp" className="signin__form__subtitle__link-signup">Daftar disini</Link></span>
+                </p>
+            <div className="signin__form__input__group">
+                <label>Email</label>
                 <input type="text" name="email" placeholder="Email" className="signin__form__input__email" value={email} onChange={updateEmail}/>
+            </div>
+            <div className="signin__form__input__group">
+                <label>Password</label>
                 <input type="password" name="password" placeholder="Password" className="signin__form__input__password" value={password} onChange={updatePassword}/>
             </div>
             <div className="signin__form__btn">
-                <button onClick={navigateTo}  value="Sign Up" className="signin__form__btn__signup">Sign Up</button>
                 <button type="submit" value="Sign In" className="signin__form__btn__signin" onClick={signIn}>Sign In</button>
             </div>
         </form>
