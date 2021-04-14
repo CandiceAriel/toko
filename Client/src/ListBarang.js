@@ -38,7 +38,7 @@ const ListBarang = () => {
                 <tr>
                     <th align="center" width="50px">Kode Barang</th>
                     <th align="center" width="50px">Nama Barang</th>
-                    <th align="center" width="50px">Harga</th> 
+                    <th align="center" width="45px">Harga</th> 
                     <th align="center" width="50px">Stok Barang</th>
                     <th align="center" width="50px">Jumlah Barang</th>
                     <th align="center" width="50px"></th>

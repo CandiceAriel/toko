@@ -5,6 +5,7 @@ import Cart from './page/Cart';
 import Axios from 'axios';
 
 import { FaShoppingCart } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 import {ReactComponent as EmptyCart} from './image/emptycart.svg';
 
@@ -86,7 +87,7 @@ const ListCart = () => {
                       harga={cart.harga}
                       qty={cart.qty}
                       total={cart.total}/>
-                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item__button__delete"> X </button>
+                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item__button__delete"><FaTimes /> </button>
                   </div>
                 ))}  
             </div> 
@@ -99,8 +100,8 @@ const ListCart = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="list-cart-detil__table__body">Total</td>
-                    <td className="list-cart-detil__table__body">{totalorder}</td>
+                    <td className="list-cart-detil__table__body"> TOTAL </td>
+                    <td className="list-cart-detil__table__body">Rp. {totalorder}</td>
                   </tr>
                 </tbody>
               </table>

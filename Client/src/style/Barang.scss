@@ -11,6 +11,7 @@
         box-sizing: border-box;
         height: 100%;
         width: 100%;
+        border-radius: 10px;
 
         &__item{
             display: table-cell;
@@ -97,7 +98,7 @@
 
     &__addtocart{
         border-radius: 5px;
-        width: 170px;
+        width: 180px;
         height: 50px;
         font-family: $base-font-family;
         font-size: 14px;

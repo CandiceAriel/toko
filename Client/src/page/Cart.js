@@ -42,11 +42,8 @@ const Cart = ({id,kodeBarang,namaBarang, harga,qty,total}) => {
         <div>
             <table className="cart__table">
                     <tbody>
-                        <tr align="center"><td>{kodeBarang}</td></tr>
-                        <tr align="center"><td>{namaBarang}</td></tr>
-                        <tr align="center"><td>{harga}</td></tr>
-                        <tr align="center"><td>{qtyBaru}</td></tr>
-                        <tr align="center"><td>{total}</td></tr>
+                        <tr align="center"><td>{kodeBarang}</td><td>{namaBarang}</td><td>{qtyBaru}</td></tr>
+                        <tr align="center"><td>RP. {harga}</td> <td>({total} / PCS)</td></tr>
                     </tbody>
             </table>
         </div>
