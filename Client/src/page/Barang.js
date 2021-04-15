@@ -92,12 +92,12 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
             <table className="barang__table">
                     <tbody>
                         <tr>
-                        <td className="barang__table__item" align="center">{kodeBarang}</td>
-                        <td className="barang__table__item" align="center">{namaBarang}</td>
-                        <td className="barang__table__item" align="center"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input></td> 
-                        <td className="barang__table__item" align="center"><button onClick={addStok} className="btn__tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn__kurang">-</button></td>
-                        <td className="barang__table__item" align="center"><button onClick={kurangiStok} className="btn__tambah">+</button>{qty}<button onClick={tambahStok} className="btn__kurang">-</button></td>
-                        <td className="barang__table__item__addtocart" align="center" width="200px"><button onClick={() => {addCart(id);}} className="btn__addtocart"> BELI SEKARANG </button></td>
+                        <td className="barang__table table__item" width="100px">{kodeBarang}</td>
+                        <td className="barang__table table__item" width="100px">{namaBarang}</td>
+                        <td className="barang__table table__item" width="50px"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input></td> 
+                        <td className="barang__table table__item" width="50px"><button onClick={addStok} className="btn__tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn__kurang">-</button></td>
+                        <td className="barang__table table__item" width="50px"><button onClick={kurangiStok} className="btn__tambah">+</button>{qty}<button onClick={tambahStok} className="btn__kurang">-</button></td>
+                        <td className="barang__table table__item__addtocart" width="200px"><button onClick={() => {addCart(id);}} className="button"> BELI SEKARANG </button></td>
                         </tr>
                     </tbody>
             </table>

@@ -92,7 +92,7 @@ const SignUp = () => {
                 <input type="password" name="email" placeholder="Minimal 6 karakter" className="form__input input" value={password} onChange={updatePassword}/>
             </div>
             <div className="form__button">
-                <button type="submit" value="Sign In" className="form__button button" onClick={signUp}>SIGN UP</button>
+                <button type="submit" className="button" onClick={signUp}>SIGN UP</button>
             </div>
         </form>
         </div>

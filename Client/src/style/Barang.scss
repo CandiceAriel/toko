@@ -12,11 +12,32 @@
         height: 100%;
         width: 100%;
         border-radius: 10px;
+    }
+}
 
-        &__item{
+.table{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+
+    &__item{
+        display: table-cell;
+        height: 100%;
+        width: 185px;
+        padding: 20px 0px;
+        vertical-align: middle;
+        font-family: $base-font-family;
+        font-weight: $weight-bold;
+        font-size: 20px;
+        box-sizing: border-box;
+        border-radius: 0px;
+        color: #3a4166;
+        text-align: center;
+
+        &__addtocart{
             display: table-cell;
             height: 100%;
-            padding: 20px 15px;
             vertical-align: middle;
             font-family: $base-font-family;
             font-weight: $weight-bold;
@@ -25,30 +46,16 @@
             border-radius: 0px;
             color: #3a4166;
             text-align: center;
-
-            &__addtocart{
-                display: table-cell;
-                height: 100%;
-                padding: 20px 0px;
-                vertical-align: middle;
-                font-family: $base-font-family;
-                font-weight: $weight-bold;
-                font-size: 20px;
-                box-sizing: border-box;
-                border-radius: 0px;
-                color: #3a4166;
-                text-align: center;
-            }
         }
-        
-        tr{
-            display: table-row;
-            height: 100%;
-            padding: 0px;
-            justify-content: center;
-            font-family: $base-font-family;
-            box-sizing: border-box;
-        }
+    }
+    
+    tr{
+        display: table-row;
+        height: 100%;
+        padding: 0px;
+        justify-content: center;
+        font-family: $base-font-family;
+        box-sizing: border-box;
     }
 }
 
@@ -94,25 +101,6 @@
         color: #fff;
         text-align: center;
         text-transform: uppercase;
-    }
-
-    &__addtocart{
-        border-radius: 5px;
-        width: 180px;
-        height: 50px;
-        font-family: $base-font-family;
-        font-size: 14px;
-        font-weight: 900;
-        background: #fb8c00;
-        border: none;
-        color: #fff;
-        text-align: center;
-        text-transform: uppercase;
-        display: inline-block;
-
-        &:hover{
-            background-color: #fd7e14;
-        }
     }
 }
 

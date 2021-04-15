@@ -36,12 +36,12 @@ const ListBarang = () => {
             <table className="list-barang__table">
               <thead>
                 <tr>
-                    <th align="center" width="50px">Kode Barang</th>
-                    <th align="center" width="50px">Nama Barang</th>
-                    <th align="center" width="45px">Harga</th> 
-                    <th align="center" width="50px">Stok Barang</th>
-                    <th align="center" width="50px">Jumlah Barang</th>
-                    <th align="center" width="50px"></th>
+                    <th align="center" className="list-barang__table table__head">Kode Barang</th>
+                    <th align="center" className="list-barang__table table__head">Nama Barang</th>
+                    <th align="center" className="list-barang__table table__head">Harga</th> 
+                    <th align="left" className="list-barang__table table__head">Stok Barang</th>
+                    <th align="left" className="list-barang__table table__head">Jumlah Barang</th>
+                    <th className="list-barang__table table__head" ></th>
                 </tr>
               </thead>
               </table>

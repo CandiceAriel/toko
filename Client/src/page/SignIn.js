@@ -66,7 +66,7 @@ const SignIn = () => {
         <NavHeader />
         <div className="container">
         <form className="signin__form" onSubmit={signIn}>
-        <h5 className=" title">Sign In</h5>
+        <h5 className="title">Sign In</h5>
             <p className="subtitle">
                 Belum punya akun.
                 <span><Link to="/SignUp" className="subtitle__link">Daftar disini</Link></span>
@@ -80,7 +80,7 @@ const SignIn = () => {
                 <input type="password" name="password" placeholder="Minimal 6 karakter" className="form__input input" value={password} onChange={updatePassword}/>
             </div>
             <div className="form__button">
-                <button type="submit" value="Sign In" className="form__button button" onClick={signIn}>Sign In</button>
+                <button type="submit" className="button" onClick={signIn}>Sign In</button>
             </div>
         </form>
         <h1>{signInStatus}</h1>

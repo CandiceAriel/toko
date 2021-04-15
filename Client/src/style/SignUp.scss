@@ -16,7 +16,7 @@
         justify-content: center;
         border-radius: 8px;
         width: 500px;
-        height: 700px; 
+        height: 660px; 
         background-color: white;
         box-shadow: 0 6px 20px calc(rgb(17 26 104 / 20%));
         border: 1px solid #c4c4c4;
@@ -30,9 +30,16 @@
   }
 
   &__group{
-      margin-top: 32px;
+      margin-bottom: 30px;
       padding: 0px;
       height: 65px;
+  }
+
+  &__button{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 20px;
   }
 }
 
@@ -42,5 +49,5 @@ label{
     font-size: 12px;
     line-height: 16px;
     color: #3a4166;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
 }

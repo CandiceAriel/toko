@@ -44,67 +44,69 @@
         padding: 0px 100px;
         box-sizing: border-box;
         background: white;
-        border-bottom: 1px solid #007bff;
-
-        &__item{
-        list-style: none;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 50%;
-        height: 50px;
-        }
-
-        &__link{
-            text-decoration: none;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-
-            &__signout{
-                box-sizing: border-box;
-                text-decoration: none;
-                color:black;
-                font-weight: $weight-bold;
-                border: none;
-                justify-content: center;
-                border-radius: 10px;
-                padding: 5px 0px;
-                margin-right: 50px;
-                border: transparent;
-                box-sizing: border-box;
-                width: 60px;
-                height: 50px;
-    
-                &:hover {
-                    color:blue;
-                }
-            }
-
-            &__signin{
-                box-sizing: border-box;
-                text-decoration: none;
-                color:#4d5872;
-                font-weight: $weight-bold;
-                border: 1px solid #4d5872;
-                border-radius: 4px;
-                padding: 5px 10px 5px 10px!important;
-                margin-right: 40px;
-                width: 700px;
-                height: 50px;
-    
-                &:hover {
-                    background-color: #4d5872;
-                    color: white;
-                }
-            }
-        }
 
         li{
             display: list-item;
         }
     }
     
+}
+
+.subnav{
+
+    &__item{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 50px;
+    }
+
+    &__link{
+        text-decoration: none;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+
+        &__signout{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:black;
+            font-weight: $weight-bold;
+            border: none;
+            justify-content: center;
+            border-radius: 10px;
+            padding: 5px 0px;
+            margin-right: 50px;
+            border: transparent;
+            box-sizing: border-box;
+            width: 60px;
+            height: 50px;
+
+            &:hover {
+                color:blue;
+            }
+        }
+
+        &__signin{
+            box-sizing: border-box;
+            text-decoration: none;
+            color:#4d5872;
+            font-weight: $weight-bold;
+            border: 1px solid #4d5872;
+            border-radius: 4px;
+            padding: 5px 10px 5px 10px!important;
+            margin-right: 40px;
+            width: 69px;
+            height: 40px;
+
+            &:hover {
+                background-color: #4d5872;
+                color: white;
+            }
+        }
+    }
 }
 
 .link{
@@ -188,9 +190,7 @@
             background-color: transparent;
             border: transparent;
         }
-    }
-
-    
+    }    
 }
 
 .list-cart-detil{
@@ -211,38 +211,35 @@
         font-family: $base-font-family;
         font-size: $base-font-size-medium;
     }
+}
 
-    &__table{
-        height: 100px;
-        width: 100%;
+.table{
+    &__judul{
+        text-align: left;
+        padding: 5px 10px;
+        width: 50%;
+        height: 25px;
+        color: #4d5872;
+        font-family: $base-font-family;
+        font-size: $base-font-size-medium;
+        font-weight: $weight-normal;
+    }
 
-        &__head{
-            text-align: left;
-            padding: 5px 10px;
-            height: 25px;
-            font-family: $base-font-family;
-            font-size: $base-font-size-medium;
-            font-weight: $weight-normal;
-        }
+    &__total{
+        height: 33px;
+        font-size: 14px;
+        line-height: 19px;
+        color: #4d5872;
+        font-weight: $weight-bold;
+    }
 
-        &__body-total{
-            width: 50px;
-            height: 33px;
-            font-size: 14px;
-            line-height: 19px;
-            color: #4d5872;
-            font-weight: $weight-bold;
-        }
-
-        &__body-jumlah{
-            width: 50px;
-            height: 33px;
-            font-size: 18px;
-            line-height: 24px;
-            color: #4d5872;
-            text-align: right;
-            font-weight: $weight-black;
-        }
+    &__jumlah{
+        height: 33px;
+        font-size: 18px;
+        line-height: 24px;
+        color: #4d5872;
+        text-align: right;
+        font-weight: $weight-black;
     }
 }
 
