@@ -100,8 +100,8 @@ const ListCart = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="list-cart-detil__table__body"> TOTAL </td>
-                    <td className="list-cart-detil__table__body">Rp. {totalorder}</td>
+                    <td className="list-cart-detil__table__body-total"> TOTAL </td>
+                    <td className="list-cart-detil__table__body-jumlah">Rp. {totalorder}</td>
                   </tr>
                 </tbody>
               </table>
@@ -114,7 +114,7 @@ const ListCart = () => {
         <nav className="list-cart__subnav">
               <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                 <ul className="list-cart__subnav__item">
-                  <li><Link to="/SignIn" className="list-cart__subnav__link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                  <li><Link to="/SignIn" className="list-cart__subnav__link__signin" onClick={onDelete}>Sign In</Link></li> 
                 </ul>
             </nav>
         <div className="list-cart__container">
@@ -134,7 +134,7 @@ const ListCart = () => {
         <nav className="list-cart__subnav">
               <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                 <ul className="list-cart__subnav__item">
-                  <li><Link to="/SignIn" className="list-cart__subnav__link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                <li><Link to="/SignIn" className="list-cart__subnav__link__signin" onClick={onDelete}>Sign In</Link></li> 
                 </ul>
             </nav>
         <div className="list-cart__container">

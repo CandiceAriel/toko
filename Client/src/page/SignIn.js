@@ -64,23 +64,23 @@ const SignIn = () => {
     return (
     <div>
         <NavHeader />
-        <div className="signin__container">
+        <div className="container">
         <form className="signin__form" onSubmit={signIn}>
-            <h5 className="signin__form__title">Sign In</h5>
-            <p className="signin__form__subtitle">
+        <h5 className=" title">Sign In</h5>
+            <p className="subtitle">
                 Belum punya akun.
-                <span><Link to="/SignUp" className="signin__form__subtitle__link-signup">Daftar disini</Link></span>
+                <span><Link to="/SignUp" className="subtitle__link">Daftar disini</Link></span>
             </p>
-            <div className="signin__form__input__group">
+            <div className="form__group">
                 <label>Email</label>
-                <input type="text" name="email" placeholder="Email" className="signin__form__input__email" value={email} onChange={updateEmail}/>
+                <input type="text" name="email" placeholder="nama@email.com" className="form__input input" value={email} onChange={updateEmail}/>
             </div>
-            <div className="signin__form__input__group">
+            <div className="form__group">
                 <label>Password</label>
-                <input type="password" name="password" placeholder="Password" className="signin__form__input__password" value={password} onChange={updatePassword}/>
+                <input type="password" name="password" placeholder="Minimal 6 karakter" className="form__input input" value={password} onChange={updatePassword}/>
             </div>
-            <div className="signin__form__btn">
-                <button type="submit" value="Sign In" className="signin__form__btn__signin" onClick={signIn}>Sign In</button>
+            <div className="form__button">
+                <button type="submit" value="Sign In" className="form__button button" onClick={signIn}>Sign In</button>
             </div>
         </form>
         <h1>{signInStatus}</h1>

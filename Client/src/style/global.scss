@@ -51,10 +51,12 @@ tr{
     box-sizing: border-box;
 }
 
-input{
+.input{
     font-family: $base-font-family;
-    border: none;
+    font-size: $base-font-size-medium;
     border-bottom: 2px solid darkgrey;
+    width: 400px;
+    height: 40px;
 }
 
 .content{
@@ -78,21 +80,47 @@ input{
 
 .container{
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.button-primary{
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    margin: 15px 180px 0px;
-    background: #435560;
-    border: none;
+.title{
+    font-size: $base-font-size-x-large;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #3a4166;
+    margin: 0px 0px 8px 0px;
 }
 
-.button-secondary{
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    margin: 15px 180px 0px;
-    border: none;
+.subtitle{
+    margin: 0px 0px 8px 0px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(58,65,102,.7);
+
+    &__link{
+        font-size: $base-font-size-small;
+        font-weight: $weight-bold;
+        color: #007aff;
+        margin-left: 5px;
+    }
+}
+
+.button{
+      width: 200px;
+      height: 40px;
+      border-radius: 5px;
+      background: orange;
+      border: none;
+      font-weight: 900;
+      font-size: 16px;
+      color: white;
+      font-family: $base-font-family;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      text-transform: uppercase;
 }

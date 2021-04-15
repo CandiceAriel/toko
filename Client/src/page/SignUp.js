@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useHistory} from "react-router-dom";
 import Axios from 'axios';
 import '../style/SignUp.scss'
 
@@ -64,38 +65,38 @@ const SignUp = () => {
         <div>
         <NavHeader />
         <div className="signup__container">
-        <form className="signup__form">
-            <div className="signup__form__title">
-                <h5 className="signup__form__title__text">Sign Up</h5>
+        <form className="signup__form" onSubmit={signUp}>
+        <h5 className=" title">Sign Up</h5>
+            <p className="subtitle">
+                Sudah punya akun.
+                <span><Link to="/SignIn" className="subtitle__link">Masuk disini</Link></span>
+            </p>
+            <div className="form__group">
+                <label>User ID</label>
+                <input type="text" name="email" placeholder="Email" className="form__input input" value={userID} onChange={updateUserID}/>
             </div>
-            <div className="signup__form__input">
-                <div className="signup__form__input__group">
-                    <label>ID</label>
-                    <input type="text"  className="signup__form__input__id" value={userID} onChange={updateUserID}/>
-                </div>
-                <div className="signup__form__input__group">
-                    <label>Nama</label>
-                    <input type="text"  className="signup__form__input__nama" value={nama} onChange={updateNama}/>
-                </div>
-                <div className="signup__form__input__group">
-                    <label>No. Handphone</label>
-                    <input type="text"  className="signup__form__input__hp" value={noHP} onChange={updateHP}/>
-                </div>
-                <div className="signup__form__input__group">
-                    <label>Email</label>
-                    <input type="text"  className="signup__form__input__email" value={email} onChange={updateEmail}/>
-                </div>
-                <div className="signup__form__input__group">
-                    <label>Password</label>
-                    <input type="text"  className="signup__form__input__password" value={password} onChange={updatePassword}/>
-                </div>
+            <div className="form__group">
+                <label>Nama</label>
+                <input type="text" name="password" placeholder="Masukkan nama disini" className="form__input input" value={nama} onChange={updateNama}/>
             </div>
-            <div className="signup__form__btn">
-                <input type="submit" value="Sign Up" className="signup__form__btn__signup" onClick={signUp}/>
+            <div className="form__group">
+                <label>No HP</label>
+                <input type="text" name="email" placeholder="0817895xxx" className="form__input input" value={noHP} onChange={updateHP}/>
+            </div>
+            <div className="form__group">
+                <label>Email</label>
+                <input type="text" name="email" placeholder="nama@example.com" className="form__input input" value={email} onChange={updateEmail}/>
+            </div>
+            <div className="form__group">
+                <label>Password</label>
+                <input type="password" name="email" placeholder="Minimal 6 karakter" className="form__input input" value={password} onChange={updatePassword}/>
+            </div>
+            <div className="form__button">
+                <button type="submit" value="Sign In" className="form__button button" onClick={signUp}>SIGN UP</button>
             </div>
         </form>
         </div>
-        </div>
+    </div>
     )
 }
 
