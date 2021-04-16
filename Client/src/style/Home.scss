@@ -1,7 +1,7 @@
 @import './main.scss';
 
 .home{
-    &__container{
+    &_container{
         box-sizing: border-box;
         height: 100vh;
         background-image: url(../image/ingredients.jpg);
@@ -9,13 +9,13 @@
         padding: 200px 50px;
     }
 
-    &__wrapper{
+    &_wrapper{
         padding: 10px 5px;
         width: 700px;
         height: 100px;
     }
 
-    &__slogan{
+    &_slogan{
         font-family: $base-font-family;
         font-weight: 900;
         letter-spacing: .05em;

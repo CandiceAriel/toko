@@ -3,14 +3,14 @@
 
 .list-cart{
     
-    &__container{
+    &_container{
         width: 100%;
         display: flex;
         justify-content: center;
         background-color: #f6fbff;
     }
 
-    &__wrapper{
+    &_wrapper{
         width: 100%;
         margin-right: auto;
         margin-left: auto;
@@ -21,19 +21,19 @@
         justify-content: center;
     }
 
-    &__emptycart-image{
+    &_emptycart-image{
         width: 360px;
         height: 200px;
         box-sizing: border-box;
     }
 
-    &__warning-text{
+    &_warning-text{
         margin: 40px;
         font-size: 28px;
         font-family: 'Montserrat', sans-serif;
     }
 
-    &__subnav{
+    &_subnav{
         list-style: none;
         display: flex;
         justify-content: flex-end;
@@ -54,7 +54,7 @@
 
 .subnav{
 
-    &__item{
+    &_item{
     list-style: none;
     display: flex;
     justify-content: flex-end;
@@ -63,13 +63,13 @@
     height: 50px;
     }
 
-    &__link{
+    &_link{
         text-decoration: none;
         box-sizing: border-box;
         display: flex;
         justify-content: center;
 
-        &__signout{
+        &_signout{
             box-sizing: border-box;
             text-decoration: none;
             color:black;
@@ -89,7 +89,7 @@
             }
         }
 
-        &__signin{
+        &_signin{
             box-sizing: border-box;
             text-decoration: none;
             color:#4d5872;
@@ -110,7 +110,7 @@
 }
 
 .link{
-    &__home{
+    &_home{
         box-sizing: border-box;
         text-decoration: none;
         color:black;
@@ -127,7 +127,7 @@
         font-size: $base-font-size-x-large;
     }
 
-    &__mainpage{
+    &_mainpage{
         text-decoration: none;
         width: 200px;
         font-family: $base-font-family;
@@ -149,7 +149,7 @@
 }
 
 .list-cart-item{
-    &__container{
+    &_container{
         width: 80%;
         display: flex;
         flex-direction: column;
@@ -161,7 +161,7 @@
         border-radius: 8px;
     }
 
-    &__wrapper{
+    &_wrapper{
         box-sizing: border-box;
         width: 100%;
         padding-right: 10px;
@@ -176,9 +176,9 @@
         padding: 32px 48px;
     }
 
-    &__button{
+    &_button{
 
-        &__delete{
+        &_delete{
             width: 70px;
             height: 30px;
             justify-content: flex-end;
@@ -195,7 +195,7 @@
 
 .list-cart-detil{
 
-    &__container{
+    &_container{
         box-sizing: border-box;
         width: 40%;
         height: 100px;
@@ -207,14 +207,14 @@
         color: black;
     }
 
-    &__text{
+    &_text{
         font-family: $base-font-family;
         font-size: $base-font-size-medium;
     }
 }
 
 .table{
-    &__judul{
+    &_judul{
         text-align: left;
         padding: 5px 10px;
         width: 50%;
@@ -225,7 +225,7 @@
         font-weight: $weight-normal;
     }
 
-    &__total{
+    &_total{
         height: 33px;
         font-size: 14px;
         line-height: 19px;
@@ -233,7 +233,7 @@
         font-weight: $weight-bold;
     }
 
-    &__jumlah{
+    &_jumlah{
         height: 33px;
         font-size: 18px;
         line-height: 24px;

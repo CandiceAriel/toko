@@ -1,13 +1,13 @@
 @import './main.scss';
 
 .signup{
-    &__container{
+    &_container{
       display: flex;
       justify-content: center;
       padding: 50px;
     }
 
-    &__form{
+    &_form{
         font-size: 16px;
         padding: 30px 48px;
         text-align: left;
@@ -25,17 +25,17 @@
 }
 
 .form{
-  &__input{
+  &_input{
     border:none;
   }
 
-  &__group{
+  &_group{
       margin-bottom: 30px;
       padding: 0px;
       height: 65px;
   }
 
-  &__button{
+  &_button{
     display: flex;
     justify-content: center;
     box-sizing: border-box;

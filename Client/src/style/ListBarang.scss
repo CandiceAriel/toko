@@ -1,7 +1,7 @@
 @import './main.scss';
 
 .list-barang{
-    &__container{
+    &_container{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -9,11 +9,11 @@
         padding-left: 115px;
     }
 
-    &__title{
+    &_title{
         margin: 50px 480px;
     }
 
-    &__table{
+    &_table{
         font-size: medium;
         width: 100%;
         height: 70px;
@@ -22,8 +22,8 @@
         background-color: transparent;
     }
     
-    &__btn{
-        &__delete{
+    &_btn{
+        &_delete{
             width: 70px;
             height: 40px;
             border-radius: 5px;
@@ -37,8 +37,8 @@
         }
     }
 
-    &__item{
-        &__container{
+    &_item{
+        &_container{
             box-sizing: border-box;
             margin-top: 10px;
             padding: 0px;
@@ -48,7 +48,7 @@
 }
 
 .table{
-    &__head{
+    &_head{
         display: table-cell;
         height: 100%;
         width: 3px;
@@ -61,7 +61,7 @@
         color: #3a4166;
 
         .link{
-            &__barang{
+            &_barang{
                 width: 90px;
                 height: 50px;
                 margin-right: 30px;

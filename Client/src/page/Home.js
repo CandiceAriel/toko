@@ -8,10 +8,10 @@ const Home = () => {
     return (
         <div>
             <NavHeader />
-            <div className="home__container">
-                <div className="home__wrapper">
-                    <h1 className="home__slogan">Hard to find ingredients? No Worries</h1>
-                    <h1 className="home__slogan__description"> Herbs, extract, flour, we got it all covered</h1>
+            <div className="home_container">
+                <div className="home_wrapper">
+                    <h1 className="home_slogan">Hard to find ingredients? No Worries</h1>
+                    <h1 className="home_slogan_description"> Herbs, extract, flour, we got it all covered</h1>
                 </div>
             </div>
         </div>

@@ -61,35 +61,35 @@ const AddBarang = () => {
     return (
         <div>
         <NavHeader />
-        <div className="barang-add__container">
-        <form className="barang-add__form">
-            <div className="signup__form__title">
-                <h5 className="signup__form__title__text">Tambah Barang</h5>
+        <div className="barang-add_container">
+        <form className="barang-add_form">
+            <div className="signup_form_title">
+                <h5 className="signup_form_title_text">Tambah Barang</h5>
             </div>
-            <div className="barang-add__form__input__group">
+            <div className="barang-add_form_input_group">
                 <label>Kode Barang</label>
-                <input type="text"  className="barang-add__form__input__kode" value={kodeBaranginput} onChange={updateKodeBarang}/>
+                <input type="text"  className="barang-add_forminput__kode" value={kodeBaranginput} onChange={updateKodeBarang}/>
             </div>
-            <div className="barang-add__form__input__group">
+            <div className="barang-add_form_input_group">
                 <label>Nama Barang</label>
-                <input type="text"  className="barang-add__form__input__nama" value={namaBaranginput} onChange={updateNamaBarang}/>
+                <input type="text"  className="barang-add_form_input_nama" value={namaBaranginput} onChange={updateNamaBarang}/>
             </div>
-            <div className="barang-add__form__input__group">
+            <div className="barang-add_form_input_group">
                 <label>Harga</label>
-                <input type="number"  className="barang-add__form__input__harga" value={hargainput} onChange={updateHarga}/>
+                <input type="number"  className="barang-add_form_input_harga" value={hargainput} onChange={updateHarga}/>
             </div>
-            <div className="barang-add__form__input__group">
+            <div className="barang-add_form_input_group">
                 <label>Stok</label>
-                <input type="number"  className="barang-add__form__input__stok" value={stokinput} onChange={updateStok}/>
+                <input type="number"  className="barang-add_form_input_stok" value={stokinput} onChange={updateStok}/>
             </div>
-            <div className="barang-add__form__btn">
-                <input type="submit" value="Submit" onClick={addBarang} className="barang-add__form__btn__submit" />
+            <div className="barang-add_form_btn">
+                <input type="submit" value="Submit" onClick={addBarang} className="barang-add_form_btn_submit" />
             </div>
         </form>
         <div>
             { barang.map(barang => (
                 <div className="wrapper" key={barang.id}>
-                <table className="barang-add__table">
+                <table className="barang-add_table">
                     <tbody> 
                         <tr>
                         <td>{barang.kodeBarang}</td>
@@ -109,7 +109,7 @@ const AddBarang = () => {
         return (
             <div>
                 <NavHeader />
-                <h1 className="barang-add__warning-text">Not Authorized</h1>
+                <h1 className="barang-add_warning-text">Not Authorized</h1>
             </div>
         )
     }

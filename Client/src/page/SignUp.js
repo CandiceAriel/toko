@@ -64,34 +64,34 @@ const SignUp = () => {
     return (
         <div>
         <NavHeader />
-        <div className="signup__container">
-        <form className="signup__form" onSubmit={signUp}>
+        <div className="signup_container">
+        <form className="signup_form" onSubmit={signUp}>
         <h5 className=" title">Sign Up</h5>
             <p className="subtitle">
                 Sudah punya akun.
-                <span><Link to="/SignIn" className="subtitle__link">Masuk disini</Link></span>
+                <span><Link to="/SignIn" className="subtitle_link">Masuk disini</Link></span>
             </p>
-            <div className="form__group">
+            <div className="form_group">
                 <label>User ID</label>
-                <input type="text" name="email" placeholder="Email" className="form__input input" value={userID} onChange={updateUserID}/>
+                <input type="text" name="email" placeholder="Masukkan user id" className="form_input input" value={userID} onChange={updateUserID}/>
             </div>
-            <div className="form__group">
+            <div className="form_group">
                 <label>Nama</label>
-                <input type="text" name="password" placeholder="Masukkan nama disini" className="form__input input" value={nama} onChange={updateNama}/>
+                <input type="text" name="password" placeholder="Masukkan nama disini" className="form_input input" value={nama} onChange={updateNama}/>
             </div>
-            <div className="form__group">
+            <div className="form_group">
                 <label>No HP</label>
-                <input type="text" name="email" placeholder="0817895xxx" className="form__input input" value={noHP} onChange={updateHP}/>
+                <input type="text" name="email" placeholder="0817895xxx" className="form_input input" value={noHP} onChange={updateHP}/>
             </div>
-            <div className="form__group">
+            <div className="form_group">
                 <label>Email</label>
-                <input type="text" name="email" placeholder="nama@example.com" className="form__input input" value={email} onChange={updateEmail}/>
+                <input type="text" name="email" placeholder="nama@example.com" className="form_input input" value={email} onChange={updateEmail}/>
             </div>
-            <div className="form__group">
+            <div className="form_group">
                 <label>Password</label>
-                <input type="password" name="email" placeholder="Minimal 6 karakter" className="form__input input" value={password} onChange={updatePassword}/>
+                <input type="password" name="email" placeholder="Minimal 6 karakter" className="form_input input" value={password} onChange={updatePassword}/>
             </div>
-            <div className="form__button">
+            <div className="form_button">
                 <button type="submit" className="button" onClick={signUp}>SIGN UP</button>
             </div>
         </form>

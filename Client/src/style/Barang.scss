@@ -1,13 +1,13 @@
 @import './main.scss';
 
 .barang{
-    &__container{
+    &_container{
         width: 100%;
         height: 130px;
         box-sizing: border-box;
     }
 
-    &__table{
+    &_table{
         box-sizing: border-box;
         height: 100%;
         width: 100%;
@@ -21,7 +21,7 @@
     width: 100%;
     border-radius: 10px;
 
-    &__item{
+    &_item{
         display: table-cell;
         height: 100%;
         width: 185px;
@@ -35,7 +35,7 @@
         color: #3a4166;
         text-align: center;
 
-        &__addtocart{
+        &_addtocart{
             display: table-cell;
             height: 100%;
             vertical-align: middle;
@@ -62,7 +62,7 @@
 .btn{
     font-family: $base-font-family;
     
-    &__tambah{
+    &_tambah{
         box-sizing: border-box;
         background-color: transparent;
         margin: 0px 10px;
@@ -75,7 +75,7 @@
         font-size: $base-font-size-large;
     }
 
-    &__kurang{
+    &_kurang{
         box-sizing: border-box;
         background-color: transparent;
         margin: 0px 10px;
@@ -88,7 +88,7 @@
         font-size: $base-font-size-x-large;
     }
 
-    &__update{
+    &_update{
         margin: 0px 0px;
         border-radius: 5px;
         width: 100px;

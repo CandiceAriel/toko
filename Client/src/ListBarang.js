@@ -30,22 +30,22 @@ const ListBarang = () => {
     return (
         <div>
             <NavHeader />
-            <div className="list-barang__container">
-            <h1 className="list-barang__title">Daftar Barang</h1>
-            <div className="list-barang__wrapper">
-            <table className="list-barang__table">
+            <div className="list-barang_container">
+            <h1 className="list-barang_title">Daftar Barang</h1>
+            <div className="list-barang_wrapper">
+            <table className="list-barang_table">
               <thead>
                 <tr>
-                    <th align="center" className="list-barang__table table__head">Kode Barang</th>
-                    <th align="center" className="list-barang__table table__head">Nama Barang</th>
-                    <th align="center" className="list-barang__table table__head">Harga</th> 
-                    <th align="left" className="list-barang__table table__head">Stok Barang</th>
-                    <th align="left" className="list-barang__table table__head">Jumlah Barang</th>
-                    <th className="list-barang__table table__head" ></th>
+                    <th align="center" className="list-barang_table table_head">Kode Barang</th>
+                    <th align="center" className="list-barang_table table_head">Nama Barang</th>
+                    <th align="center" className="list-barang_table table_head">Harga</th> 
+                    <th align="left" className="list-barang_table table_head">Stok Barang</th>
+                    <th align="left" className="list-barang_table table_head">Jumlah Barang</th>
+                    <th className="list-barang_table table_head" ></th>
                 </tr>
               </thead>
               </table>
-              <div className="list-barang__item__container">
+              <div className="list-barang_item_container">
               {barang.map(barang => (
                       <div className="wrapper" key={barang.id}>
                         <Barang key={barang.id}

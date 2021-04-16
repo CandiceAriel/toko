@@ -2,7 +2,7 @@
  
 }
 
-.container__profile{
+.container_profile{
     height: 100vh;
     width: 100%;
     background: transparent;
@@ -11,7 +11,7 @@
     .wrapper{
         height: 150px;
 
-        &__profile{
+        &_profile{
             padding: 10px 400px;
             border-radius: 17px;
             margin: 10px;
@@ -19,7 +19,7 @@
             border: 1px solid rgba(139, 128, 91, 0.2);
         }
 
-        &__link{
+        &_link{
              padding: 20px 200px;
              border-radius: 7px;
              margin: 10px;
@@ -32,7 +32,7 @@
 
 .link{
 
-    &__SignOut{
+    &_SignOut{
         font-weight: bold;
         text-decoration: none;
         color: black;

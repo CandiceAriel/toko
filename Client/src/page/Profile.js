@@ -31,14 +31,14 @@ const Profile = () => {
     return (
         <div>
             <NavHeader />
-        <div className="container__profile">
-            <div className="wrapper__profile">
+        <div className="container_profile">
+            <div className="wrapper_profile">
                 <h3>{nama}</h3>
                 <p>{noHP}</p>
                 <p>{email}</p>
             </div>
-            <div className="wrapper__link">
-                <Link to="/SignIn" className="link__SignOut" onClick={onDelete}>Sign Out</Link>
+            <div className="wrapper_link">
+                <Link to="/SignIn" className="link_SignOut" onClick={onDelete}>Sign Out</Link>
             </div>
         </div>
         </div>

@@ -70,16 +70,16 @@ const ListCart = () => {
     if(dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('datacart')).length !== 0){
     return (
         <div>
-          <nav className="list-cart__subnav">
-              <Link to="/" className="link__home">TOKO SERBA ADA</Link>
-                <ul className="list-cart__subnav subnav__item">
-                  <li><Link to="/SignIn" className="list-cart__subnav subnav__link__signout" onClick={onDelete}>Sign Out</Link></li> 
+          <nav className="list-cart_subnav">
+              <Link to="/" className="link_home">TOKO SERBA ADA</Link>
+                <ul className="list-cart_subnav subnav_item">
+                  <li><Link to="/SignIn" className="list-cart_subnav subnav_link_signout" onClick={onDelete}>Sign Out</Link></li> 
                 </ul>
             </nav>
-          <div className="list-cart__container">
-            <div className="list-cart-item__container">
+          <div className="list-cart_container">
+            <div className="list-cart-item_container">
                 {cart.map(cart => (
-                  <div className="list-cart-item__wrapper" key={cart.id}>
+                  <div className="list-cart-item_wrapper" key={cart.id}>
                   <Cart userID={cart.userID}  
                       id={cart.id}
                       kodeBarang={cart.kodeBarang} 
@@ -87,21 +87,21 @@ const ListCart = () => {
                       harga={cart.harga}
                       qty={cart.qty}
                       total={cart.total}/>
-                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item__button__delete"><FaTimes /> </button>
+                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item_button_delete"><FaTimes /> </button>
                   </div>
                 ))}  
             </div> 
-            <div className="list-cart-detil__container">
-              <table className="list-cart-detil__table">
+            <div className="list-cart-detil_container">
+              <table className="list-cart-detil_table">
                 <thead>
                   <tr>
-                    <th className="list-cart-detil__table table__judul">Detail Order</th>
+                    <th className="list-cart-detil_table table_judul">Detail Order</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="list-cart-detil__table table__total"> TOTAL </td>
-                    <td className="list-cart-detil__table table__jumlah">Rp. {totalorder}</td>
+                    <td className="list-cart-detil_table table_total"> TOTAL </td>
+                    <td className="list-cart-detil_table table_jumlah">Rp. {totalorder}</td>
                   </tr>
                 </tbody>
               </table>
@@ -111,17 +111,17 @@ const ListCart = () => {
     )} else if (dataUser === null || usercart === null  ) {
     return (
       <div>
-        <nav className="list-cart__subnav">
-              <Link to="/" className="link__home">TOKO SERBA ADA</Link>
-                <ul className="list-cart__subnav subnav__item">
-                  <li><Link to="/SignIn" className="list-cart__subnav subnav__link__signin" onClick={onDelete}>Sign In</Link></li> 
+        <nav className="list-cart_subnav">
+              <Link to="/" className="link_home">TOKO SERBA ADA</Link>
+                <ul className="list-cart_subnav subnav_item">
+                  <li><Link to="/SignIn" className="list-cart_subnav subnav_link_signin" onClick={onDelete}>Sign In</Link></li> 
                 </ul>
             </nav>
-        <div className="list-cart__container">
-          <div className="list-cart__wrapper">
-            <EmptyCart className="list-cart__emptycart-image"/>
-            <h1 className="list-cart__warning-text">Cart Anda Kosong</h1>
-            <Link to="/Barang" className="link__mainpage">KE HALAMAN UTAMA</Link>
+        <div className="list-cart_container">
+          <div className="list-cart_wrapper">
+            <EmptyCart className="list-cart_emptycart-image"/>
+            <h1 className="list-cart_warning-text">Cart Anda Kosong</h1>
+            <Link to="/Barang" className="link_mainpage">KE HALAMAN UTAMA</Link>
           </div>
         </div> 
       </div>
@@ -131,17 +131,17 @@ const ListCart = () => {
   if (dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('datacart')).length === 0) {
     return (
       <div>
-        <nav className="list-cart__subnav">
-              <Link to="/" className="link__home">TOKO SERBA ADA</Link>
-                <ul className="list-cart__subnav subnav__item">
-                <li><Link to="/SignIn" className="list-cart__subnav subnav__link__signin" onClick={onDelete}>Sign In</Link></li> 
+        <nav className="list-cart_subnav">
+              <Link to="/" className="link_home">TOKO SERBA ADA</Link>
+                <ul className="list-cart_subnav subnav_item">
+                <li><Link to="/SignIn" className="list-cart_subnav subnav_link_signin" onClick={onDelete}>Sign In</Link></li> 
                 </ul>
             </nav>
-        <div className="list-cart__container">
-          <div className="list-cart__wrapper">
-            <EmptyCart className="list-cart__emptycart-image"/>
-            <h1 className="list-cart__warning-text">Cart Anda Kosong</h1>
-            <Link to="/Barang" className="link__mainpage">KE HALAMAN UTAMA</Link>
+        <div className="list-cart_container">
+          <div className="list-cart_wrapper">
+            <EmptyCart className="list-cart_emptycart-image"/>
+            <h1 className="list-cart_warning-text">Cart Anda Kosong</h1>
+            <Link to="/Barang" className="link_mainpage">KE HALAMAN UTAMA</Link>
           </div>
         </div> 
       </div>

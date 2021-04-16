@@ -5,17 +5,17 @@
   //display: flex;
   //justify-content: center;
 
-  &__container{
+  &_container{
     padding: 10px 100px;
   }
 
-  &__warning-text{
+  &_warning-text{
     margin: 280px 570px;
     font-size: 30px;
     font-weight: 900;
   }
 
-  &__form{
+  &_form{
     height:430px; 
     font-size: 16px;
     padding: 25px 20px;
@@ -31,7 +31,7 @@
     border: 1px solid rgba(139, 128, 91, 0.2);
     box-sizing: border-box;
 
-    &__title{
+    &_title{
       box-sizing: border-box;
       display: flex;
       justify-content: center;
@@ -39,12 +39,12 @@
       height: 50px;
       margin-bottom: 0px;
 
-      &__text{
+      &_text{
           margin: 0px;
       }
     }
 
-  &__btn{
+  &_btn{
         width: 100%;
         height: 40px;
         box-sizing: border-box;
@@ -52,7 +52,7 @@
         margin-top: 10px;
         justify-content: center;
 
-    &__submit{
+    &_submit{
         width: 100px;
         height: 40px;
         border-radius: 5px;
@@ -64,7 +64,7 @@
     }
   }
   
-  &__input{
+  &_input{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -72,7 +72,7 @@
     height: 260px;
     margin-bottom: 30px;
 
-  &__group{
+  &_group{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -82,22 +82,22 @@
     margin-bottom: 10px;
   }
   
-    &__kode{
+    &_kode{
       width: 300px;
           height: 40px;
     }
     
-    &__nama{
+    &_nama{
       width: 300px;
           height: 40px;
     }
     
-    &__harga{
+    &_harga{
       width: 300px;
       height: 40px;
     }
     
-    &__stok{
+    &_stok{
       width: 300px;
           height: 40px;
     }

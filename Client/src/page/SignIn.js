@@ -65,21 +65,21 @@ const SignIn = () => {
     <div>
         <NavHeader />
         <div className="container">
-        <form className="signin__form" onSubmit={signIn}>
+        <form className="signin_form" onSubmit={signIn}>
         <h5 className="title">Sign In</h5>
             <p className="subtitle">
                 Belum punya akun.
-                <span><Link to="/SignUp" className="subtitle__link">Daftar disini</Link></span>
+                <span><Link to="/SignUp" className="subtitle_link">Daftar disini</Link></span>
             </p>
-            <div className="form__group">
+            <div className="form_group">
                 <label>Email</label>
-                <input type="text" name="email" placeholder="nama@email.com" className="form__input input" value={email} onChange={updateEmail}/>
+                <input type="text" name="email" placeholder="nama@email.com" className="form_input input" value={email} onChange={updateEmail}/>
             </div>
-            <div className="form__group">
+            <div className="form_group">
                 <label>Password</label>
-                <input type="password" name="password" placeholder="Minimal 6 karakter" className="form__input input" value={password} onChange={updatePassword}/>
+                <input type="password" name="password" placeholder="Minimal 6 karakter" className="form_input input" value={password} onChange={updatePassword}/>
             </div>
-            <div className="form__button">
+            <div className="form_button">
                 <button type="submit" className="button" onClick={signIn}>Sign In</button>
             </div>
         </form>
