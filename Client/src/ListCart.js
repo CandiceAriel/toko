@@ -14,9 +14,9 @@ const ListCart = () => {
     const [cart,setCart]=useState([]);
 
     var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
-    var usercart = JSON.parse(localStorage.getItem('datacart'));
+    var usercart = JSON.parse(localStorage.getItem('usercart'));
 
-    if(usercart !== null && JSON.parse(localStorage.getItem('datacart')).length !== 0){
+    if(usercart !== null && JSON.parse(localStorage.getItem('usercart')).length !== 0){
       var totalorder = usercart[0].total;
     } else if (usercart === null){
       var totalorder = 0;
@@ -24,17 +24,17 @@ const ListCart = () => {
 
     const onDelete = () => {
       localStorage.removeItem('dataLogIn')
-      localStorage.removeItem('datacart')
+      localStorage.removeItem('usercart')
   }
     
     //Get data upon accessing Cart menu
     useEffect(() => {
-      var usercart = JSON.parse(localStorage.getItem('datacart'));
+      var usercart = JSON.parse(localStorage.getItem('usercart'));
 
       setCart(usercart)
 
-      if(localStorage.getItem('datacart') !== null && localStorage.getItem('datacart').length === 0){
-        localStorage.removeItem('datacart')
+      if(localStorage.getItem('usercart') !== null && localStorage.getItem('usercart').length === 0){
+        localStorage.removeItem('usercart')
       }
     }, [])
 
@@ -47,12 +47,12 @@ const ListCart = () => {
             })
           );
         });
-        const datacart = JSON.parse(localStorage.getItem('datacart'));
-        const filtered = datacart.filter(datacart => datacart.id !== id);
-        localStorage.setItem('datacart', JSON.stringify(filtered));
+        const usercart = JSON.parse(localStorage.getItem('usercart'));
+        const filtered = usercart.filter(usercart => usercart.id !== id);
+        localStorage.setItem('usercart', JSON.stringify(filtered));
     };
     
-    if(dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('datacart')).length !== 0){
+    if(dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('usercart')).length !== 0){
     return (
         <div>
           <nav className="list-cart_subnav">
@@ -114,7 +114,7 @@ const ListCart = () => {
     )
   }
   
-  if (dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('datacart')).length === 0) {
+  if (dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('usercart')).length === 0) {
     return (
       <div>
         <nav className="list-cart_subnav">

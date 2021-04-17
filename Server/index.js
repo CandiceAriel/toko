@@ -122,7 +122,7 @@ app.post('/createCart/', (req,res) => {
   const userID = req.body.userID;
   const cartID = req.body.cartID;
 
-  con.query('INSERT INTO Cart (userID,cartID) VALUES (?,?)',
+  con.query('INSERT INTO Cart (userID,cartID) VALUES (?,?) ON DUPLICATE KEY UPDATE cartID = VALUES(cartID)',
    [userID,cartID],
     (err,result) => {
       if(err) {

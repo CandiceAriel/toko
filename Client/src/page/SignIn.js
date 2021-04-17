@@ -5,7 +5,7 @@ import '../style/SignIn.scss'
 import '../style/NavHeader.scss';
 import NavHeader from '../NavHeader';
 
-const SignIn = () => {
+const SignIn = ({cartID}) => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
@@ -44,16 +44,28 @@ const SignIn = () => {
 
                 if(dataUser !== null){
                     const userID = dataUser[0].userID;
-            
-                      Axios.post("http://localhost:3001/retrieveCart",
-                      {
-                        userID: userID
-                      }).then((response) => {
-                      if(response.data.message){
-                        console.log(response.data.message)
-                      }else {
-                        localStorage.setItem('datacart', JSON.stringify(response.data));
-                      }
+                    
+                    Axios.post("http://localhost:3001/createCart",
+                     {
+                        userID: dataUser[0].userID,
+                        cartID: cartID,
+                     }).then((response) => {
+                        alert("Good");
+                     });
+
+                     Axios.post("http://localhost:3001/retrieveCart",
+                    {
+                        userID: dataUser[0].userID
+                    }).then((response) => {
+                        if(response.data.message ){
+                            console.log(response.data.message)
+                        }else {
+                            if(response.data){
+                                localStorage.setItem('datacart', JSON.stringify(response.data));
+                            } else {
+
+                            }
+                        }
                     });
                 }
             }

@@ -9,8 +9,7 @@ export const NavHeader = () => {
     var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
 
     const onDelete = () => {
-        localStorage.removeItem('dataLogIn')
-        localStorage.removeItem('datacart')
+        localStorage.clear();
     }
 
     if(dataUser === null){
