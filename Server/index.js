@@ -88,17 +88,18 @@ app.put("/update", (req, res) => {
 });
 
 //Add data to Cart table
-app.post('/createCart/', (req,res) => {
+app.post('/createCartDetail/', (req,res) => {
   const userID = req.body.userID;
   const id = req.body.id;
+  const cartID = req.body.cartID;
   const kodeBarang = req.body.kodeBarang;
   const namaBarang = req.body.namaBarang;
   const harga = req.body.harga;
   const qty = req.body.qty;
   const total = req.body.total;
 
-  con.query('INSERT INTO Cart (userID,id,kodeBarang,namaBarang,harga,qty,total) VALUES (?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE qty = VALUES(qty)',
-   [userID,id,kodeBarang,namaBarang,harga,qty,total],
+  con.query('INSERT INTO Cart_detail (userID,id,cartID,kodeBarang,namaBarang,harga,qty,total) VALUES (?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE qty = VALUES(qty)',
+   [userID,id,cartID,kodeBarang,namaBarang,harga,qty,total],
     (err,result) => {
       if(err) {
         console.log(err);
@@ -109,11 +110,35 @@ app.post('/createCart/', (req,res) => {
   );
 });
 
-//delete data from Cart table
+//Get data Barang from Barang table
+app.get('/cart', function (req, res) {
+  con.query('SELECT * FROM Cart', (error, rows,field)  => {
+      if (error) throw error;
+      return res.send(rows);
+  });
+});
+
+app.post('/createCart/', (req,res) => {
+  const userID = req.body.userID;
+  const cartID = req.body.cartID;
+
+  con.query('INSERT INTO Cart (userID,cartID) VALUES (?,?)',
+   [userID,cartID],
+    (err,result) => {
+      if(err) {
+        console.log(err);
+      }else {
+        res.send(result.data);
+      }
+    }
+  );
+});
+
+//delete data FROM Cart_detail table
 app.delete("/deleteCart/:id", (req, res) => {
   const id = req.params.id;
 
-  con.query("DELETE FROM Cart WHERE id = ? ", id, (err, result) => {
+  con.query("DELETE FROM Cart_detail WHERE id = ? ", id, (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -207,7 +232,27 @@ app.post('/SignIn', function(req,res) {
 app.post('/retrieveCart', function(req,res) {
   const userID = req.body.userID;
 
-  con.query('SELECT * FROM Cart WHERE userID = ?', 
+  con.query('SELECT cartID FROM Cart WHERE userID = ?', 
+      userID, 
+      (err, result) => {
+        if (err) {
+          res.send({ err: err });
+        }
+  
+        if (result.length > 0) {
+              res.send(result);
+        } else {
+          res.send({ message: "Cart is empty" });
+        }
+      }
+    );
+});
+
+//retrieve Cart based on UserID in Local Storage
+app.post('/retrieveCartDetil', function(req,res) {
+  const userID = req.body.userID;
+
+  con.query('SELECT * FROM Cart_detail WHERE userID = ?', 
       userID, 
       (err, result) => {
         if (err) {

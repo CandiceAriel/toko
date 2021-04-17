@@ -29,24 +29,9 @@ const ListCart = () => {
     
     //Get data upon accessing Cart menu
     useEffect(() => {
-      var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
       var usercart = JSON.parse(localStorage.getItem('datacart'));
 
-      if(dataUser === null){
-        } else if(dataUser !== null){
-          const userID = dataUser[0].userID;
-          Axios.post("http://localhost:3001/retrieveCart",
-          {
-            userID: userID
-          }).then((response) => {
-          if(response.data.message ){
-            console.log(response.data.message)
-          }else {
-            setCart(response.data)
-            localStorage.setItem('datacart', JSON.stringify(response.data));
-          }
-        });
-      }
+      setCart(usercart)
 
       if(localStorage.getItem('datacart') !== null && localStorage.getItem('datacart').length === 0){
         localStorage.removeItem('datacart')
@@ -55,7 +40,7 @@ const ListCart = () => {
 
     //Delete Cart data based on ID
     const deleteCart = (id) => {
-          Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
+        Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
           setCart(
             cart.filter((cart) => {
               return cart.id !== id;
@@ -80,7 +65,8 @@ const ListCart = () => {
             <div className="list-cart-item_container">
                 {cart.map(cart => (
                   <div className="list-cart-item_wrapper" key={cart.id}>
-                  <Cart userID={cart.userID}  
+                  <Cart userID={cart.userID}
+                      cartID={cart.cartID}  
                       id={cart.id}
                       kodeBarang={cart.kodeBarang} 
                       namaBarang={cart.namaBarang} 

@@ -1,15 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Axios from 'axios';
 import '../style/Barang.scss'
 
-const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
+const Barang = ({id, cartID,kodeBarang,namaBarang, harga,stok}) => {
     const [qty,setQty] = useState(0);
     const [stokBaru,setStokBaru] = useState(stok);
     const [hargaBaru, setHargaBaru] = useState(harga);
 
     const [barang,setBarang] = useState([])
 
-    //Kurangi stok based on qty for counter button
+    //Kurangi stok based on Qty for counter button
     const kurangiStok =() => {
        if(stokBaru === 0 ){
             setQty(qty + 0)
@@ -53,14 +53,28 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
     };
 
     //Add to Cart
-    const addCart = (id) => {
+    const addCartDetail = (id) => {
         var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
 
-        if(dataUser !== null){
-            Axios.post("http://localhost:3001/createCart",
+        Axios.post("http://localhost:3001/retrieveCart",
+          {
+            userID: dataUser[0].userID
+          }).then((response) => {
+          if(response.data.message ){
+            console.log(response.data.message)
+          }else {
+            alert("Berhasil")
+          }
+        });
+
+        var usercart = JSON.parse(localStorage.getItem('usercart'));
+
+        if(dataUser !== null && usercart !== null){
+            Axios.post("http://localhost:3001/createCartDetail",
          {
             userID: dataUser[0].userID,
             id: id,
+            cartID: usercart[0].cartID,
             kodeBarang: kodeBarang,
             namaBarang: namaBarang,
             harga: hargaBaru,
@@ -70,21 +84,69 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
          }).then((response) => {
             alert("Good");
             {updateBarang(kodeBarang);}
+         });
 
-                Axios.post("http://localhost:3001/retrieveCart",
-                {
-                    userID: dataUser[0].userID
-                }).then((response) => {
-                if(response.data.message ){
-                    console.log(response.data.message)
-                }else {
-                    localStorage.setItem('datacart', JSON.stringify(response.data));
-                }
-            });
-         }); 
+         Axios.post("http://localhost:3001/retrieveCartDetil",
+          {
+            userID: dataUser[0].userID
+          }).then((response) => {
+          if(response.data.message ){
+            console.log(response.data.message)
+          }else {
+            localStorage.setItem('datacart', JSON.stringify(response.data));
+          }
+        });
+        } else if (dataUser !== null && usercart === null){
+            Axios.post("http://localhost:3001/retrieveCart",
+          {
+            userID: dataUser[0].userID
+          }).then((response) => {
+          if(response.data.message ){
+            console.log(response.data.message)
+          }else {
+            localStorage.setItem('usercart', JSON.stringify(response.data));
+          }
+        });
+
+        {/*}    Axios.post("http://localhost:3001/createCartDetail",
+         {
+            userID: dataUser[0].userID,
+            id: id,
+            cartID: cartID,
+            kodeBarang: kodeBarang,
+            namaBarang: namaBarang,
+            harga: hargaBaru,
+            stok: stokBaru,
+            qty: qty,
+            total : hargaBaru * qty,
+         }).then((response) => {
+            alert("Good");
+            {updateBarang(kodeBarang);}
+         }); */}
         } else {
             alert ('You must log in')
         }
+    }
+
+    const addCart = (cartID) => {
+        var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
+
+        if(dataUser !== null){
+            Axios.post("http://localhost:3001/createCart",
+         {
+            userID: dataUser[0].userID,
+            cartID: cartID,
+         }).then((response) => {
+            alert("Good");
+         });
+        } else {
+            alert ('You must log in')
+        }
+    }
+
+    const buttonClicked = () => {
+        addCart(cartID);
+        addCartDetail(id);
     }
 
     return (
@@ -97,7 +159,7 @@ const Barang = ({id, kodeBarang,namaBarang, harga,stok}) => {
                         <td className="barang_table table_item" width="50px"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input></td> 
                         <td className="barang_table table_item" width="50px"><button onClick={addStok} className="btn_tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn_kurang">-</button></td>
                         <td className="barang_table table_item" width="50px"><button onClick={kurangiStok} className="btn_tambah">+</button>{qty}<button onClick={tambahStok} className="btn_kurang">-</button></td>
-                        <td className="barang_table table_item_addtocart" width="200px"><button onClick={() => {addCart(id);}} className="button"> BELI SEKARANG </button></td>
+                        <td className="barang_table table_item_addtocart" width="200px"><button onClick={buttonClicked} className="button"> BELI SEKARANG </button></td>
                         </tr>
                     </tbody>
             </table>
