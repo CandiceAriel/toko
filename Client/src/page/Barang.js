@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import Axios from 'axios';
 import '../style/Barang.scss'
 
+import { FaPenAlt } from 'react-icons/fa'
+
 const Barang = ({id, cartID,kodeBarang,namaBarang, harga,stok}) => {
     const [qty,setQty] = useState(0);
     const [stokBaru,setStokBaru] = useState(stok);
@@ -48,6 +50,7 @@ const Barang = ({id, cartID,kodeBarang,namaBarang, harga,stok}) => {
             setBarang(barang.map((barang) => {
                 return barang.kodeBarang === kodeBarang ? {kodeBarang: kodeBarang,nama: namaBarang, harga: hargaBaru, stok:stokBaru, qty: qty } : barang
             }))
+            alert('Data Updated')
           }
         );
     };
@@ -96,7 +99,7 @@ const Barang = ({id, cartID,kodeBarang,namaBarang, harga,stok}) => {
                         <tr>
                         <td className="barang_table table_item" width="100px">{kodeBarang}</td>
                         <td className="barang_table table_item" width="100px">{namaBarang}</td>
-                        <td className="barang_table table_item" width="50px"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input></td> 
+                        <td className="barang_table table_item" width="50px"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input><button className="btn_update" onClick={() => {updateBarang(kodeBarang);}}><FaPenAlt /></button></td> 
                         <td className="barang_table table_item" width="50px"><button onClick={addStok} className="btn_tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn_kurang">-</button></td>
                         <td className="barang_table table_item" width="50px"><button onClick={kurangiStok} className="btn_tambah">+</button>{qty}<button onClick={tambahStok} className="btn_kurang">-</button></td>
                         <td className="barang_table table_item_addtocart" width="200px"><button onClick={() => {addCartDetail(id);}} className="button"> BELI SEKARANG </button></td>

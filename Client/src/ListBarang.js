@@ -41,7 +41,7 @@ const ListBarang = () => {
                     <th align="center" className="list-barang_table table_head">Harga</th> 
                     <th align="left" className="list-barang_table table_head">Stok Barang</th>
                     <th align="left" className="list-barang_table table_head">Jumlah Barang</th>
-                    <th className="list-barang_table table_head" ></th>
+                    <th className="list-barang_table table_head"><Link to="/AddBarang" className="link_tambahbarang">+</Link></th>
                 </tr>
               </thead>
               </table>
