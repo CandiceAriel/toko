@@ -13,14 +13,10 @@ import {ReactComponent as EmptyCart} from './image/emptycart.svg';
 const ListCart = () => {
     const [cart,setCart]=useState([]);
 
+    const [totalorder,setTotalorder] = useState(0)
+
     var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
     var usercart = JSON.parse(localStorage.getItem('usercart'));
-
-    if(usercart !== null && JSON.parse(localStorage.getItem('usercart')).length !== 0){
-      var totalorder = usercart[0].total;
-    } else if (usercart === null){
-      var totalorder = 0;
-    }
 
     const onDelete = () => {
       localStorage.removeItem('dataLogIn')
@@ -30,13 +26,26 @@ const ListCart = () => {
     //Get data upon accessing Cart menu
     useEffect(() => {
       var usercart = JSON.parse(localStorage.getItem('usercart'));
-
       setCart(usercart)
 
       if(localStorage.getItem('usercart') !== null && localStorage.getItem('usercart').length === 0){
         localStorage.removeItem('usercart')
       }
+      gettotal()
+      
     }, [])
+
+    const gettotal = () => {
+      var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
+      var datacart = JSON.parse(localStorage.getItem('datacart'));
+
+      Axios.post("http://localhost:3001/totalbelanja",{
+        userID: dataUser[0].userID,
+        cartID: datacart[0].cartID
+      }).then((response) => {
+            setTotalorder(response.data[0].totalorder)
+      });
+    }
 
     //Delete Cart data based on ID
     const deleteCart = (id) => {
@@ -58,7 +67,7 @@ const ListCart = () => {
           <nav className="list-cart__subnav">
               <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                 <ul className="list-cart__subnav subnav__item">
-                  <li><Link to="/SignIn" className="list-cart__subnav subnav__link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                  <li><Link to="/SignIn" className="list-cart__subnav subnav__link link__signout" onClick={onDelete}>Sign Out</Link></li> 
                 </ul>
             </nav>
           <div className="list-cart__container">
@@ -73,7 +82,7 @@ const ListCart = () => {
                       harga={cart.harga}
                       qty={cart.qty}
                       total={cart.total}/>
-                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item__button__delete"><FaTimes /> </button>
+                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item__buttondelete"><FaTimes /> </button>
                   </div>
                 ))}  
             </div> 
@@ -100,7 +109,7 @@ const ListCart = () => {
         <nav className="list-cart__subnav">
               <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                 <ul className="list-cart__subnav subnav__item">
-                  <li><Link to="/SignIn" className="list-cart__subnav subnav__link__signin" onClick={onDelete}>Sign In</Link></li> 
+                  <li><Link to="/SignIn" className="list-cart__subnav subnav__link link__signin" onClick={onDelete}>Sign In</Link></li> 
                 </ul>
             </nav>
         <div className="list-cart__container">
@@ -118,7 +127,7 @@ const ListCart = () => {
         <nav className="list-cart__subnav">
               <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                 <ul className="list-cart__subnav subnav__item">
-                  <li><Link to="/SignIn" className="list-cart__subnav subnav__link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                  <li><Link to="/SignIn" className="list-cart__subnav subnav__link link__signout" onClick={onDelete}>Sign Out</Link></li> 
                 </ul>
             </nav>
         <div className="list-cart__container">
@@ -138,7 +147,7 @@ const ListCart = () => {
         <nav className="list-cart__subnav">
               <Link to="/" className="link__home">TOKO SERBA ADA</Link>
                 <ul className="list-cart__subnav subnav__item">
-                <li><Link to="/SignIn" className="list-cart__subnav subnav__link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                <li><Link to="/SignIn" className="list-cart__subnav subnav__link link__signout" onClick={onDelete}>Sign Out</Link></li> 
                 </ul>
             </nav>
         <div className="list-cart__container">

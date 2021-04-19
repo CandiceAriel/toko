@@ -251,6 +251,27 @@ app.post('/retrieveCart', function(req,res) {
 });
 
 //retrieve Cart based on UserID in Local Storage
+app.post('/totalbelanja', function(req,res) {
+  const userID = req.body.userID;
+  const cartID = req.body.cartID;
+
+  con.query('SELECT SUM(total) AS totalorder FROM Cart_detail WHERE userID = ? AND cartID = ?', 
+      [userID, cartID],
+      (err, result) => {
+        if (err) {
+          res.send({ err: err });
+        }
+  
+        if (result.length > 0) {
+              res.send(result);
+        } else {
+          res.send({ message: "Cart is empty" });
+        }
+      }
+    );
+});
+
+//retrieve Cart based on UserID in Local Storage
 app.post('/retrieveCartDetil', function(req,res) {
   const userID = req.body.userID;
 

@@ -45,7 +45,7 @@ const ListBarang = () => {
                 </tr>
               </thead>
               </table>
-              <div className="list-barang__item__container">
+              <div className="list-barang__item item__container">
               {barang.map(barang => (
                       <div className="wrapper" key={barang.id}>
                         <Barang key={barang.id}

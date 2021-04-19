@@ -36,14 +36,14 @@
             font-weight: $weight-bold;
         }
     }
+}
 
-    &__item{
-        &__container{
-            box-sizing: border-box;
-            margin-top: 10px;
-            padding: 0px;
-            width: 100%;
-        }
+.item{
+    &__container{
+        box-sizing: border-box;
+        margin-top: 10px;
+        padding: 0px;
+        width: 100%;
     }
 }
 

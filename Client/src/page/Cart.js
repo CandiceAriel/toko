@@ -1,10 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import Axios from 'axios'
 import '../style/Cart.scss'
 
 const Cart = ({id,cartID,kodeBarang,namaBarang, harga,qty,total}) => {
     const [qtyBaru,setQtyBaru] = useState(qty);
-
     const [cart, setCart] =  useState([])
 
     //Kurangi stok based on qty for counter button
@@ -56,8 +55,8 @@ const Cart = ({id,cartID,kodeBarang,namaBarang, harga,qty,total}) => {
         <div>
           <table className="cart__table">
               <tbody>
-                <tr align="center" className="cart__table table__row-product"><td>{kodeBarang}</td><td>{namaBarang}</td><td>{qtyBaru}</td></tr>
-                <tr align="center" className="cart__table table__row-price"><td>RP. {total}</td> <td>Rp. ({harga} / PCS)</td></tr>
+                <tr align="center" className="cart__table table__rowproduct"><td>{kodeBarang}</td><td>{namaBarang}</td><td>{qtyBaru}</td></tr>
+                <tr align="center" className="cart__table table__rowprice"><td>RP. {total}</td><td>Rp. ({harga} / PCS)</td></tr>
               </tbody>
           </table>
         </div>
