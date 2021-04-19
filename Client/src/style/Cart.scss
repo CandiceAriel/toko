@@ -3,7 +3,7 @@
 .cart{
     font-family: $base-font-family;
 
-    &_content{
+    &__content{
         box-sizing: border-box;
         width: 100vh;
         height: 500px;
@@ -11,7 +11,7 @@
         margin-right: 10px;
     }
 
-    &_wrapper{
+    &__wrapper{
         box-sizing: border-box;
         width: 50%;
         height: 250px;
@@ -20,40 +20,47 @@
         justify-content: space-around;
     }
 
-    &_table{
+    &__table{
         width: 90%;
         border-radius: 0px;
         box-sizing: border-box;
         margin-bottom: 16px;
+    }
+}
 
-        &_row-product{
-            width: 100%;
-            height: 39px;
-            padding: 0px;
-            vertical-align: inherit;
-            display: flex;
-            justify-content: right;
-            box-sizing: border-box;
-            font-weight: $weight-bold;
-            font-size: $base-font-size-medium;
-        }
+.table{
+    width: 90%;
+    border-radius: 0px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
 
-        &_row-price{
-            width: 100%;
-            height: 39px;
-            padding: 0px;
-            vertical-align: inherit;
-            display: flex;
-            justify-content: right;
-            box-sizing: border-box;
-            font-weight: $weight-semi;
-            font-size: $base-font-size-medium;
-        }
+    &__row-product{
+        width: 100%;
+        height: 39px;
+        padding: 0px;
+        vertical-align: inherit;
+        display: flex;
+        justify-content: right;
+        box-sizing: border-box;
+        font-weight: $weight-bold;
+        font-size: $base-font-size-medium;
+    }
+
+    &__row-price{
+        width: 100%;
+        height: 39px;
+        padding: 0px;
+        vertical-align: inherit;
+        display: flex;
+        justify-content: right;
+        box-sizing: border-box;
+        font-weight: $weight-semi;
+        font-size: $base-font-size-medium;
     }
 }
 
 .button{
-    &_tambah{
+    &__tambah{
         background-color: #28527A;
         margin-right: 10px;
         border-radius: 5px;
@@ -64,7 +71,7 @@
         font-size: medium;
     }
 
-    &_kurang{
+    &__kurang{
         background-color: #28527A;
         margin-left: 10px;
         border-radius: 5px;

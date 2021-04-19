@@ -1,7 +1,7 @@
 @import './main.scss';
 
 .signin{
-    &_form{
+    &__form{
         height: 420px; 
         font-size: 16px;
         margin-top: 50px;
@@ -19,18 +19,18 @@
 }
 
 .form{
-    &_group{
+    &__group{
         width: 410px;
         margin-bottom: 32px;
         padding: 0px;
         height: 60px;
     }
 
-    &_input{
+    &__input{
         border: none;
     }
 
-    &_button{
+    &__button{
         display: flex;
         justify-content: center;
         box-sizing: border-box;

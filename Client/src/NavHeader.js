@@ -14,30 +14,30 @@ export const NavHeader = () => {
 
     if(dataUser === null){
         return (
-            <div className="navbar_container">
-                <ul className="navbar_subnav">
-                    <li><Link to="/Cart" className="link_cart"><FaShoppingCart className="link_icon"/></Link></li> 
+            <div className="navbar__container">
+                <ul className="navbar__subnav">
+                    <li><Link to="/Cart" className="link__cart"><FaShoppingCart className="link__icon"/></Link></li> 
                 </ul>
             <nav className="navbar">
-                    <Link to="/" className="link_home">TOKO SERBA ADA</Link>
-                    <ul className="navbar_item">
-                        <li><Link to="/Barang" className="link_barang">Barang</Link></li>
-                        <li><Link to="/SignIn" className="link_signin">Sign In</Link></li>
+                    <Link to="/" className="link__home">TOKO SERBA ADA</Link>
+                    <ul className="navbar__item">
+                        <li><Link to="/Barang" className="link__barang">Barang</Link></li>
+                        <li><Link to="/SignIn" className="link__signin">Sign In</Link></li>
                     </ul>
             </nav>
             </div>
         )
     } else if (dataUser !== null){
         return (
-            <div className="navbar_container">
-                <ul className="navbar_subnav">
-                    <li><Link to="/SignIn" className="link_signout" onClick={onDelete}>Sign Out</Link></li> 
-                    <li><Link to="/Cart" className="link_cart"><FaShoppingCart className="link_icon" size="20px"/></Link></li>
+            <div className="navbar__container">
+                <ul className="navbar__subnav">
+                    <li><Link to="/SignIn" className="link__signout" onClick={onDelete}>Sign Out</Link></li> 
+                    <li><Link to="/Cart" className="link__cart"><FaShoppingCart className="link__icon" size="20px"/></Link></li>
                 </ul>
             <nav className="navbar">
-                    <Link to="/" className="link_home">TOKO SERBA ADA</Link>
-                    <ul className="navbar_item">
-                        <li><Link to="/Barang" className="link_barang">Barang</Link></li>
+                    <Link to="/" className="link__home">TOKO SERBA ADA</Link>
+                    <ul className="navbar__item">
+                        <li><Link to="/Barang" className="link__barang">Barang</Link></li>
                     </ul>
             </nav>
             </div>

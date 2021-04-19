@@ -38,12 +38,26 @@ const Cart = ({id,cartID,kodeBarang,namaBarang, harga,qty,total}) => {
         );
     };
 
+    //Delete Cart data based on ID
+    const deleteCart = (id) => {
+        Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
+          setCart(
+            cart.filter((cart) => {
+              return cart.id !== id;
+            })
+          );
+        });
+        const usercart = JSON.parse(localStorage.getItem('usercart'));
+        const filtered = usercart.filter(usercart => usercart.id !== id);
+        localStorage.setItem('usercart', JSON.stringify(filtered));
+    };
+
     return (
         <div>
-          <table className="cart_table">
+          <table className="cart__table">
               <tbody>
-                <tr align="center" className="cart_table_row-product"><td>{kodeBarang}</td><td>{namaBarang}</td><td>{qtyBaru}</td></tr>
-                <tr align="center" className="cart_table_row-price"><td>RP. {harga}</td> <td>Rp. ({total} / PCS)</td></tr>
+                <tr align="center" className="cart__table table__row-product"><td>{kodeBarang}</td><td>{namaBarang}</td><td>{qtyBaru}</td></tr>
+                <tr align="center" className="cart__table table__row-price"><td>RP. {total}</td> <td>Rp. ({harga} / PCS)</td></tr>
               </tbody>
           </table>
         </div>

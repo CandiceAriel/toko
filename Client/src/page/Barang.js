@@ -71,10 +71,12 @@ const Barang = ({id, cartID,kodeBarang,namaBarang, harga,stok}) => {
             harga: hargaBaru,
             stok: stokBaru,
             qty: qty,
+            qtyinput: qty,
             total : hargaBaru * qty,
          }).then((response) => {
             alert("Good");
             {updateBarang(kodeBarang);}
+            setQty(0)
          });
 
          Axios.post("http://localhost:3001/retrieveCartDetil",
@@ -93,16 +95,16 @@ const Barang = ({id, cartID,kodeBarang,namaBarang, harga,stok}) => {
     }
 
     return (
-        <div className="barang_container">
-            <table className="barang_table">
+        <div className="barang__container">
+            <table className="barang__table">
                     <tbody>
                         <tr>
-                        <td className="barang_table table_item" width="100px">{kodeBarang}</td>
-                        <td className="barang_table table_item" width="100px">{namaBarang}</td>
-                        <td className="barang_table table_item" width="50px"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input><button className="btn_update" onClick={() => {updateBarang(kodeBarang);}}><FaPenAlt /></button></td> 
-                        <td className="barang_table table_item" width="50px"><button onClick={addStok} className="btn_tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn_kurang">-</button></td>
-                        <td className="barang_table table_item" width="50px"><button onClick={kurangiStok} className="btn_tambah">+</button>{qty}<button onClick={tambahStok} className="btn_kurang">-</button></td>
-                        <td className="barang_table table_item_addtocart" width="200px"><button onClick={() => {addCartDetail(id);}} className="button"> BELI SEKARANG </button></td>
+                        <td className="barang__table table__item" width="100px">{kodeBarang}</td>
+                        <td className="barang__table table__item" width="100px">{namaBarang}</td>
+                        <td className="barang__table table__item" width="50px"><input type="number" className="input-harga" value={hargaBaru} onChange={updateHarga}></input><button className="btn__update" onClick={() => {updateBarang(kodeBarang);}}><FaPenAlt /></button></td> 
+                        <td className="barang__table table__item" width="50px"><button onClick={addStok} className="btn__tambah">+</button>{stokBaru}<button onClick={minusStok} className="btn__kurang">-</button></td>
+                        <td className="barang__table table__item" width="50px"><button onClick={kurangiStok} className="btn__tambah">+</button>{qty}<button onClick={tambahStok} className="btn__kurang">-</button></td>
+                        <td className="barang__table table__item__addtocart" width="200px"><button onClick={() => {addCartDetail(id);}} className="button"> BELI SEKARANG </button></td>
                         </tr>
                     </tbody>
             </table>

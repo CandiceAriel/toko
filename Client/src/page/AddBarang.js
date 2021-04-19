@@ -44,7 +44,7 @@ const AddBarang = () => {
             namaBarang: namaBaranginput,
             harga: hargainput,
             stok: parseInt(stokinput),
-            stokInput: stokinput,
+            stokInput: parseInt(stokinput),
             qty: 0,
         }).then((response) => {
             console.log(response.data);
@@ -63,33 +63,33 @@ const AddBarang = () => {
     return (
         <div>
         <NavHeader />
-        <div className="barang-add_container">
-        <form className="barang-add_form">
+        <div className="barang-add__container">
+        <form className="barang-add__form">
             <h5 className="title">Tambah Barang</h5>
-            <div className="form_group">
+            <div className="form__group">
                 <label>Kode Barang</label>
-                <input type="text"  className="form_input input" value={kodeBaranginput} onChange={updateKodeBarang}/>
+                <input type="text"  className="form__input input" value={kodeBaranginput} onChange={updateKodeBarang}/>
             </div>
-            <div className="form_group">
+            <div className="form__group">
                 <label>Nama Barang</label>
-                <input type="text"  className="form_input input" value={namaBaranginput} onChange={updateNamaBarang}/>
+                <input type="text"  className="form__input input" value={namaBaranginput} onChange={updateNamaBarang}/>
             </div>
-            <div className="form_group">
+            <div className="form__group">
                 <label>Harga</label>
-                <input type="number"  className="form_input input" value={hargainput} onChange={updateHarga}/>
+                <input type="number"  className="form__input input" value={hargainput} onChange={updateHarga}/>
             </div>
-            <div className="form_group">
+            <div className="form__group">
                 <label>Stok</label>
-                <input type="number"  className="form_input input" value={stokinput} onChange={updateStok}/>
+                <input type="number"  className="form__input input" value={stokinput} onChange={updateStok}/>
             </div>
-            <div className="form_button">
+            <div className="form__button">
                 <input type="submit" value="Submit" onClick={addBarang} className="button" />
             </div>
         </form>
         <div>
             { barang.map(barang => (
                 <div className="wrapper" key={barang.id}>
-                <table className="barang-add_table">
+                <table className="barang-add__table">
                     <tbody> 
                         <tr>
                         <td>{barang.kodeBarang}</td>
@@ -109,7 +109,7 @@ const AddBarang = () => {
         return (
             <div>
                 <NavHeader />
-                <h1 className="barang-add_warning-text">Not Authorized</h1>
+                <h1 className="barang-add__warning-text">Not Authorized</h1>
             </div>
         )
     }

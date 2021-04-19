@@ -42,7 +42,7 @@ app.post('/create/', (req,res) => {
   const qty = req.body.qty;
   req.setTimeout( 1000 * 60 * 10 ); 
 
-  con.query('INSERT INTO Barang (kodeBarang, namaBarang,harga,stok,stokInput,qty) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE stok = stok + (stokInput + 1) ',
+  con.query('INSERT INTO Barang (kodeBarang, namaBarang,harga,stok,stokInput,qty) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE stokInput = VALUES(stokInput), stok = stok + stokInput ',
    [kodeBarang,namaBarang,harga,stok,stokInput,qty],
     (err,result) => {
       if(err) {
@@ -97,10 +97,11 @@ app.post('/createCartDetail/', (req,res) => {
   const namaBarang = req.body.namaBarang;
   const harga = req.body.harga;
   const qty = req.body.qty;
+  const qtyinput = req.body.qtyinput;
   const total = req.body.total;
 
-  con.query('INSERT INTO Cart_detail (userID,id,cartID,kodeBarang,namaBarang,harga,qty,total) VALUES (?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE qty = qty+qty',
-   [userID,id,cartID,kodeBarang,namaBarang,harga,qty,total],
+  con.query('INSERT INTO Cart_detail (userID,id,cartID,kodeBarang,namaBarang,harga,qty,qtyinput,total) VALUES (?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE qtyinput = VALUES(qtyinput), qty = qty+qtyinput',
+   [userID,id,cartID,kodeBarang,namaBarang,harga,qty,qtyinput,total],
     (err,result) => {
       if(err) {
         console.log(err);
