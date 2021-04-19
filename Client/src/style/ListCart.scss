@@ -204,6 +204,14 @@
         font-family: $base-font-family;
         font-size: $base-font-size-medium;
     }
+
+    &__button{
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        margin-top: 20px;
+        padding: 0px 150px;
+    }
 }
 
 .table{

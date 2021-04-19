@@ -4,7 +4,6 @@ import './style/ListCart.scss'
 import Cart from './page/Cart';
 import Axios from 'axios';
 
-import { FaShoppingCart } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
 
 import {ReactComponent as EmptyCart} from './image/emptycart.svg';
@@ -17,6 +16,8 @@ const ListCart = () => {
 
     var dataUser = JSON.parse(localStorage.getItem('dataLogIn'));
     var usercart = JSON.parse(localStorage.getItem('usercart'));
+
+    var datacart = JSON.parse(localStorage.getItem('datacart'));
 
     const onDelete = () => {
       localStorage.removeItem('dataLogIn')
@@ -60,6 +61,25 @@ const ListCart = () => {
         const filtered = usercart.filter(usercart => usercart.id !== id);
         localStorage.setItem('usercart', JSON.stringify(filtered));
     };
+
+    const updatebarang = (kodeBarang, id) => {
+      Axios.put("http://localhost:3001/updatebarang", {kodeBarang: kodeBarang }).then(
+          (response) => {
+            alert('Berhsil')
+          }
+      );
+
+      Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
+          setCart(
+            cart.filter((cart) => {
+              return cart.id !== id;
+            })
+          );
+        });
+        const usercart = JSON.parse(localStorage.getItem('usercart'));
+        const filtered = usercart.filter(usercart => usercart.id !== id);
+        localStorage.setItem('usercart', JSON.stringify(filtered));
+    }
     
     if(dataUser !== null && usercart !== null && JSON.parse(localStorage.getItem('usercart')).length !== 0){
     return (
@@ -82,7 +102,7 @@ const ListCart = () => {
                       harga={cart.harga}
                       qty={cart.qty}
                       total={cart.total}/>
-                      <button onClick={() => {deleteCart(cart.id);}}className="list-cart-item__buttondelete"><FaTimes /> </button>
+                      <button onClick={() => {updatebarang(cart.kodeBarang,cart.id);}}className="list-cart-item__buttondelete"><FaTimes /></button>
                   </div>
                 ))}  
             </div> 
@@ -100,6 +120,9 @@ const ListCart = () => {
                   </tr>
                 </tbody>
               </table>
+              <div className="list-cart-detil__button">
+                <button type="submit" className="button">CHECKOUT</button>
+            </div>
             </div>
           </div>
       </div>

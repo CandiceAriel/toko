@@ -167,6 +167,23 @@ app.put("/updateCart", (req, res) => {
   );
 });
 
+//Update data on table Barang
+app.put("/updatebarang", (req, res) => {
+  const kodeBarang = req.body.kodeBarang;
+
+  con.query(
+    "UPDATE Barang INNER JOIN Cart_detail ON Barang.kodeBarang = Cart_detail.kodeBarang SET Barang.stok= Barang.stok+ Cart_detail.qty WHERE Barang.kodeBarang = ?",
+    [kodeBarang],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
 //Add data to User table
 app.post('/register/', (req,res) => {
   const userID = req.body.userID;

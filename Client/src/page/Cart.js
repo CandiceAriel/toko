@@ -2,6 +2,8 @@ import React, {useState,useEffect} from 'react'
 import Axios from 'axios'
 import '../style/Cart.scss'
 
+import { FaTimes } from "react-icons/fa";
+
 const Cart = ({id,cartID,kodeBarang,namaBarang, harga,qty,total}) => {
     const [qtyBaru,setQtyBaru] = useState(qty);
     const [cart, setCart] =  useState([])
@@ -26,6 +28,14 @@ const Cart = ({id,cartID,kodeBarang,namaBarang, harga,qty,total}) => {
          updateCart(kodeBarang);
     }
 
+    const updatebarang = (kodeBarang) => {
+      Axios.put("http://localhost:3001/updatebarang", {kodeBarang: kodeBarang }).then(
+          (response) => {
+            alert("Berhasil")
+          }
+        );
+    }
+
     //Update Barang to DB based on new value
     const updateCart = (kodeBarang) => {
         Axios.put("http://localhost:3001/updateCart", { qty: qtyBaru+1 , total: harga*qtyBaru, kodeBarang: kodeBarang }).then(
@@ -39,17 +49,17 @@ const Cart = ({id,cartID,kodeBarang,namaBarang, harga,qty,total}) => {
 
     //Delete Cart data based on ID
     const deleteCart = (id) => {
-        Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
-          setCart(
-            cart.filter((cart) => {
-              return cart.id !== id;
-            })
-          );
-        });
-        const usercart = JSON.parse(localStorage.getItem('usercart'));
-        const filtered = usercart.filter(usercart => usercart.id !== id);
-        localStorage.setItem('usercart', JSON.stringify(filtered));
-    };
+      Axios.delete(`http://localhost:3001/deleteCart/${id}`).then((response) => {
+        setCart(
+          cart.filter((cart) => {
+            return cart.id !== id;
+          })
+        );
+      });
+      const usercart = JSON.parse(localStorage.getItem('usercart'));
+      const filtered = usercart.filter(usercart => usercart.id !== id);
+      localStorage.setItem('usercart', JSON.stringify(filtered));
+  };
 
     return (
         <div>
